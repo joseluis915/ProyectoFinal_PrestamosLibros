@@ -8,10 +8,12 @@ using System.Windows;
 
 namespace ProyectoFinal_PrestamosLibros
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show($"Ha ocurrido un error no controlado: \n {e.Exception.Message}");
+            e.Handled = true;
+        }
     }
 }

@@ -15,14 +15,21 @@ using System.Windows.Shapes;
 
 namespace ProyectoFinal_PrestamosLibros
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void rUsuariosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cUsuariosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
