@@ -39,7 +39,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Login
             if (paso)
             {
                 MenuPrincipal.Show();
-                this.WindowState = WindowState.Minimized; //Minimiza el LogIn
+                //this.WindowState = WindowState.Minimized; //Minimiza el LogIn
             }
             else
             {

@@ -16,6 +16,7 @@
 
                 <MenuItem Header="Consultas">
                     <MenuItem x:Name="cEstudiantesMenuItem" Click="cEstudiantesMenuItem_Click" Header="Consultar Estudiante"/>
+                    <MenuItem x:Name="cUsuariosMenuItem" Click="cUsuariosMenuItem_Click" Header="Consultar Usuario"/>
                 </MenuItem>
 
                 <MenuItem Header="Ayuda">

@@ -36,5 +36,11 @@ namespace ProyectoFinal_PrestamosLibros
             cEstudiantes cEstudiantes = new cEstudiantes();
             cEstudiantes.Show();
         }
+
+        private void cUsuariosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cUsuarios cUsuarios = new cUsuarios();
+            cUsuarios.Show();
+        }
     }
 }
