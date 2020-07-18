@@ -9,8 +9,10 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Agendar.png" />
+	  <None Remove="Resources\Anonimo.png" />
 	  <None Remove="Resources\Buscar.png" />
 	  <None Remove="Resources\Cancelar.png" />
+	  <None Remove="Resources\Candado.png" />
 	  <None Remove="Resources\Carcular.png" />
 	  <None Remove="Resources\Crear.png" />
 	  <None Remove="Resources\Documento.png" />
@@ -19,15 +21,17 @@
 	  <None Remove="Resources\Fecha.png" />
 	  <None Remove="Resources\Guardar.png" />
 	  <None Remove="Resources\Home.png" />
+	  <None Remove="Resources\Key.png" />
 	  <None Remove="Resources\Limpiar.png" />
 	  <None Remove="Resources\Lista.png" />
 	  <None Remove="Resources\Mas.png" />
+	  <None Remove="Resources\Usuario.png" />
+	  <None Remove="Resources\Usuarios.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Data\" />
 	  <Folder Include="UI\Consultas\" />
-	  <Folder Include="UI\Login\" />
 	  <Folder Include="UI\Registros\" />
 	</ItemGroup>
 
@@ -43,10 +47,16 @@
 	  <Resource Include="Resources\Agendar.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
+	  <Resource Include="Resources\Anonimo.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
 	  <Resource Include="Resources\Buscar.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\Cancelar.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Candado.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\Carcular.png">
@@ -73,6 +83,9 @@
 	  <Resource Include="Resources\Home.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
+	  <Resource Include="Resources\Key.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
 	  <Resource Include="Resources\Limpiar.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
@@ -80,6 +93,12 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\Mas.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Usuario.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Usuarios.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
 	</ItemGroup>
