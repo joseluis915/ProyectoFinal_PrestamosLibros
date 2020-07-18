@@ -11,11 +11,11 @@
             <!--——————————————————————————————————————————————[ MENU ITEMS ]——————————————————————————————————————————————-->
             <Menu Height="24" FontSize="15">
                 <MenuItem Header="Registros">
-                    <MenuItem x:Name="rUsuariosMenuItem" Click="rUsuariosMenuItem_Click" Header="Registrar Usuario"/>
+                    <MenuItem x:Name="rEstudiantesMenuItem" Click="rEstudiantesMenuItem_Click" Header="Registrar Estudiante"/>
                 </MenuItem>
 
                 <MenuItem Header="Consultas">
-                    <MenuItem x:Name="cUsuariosMenuItem" Click="cUsuariosMenuItem_Click" Header="Consultar Usuario"/>
+                    <MenuItem x:Name="cEstudiantesMenuItem" Click="cEstudiantesMenuItem_Click" Header="Consultar Estudiante"/>
                 </MenuItem>
 
                 <MenuItem Header="Ayuda">
@@ -35,7 +35,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <Label Content="Ultima modificacion:" FontWeight="Bold" FontSize="18" FontStyle="Italic"/>
-                <Label Content="16/07/2020" FontSize="18" />
+                <Label Content="18/07/2020" FontSize="18" />
             </StackPanel>
 
             <Label Content="©2020" FontWeight="Bold"  FontSize="16" FontStyle="Italic" HorizontalAlignment="Center" Margin="0,20,0,0"/>

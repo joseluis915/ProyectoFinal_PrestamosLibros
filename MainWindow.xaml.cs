@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+//Using agregados
+using ProyectoFinal_PrestamosLibros.UI.Registros;
+using ProyectoFinal_PrestamosLibros.UI.Consultas;
 
 namespace ProyectoFinal_PrestamosLibros
 {
@@ -22,14 +25,16 @@ namespace ProyectoFinal_PrestamosLibros
             InitializeComponent();
         }
 
-        private void rUsuariosMenuItem_Click(object sender, RoutedEventArgs e)
+        private void rEstudiantesMenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            rEstudiantes rEstudiantes = new rEstudiantes();
+            rEstudiantes.Show();
         }
 
-        private void cUsuariosMenuItem_Click(object sender, RoutedEventArgs e)
+        private void cEstudiantesMenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            cEstudiantes cEstudiantes = new cEstudiantes();
+            cEstudiantes.Show();
         }
     }
 }

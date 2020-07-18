@@ -18,7 +18,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Login
     public partial class Login : Window
     {
         Usuarios usuarios = new Usuarios();
-        MainWindow Principal = new MainWindow();
+        MainWindow MenuPrincipal = new MainWindow();
 
         public Login()
         {
@@ -38,12 +38,12 @@ namespace ProyectoFinal_PrestamosLibros.UI.Login
 
             if (paso)
             {
-                this.Close();
-                Principal.Show();
+                MenuPrincipal.Show();
+                this.WindowState = WindowState.Minimized; //Minimiza el LogIn
             }
             else
             {
-                MessageBox.Show("Error Nombre Usuario o Contraseña incorrecta!", "Error!");
+                MessageBox.Show("Nombre de Usuario o Contraseña incorrecta", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 ContrasenaPasswordBox.Clear();
                 NombreUsuarioTextBox.Focus();
             }

@@ -16,13 +16,13 @@
             <Label Content="Nombre Usuario" Margin="25,5,0,0"/>
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Resources/Usuario.png" Height="30" />
-                    <TextBox x:Name="NombreUsuarioTextBox" Text="{Binding NombreUsuario}" Width="255" />
+                    <TextBox x:Name="NombreUsuarioTextBox" Text="{Binding NombreUsuario}" Width="255" VerticalContentAlignment="Center" />
                 </StackPanel>
             <!--—————————————————————————————————————————[ CONTRASEÑA ]—————————————————————————————————————————-->
             <Label Content="Contraseña" Margin="25,10,0,0" />
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Resources/Candado.png" Height="30" />
-                <PasswordBox x:Name="ContrasenaPasswordBox" PasswordHelper:PasswordHelper.Attach="True" PasswordHelper:PasswordHelper.Password="{Binding Contrasena, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="255" />
+                <PasswordBox x:Name="ContrasenaPasswordBox" PasswordHelper:PasswordHelper.Attach="True" PasswordHelper:PasswordHelper.Password="{Binding Contrasena, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="255" VerticalContentAlignment="Center" />
                 </StackPanel>
 
 
