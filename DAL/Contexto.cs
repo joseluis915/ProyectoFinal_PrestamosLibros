@@ -10,6 +10,14 @@ namespace ProyectoFinal_PrestamosLibros.DAL
     public class Contexto : DbContext
     {
         public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Estudiantes> Estudiantes { get; set; }
+        public DbSet<Libros> Libros { get; set; }
+        public DbSet<Editoriales> Editoriales { get; set; }
+        public DbSet<EntradasLibros> EntradasLibros { get; set; }
+        public DbSet<SalidasLibros> SalidasLibros { get; set; }
+        public DbSet<Prestamos> Prestamos { get; set; }
+        public DbSet<Devoluciones> Devoluciones { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
