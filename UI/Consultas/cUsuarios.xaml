@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Consultas"
         mc:Ignorable="d"
-        Title="CONSULTAR USUARIO" Height="460" Width="640" WindowStartupLocation="CenterScreen">
+        Title="CONSULTAR USUARIO" Height="460" Width="640" WindowStartupLocation="CenterScreen" Icon="/Resources/Lista.png" >
     <Grid>
         <StackPanel Orientation="Vertical" Margin="0,5,0,0" HorizontalAlignment="Center">
 

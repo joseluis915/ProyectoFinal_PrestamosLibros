@@ -18,9 +18,9 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 
             try
             {
-                var validar = from usuario in contexto.Usuarios
-                              where usuario.NombreUsuario == nombreusuario
-                              && usuario.Contrasena == GetSHA256(contrasena)
+                var validar = from usuario
+                              in contexto.Usuarios
+                              where usuario.NombreUsuario == nombreusuario && usuario.Contrasena == GetSHA256(contrasena)
                               select usuario;
                 if (validar.Count() > 0)
                     paso = true;
@@ -48,6 +48,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             StringBuilder sb = new StringBuilder();
             stream = sha256.ComputeHash(encoding.GetBytes(str));
             for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            
             return sb.ToString();
         }
     }

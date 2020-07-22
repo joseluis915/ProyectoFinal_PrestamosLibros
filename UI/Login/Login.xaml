@@ -14,22 +14,21 @@
             <Label Content="LogIn" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18" />
             <!--—————————————————————————————————————————[ USUARIO ]—————————————————————————————————————————-->
             <Label Content="Nombre Usuario" Margin="25,5,0,0"/>
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Resources/Usuario.png" Height="30" />
-                    <TextBox x:Name="NombreUsuarioTextBox" Text="{Binding NombreUsuario}" Width="255" VerticalContentAlignment="Center" />
-                </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Resources/Usuario.png" Height="30" />
+                <TextBox x:Name="NombreUsuarioTextBox" Text="{Binding NombreUsuario}" Width="255" VerticalContentAlignment="Center" />
+            </StackPanel>
             <!--—————————————————————————————————————————[ CONTRASEÑA ]—————————————————————————————————————————-->
             <Label Content="Contraseña" Margin="25,10,0,0" />
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Resources/Candado.png" Height="30" />
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Resources/Candado.png" Height="30" />
                 <PasswordBox x:Name="ContrasenaPasswordBox" PasswordHelper:PasswordHelper.Attach="True" PasswordHelper:PasswordHelper.Password="{Binding Contrasena, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="255" VerticalContentAlignment="Center" />
-                </StackPanel>
-
-
+            </StackPanel>
+            
             <StackPanel Margin="0,25,0,0">
-                <Button x:Name="IngresarButton" Click="IngresarButton_Click" Width="100" >
+                <Button x:Name="IngresarButton" Click="IngresarButton_Click" Width="110" Height="35" BorderBrush="#FFBEBEBE">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/Entrar.png" Height="30"/>
+                        <Image Source="/Resources/Entrar.png"/>
                         <Label Content="Ingresar" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
                 </Button>

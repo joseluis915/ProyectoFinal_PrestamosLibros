@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
@@ -14,6 +15,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Nombres = table.Column<string>(nullable: true),
                     Apellidos = table.Column<string>(nullable: true),
+                    FechaCreacion = table.Column<DateTime>(nullable: false),
                     NombreUsuario = table.Column<string>(nullable: true),
                     Contrasena = table.Column<string>(nullable: true)
                 },
@@ -24,8 +26,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
 
             migrationBuilder.InsertData(
                 table: "Usuarios",
-                columns: new[] { "UsuarioId", "Apellidos", "Contrasena", "NombreUsuario", "Nombres" },
-                values: new object[] { 1, "Hernandez Rodriguez", "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5", "admin", "Jose Anderson" });
+                columns: new[] { "UsuarioId", "Apellidos", "Contrasena", "FechaCreacion", "NombreUsuario", "Nombres" },
+                values: new object[] { 1, "Hernandez Rodriguez", "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5", new DateTime(2020, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin", "Jose Anderson" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
