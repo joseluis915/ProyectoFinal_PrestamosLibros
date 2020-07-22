@@ -21,7 +21,7 @@ namespace ProyectoFinal_PrestamosLibros.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.EnableSensitiveDataLogging().UseSqlite(@"Data Source= Data\ProyectoFinal_PrestamosLibros.DB");
+            optionsBuilder.EnableSensitiveDataLogging().UseSqlite(@"Data Source = Data\ProyectoFinal_PrestamosLibros.DB");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -31,6 +31,7 @@ namespace ProyectoFinal_PrestamosLibros.DAL
                 UsuarioId = 1,
                 Nombres = "Jose Anderson",
                 Apellidos = "Hernandez Rodriguez",
+                FechaCreacion = new DateTime(2020, 07, 20),
                 NombreUsuario = "admin",
                 Contrasena = "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
             });
