@@ -7,22 +7,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProyectoFinal_PrestamosLibros.Entidades
 {
-    public class Editoriales
+    public class Devoluciones
     {
         [Key]
-        public int EditorialId { get; set; }
+        public int DevolucionId { get; set; }
         public int UsuarioId { get; set; }
         //———————————————————————————[ForeingKey UsuarioId]———————————————————————————
         [ForeignKey("UsuarioId")]
         public Usuarios Usuario { get; set; } = new Usuarios();
         //————————————————————————————————————————————————————————————————————————————
-        public String Descripcion { get; set; }
-
-        //public Editoriales()
-        //{
-        //    EditorialId = 0;
-        //    //UsuarioId = 0;
-        //    Descripcion = String.Empty;
-        //}
+        public int EstudianteId { get; set; }
+        //———————————————————————————[ForeingKey EstudianteId]———————————————————————————
+        [ForeignKey("EstudianteId")]
+        public Estudiantes estudiantes { get; set; } = new Estudiantes();
+        //————————————————————————————————————————————————————————————————————————————
+        public DateTime Fecha { get; set; } = DateTime.Now;
     }
 }

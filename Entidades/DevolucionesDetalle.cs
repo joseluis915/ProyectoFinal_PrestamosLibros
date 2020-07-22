@@ -7,16 +7,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProyectoFinal_PrestamosLibros.Entidades
 {
-    public class PrestamosDetalle
+    public class DevolucionesDetalle
     {
         [Key]
-        public int PrestamoDetalleId { get; set; }
-        public int PrestamosId { get; set; }
+        public int DevolucionDetalleId { get; set; }
+        public int DevolucionId { get; set; }
         public int LibroId { get; set; }
-        //———————————————————————————[ForeingKey LibroId]———————————————————————————
+        //———————————————————————————[ForeingKey UsuarioId]———————————————————————————
         [ForeignKey("LibroId")]
         public Libros libros { get; set; } = new Libros();
         //————————————————————————————————————————————————————————————————————————————
-        public int CantidadLibro { get; set; }
+        public int LibrosDevueltos { get; set; }
+        public int Dias { get; set; }
     }
 }
