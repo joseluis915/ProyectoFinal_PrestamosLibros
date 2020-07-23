@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
-    public partial class Migracion_Inicial2 : Migration
+    public partial class Migracion_Inicial3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,11 +55,11 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     Nombres = table.Column<string>(nullable: true),
                     Apellidos = table.Column<string>(nullable: true),
                     FechaNacimiento = table.Column<DateTime>(nullable: false),
+                    Cedula = table.Column<string>(nullable: true),
                     Genero = table.Column<string>(nullable: true),
                     Telefono = table.Column<string>(nullable: true),
                     Direccion = table.Column<string>(nullable: true),
-                    Correo = table.Column<string>(nullable: true),
-                    Cedula = table.Column<string>(nullable: true)
+                    Correo = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -209,7 +209,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "UsuarioId", "Apellidos", "Contrasena", "FechaCreacion", "NombreUsuario", "Nombres" },
-                values: new object[] { 1, "Hernandez Rodriguez", "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5", new DateTime(2020, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin", "Jose Anderson" });
+                values: new object[] { 1, "Hernandez Rodriguez", "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5", new DateTime(2020, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin", "Jose Anderson" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Devoluciones_EstudianteId",

@@ -9,8 +9,8 @@ using ProyectoFinal_PrestamosLibros.DAL;
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200722215114_Migracion_Inicial2")]
-    partial class Migracion_Inicial2
+    [Migration("20200723195540_Migracion_Inicial3")]
+    partial class Migracion_Inicial3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -244,7 +244,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                             UsuarioId = 1,
                             Apellidos = "Hernandez Rodriguez",
                             Contrasena = "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5",
-                            FechaCreacion = new DateTime(2020, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FechaCreacion = new DateTime(2020, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             NombreUsuario = "admin",
                             Nombres = "Jose Anderson"
                         });
