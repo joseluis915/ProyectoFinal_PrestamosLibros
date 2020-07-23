@@ -5,85 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
         mc:Ignorable="d"
-        Title="REGISTRAR ESTUDIANTE" Height="500" Width="600" WindowStartupLocation="CenterScreen">
+        Title="REGISTRAR ESTUDIANTE" Height="400" Width="500" WindowStartupLocation="CenterScreen">
     <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Content="Estudiante Id" FontWeight="Bold" FontSize="16"/>
-            <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
-            <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="EstudianteIdTextbox" Text="{Binding EstudianteId}" Width="270" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
-                <Button x:Name="BuscarButton" Margin="109,0,0,0" Width="120" Click="BuscarButton_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Height="30" Source="/Resources/Buscar.png" />
-                        <Label Content="Buscar" FontSize="17" FontWeight="Bold"/>
-                    </StackPanel>
-                </Button>
-            </StackPanel>
-            <!--——————————————————————————————————————————————[ Matricula ]——————————————————————————————————————————————-->
-            <Label x:Name="MatriculaLabel" Content="Matricula" FontWeight="Bold"  Margin="0,10,0,0"/>
-            <TextBox x:Name="MatriculaTextBox" Text="{Binding Matricula}" Height="30" Width="150" HorizontalAlignment="Left"/>
-            <!--——————————————————————————————————————————————[ Nombres y Apellidos]——————————————————————————————————————————————-->
-            <StackPanel Orientation="Horizontal" Margin="0,15,0,5">
-                <!--—————————————————————————————[ Nombres ]—————————————————————————————-->
-                <Label x:Name="NombresLabel" Content="Nombres" FontWeight="Bold"/>
-                <TextBox x:Name="NombresTextBox" Text="{Binding Nombres}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,10,0"/>
-                <!--—————————————————————————————[ Apellidos ]—————————————————————————————-->
-                <Label x:Name="ApellidosLabel" Content="Apellidos" FontWeight="Bold"/>
-                <TextBox x:Name="ApellidosTextBox" Text="{Binding Apellidos}" Height="30" VerticalContentAlignment="Center" Width="200"/>
-            </StackPanel>
-            <!--——————————————————————————————————————————————[ Cedula y Genero ]——————————————————————————————————————————————-->
-            <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
-                <!--—————————————————————————————[ Cedula ]—————————————————————————————-->
-                <Label x:Name="CedulaLabel" Content="    Cedula" FontWeight="Bold"/>
-                <TextBox x:Name="CedulaTextBox" Text="{Binding Cedula}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,20,0"/>
-                <!--—————————————————————————————[ Genero ]—————————————————————————————-->
-                <Label x:Name="GeneroLabel" Content="Genero: " FontWeight="Bold"/>
-                <RadioButton x:Name="FemeninoRadioButton" Content="Femenino" IsChecked="{Binding Genero}" VerticalAlignment="Center" Margin="0,0,20,0"/>
-                <RadioButton x:Name="MasculinoRadioButton" Content="Masculino" IsChecked="{Binding Genero}" VerticalAlignment="Center" />
-            </StackPanel>
-            <!--——————————————————————————————————————————————[ Telefono y FechaNacimiento ]——————————————————————————————————————————————-->
-            <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
-                <!--—————————————————————————————[ Telefono ]—————————————————————————————-->
-                <Label x:Name="TelefonoLabel" Content=" Telefono" FontWeight="Bold"/>
-                <TextBox x:Name="TelefonoTextBox" Text="{Binding Telefono}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,10,0"/>
-                <!--—————————————————————————————[ FechaNacimiento ]—————————————————————————————-->
-                <Label x:Name="FechaNacimientoLabel" Content="Fecha Nacimiento" FontWeight="Bold"/>
-                <DatePicker x:Name="FechaNacimientoTextBox" Text="{Binding FechaNacimiento}" Height="30" VerticalContentAlignment="Center" Width="150"/>
-            </StackPanel>
-            <!--——————————————————————————————————————————————[ Direccion ]——————————————————————————————————————————————-->
-            <Label x:Name="DireccionLabel" Content="Direccion" FontWeight="Bold"/>
-            <TextBox x:Name="DireccionTextBox" Text="{Binding Direccion}" Height="30" VerticalContentAlignment="Center"/>
-            <!--——————————————————————————————————————————————[ Correo ]——————————————————————————————————————————————-->
-            <Label x:Name="CorreoLabel" Content="Correo Electronico" FontWeight="Bold"/>
-            <TextBox x:Name="CorreoTextBox" Text="{Binding Correo}" Height="30" VerticalContentAlignment="Center"/>
-
-            <!--——————————————————————————————————————————————[ BOTON NUEVO ]——————————————————————————————————————————————-->
-            <StackPanel Orientation="Horizontal" Height="35" Margin="0,15,0,0" HorizontalAlignment="Center">
-                <Button x:Name="NuevoButton" Click="NuevoButton_Click" Width="120">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Height="25" Source="/Resources/Crear.png"/>
-                        <Label Content="Nuevo" FontSize="17" FontWeight="Bold"/>
-                    </StackPanel>
-                </Button>
-                <!--——————————————————————————————————————————————[ BOTON GUARDAR ]——————————————————————————————————————————————-->
-                <Button x:Name="GuardarButton" Click="GuardarButton_Click" Width="120" Margin="50,0,0,0" >
-                    <StackPanel Orientation="Horizontal">
-                        <Image Height="30" Source="/Resources/Guardar.png"/>
-                        <Label Content="Guardar" FontSize="17" FontWeight="Bold"/>
-                    </StackPanel>
-                </Button>
-                <!--——————————————————————————————————————————————[ BOTON ELIMINAR ]——————————————————————————————————————————————-->
-                <Button x:Name="EliminarButton" Click="EliminarButton_Click" Width="120" Margin="50,0,0,0" >
-                    <StackPanel Orientation="Horizontal">
-                        <Image Height="30" Source="/Resources/Eliminar.png"/>
-                        <Label Content="Eliminar" FontSize="17" FontWeight="Bold"/>
-                    </StackPanel>
-                </Button>
-            </StackPanel>
-            <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
-            <Label Content="Creacion: 23/07/2020                   ©2020 JL-AR Solutions                          Version: Beta 1.0" 
-                   FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,5,0,0" />
-            <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
-        </StackPanel>
+        
     </Grid>
 </Window>
