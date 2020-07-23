@@ -24,6 +24,8 @@ namespace ProyectoFinal_PrestamosLibros
         {
             InitializeComponent();
         }
+
+
         //——————————————————————————————————————————————[ EVENTOS - REGISTROS ]——————————————————————————————————————————————
         //----------------------------[ Estudiantes ]----------------------------
         private void rEstudiantesMenuItem_Click(object sender, RoutedEventArgs e)
@@ -31,24 +33,34 @@ namespace ProyectoFinal_PrestamosLibros
             rEstudiantes rEstudiantes = new rEstudiantes();
             rEstudiantes.Show();
         }
+
         //----------------------------[ Editoriales ]----------------------------
         private void rEditorialesMenuItem_Click(object sender, RoutedEventArgs e)
         {
             rEditoriales rEditoriales = new rEditoriales();
             rEditoriales.Show();
         }
+
         //----------------------------[ EntradasLibros ]----------------------------
+        private void rEntradasLibrosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rEntradasLibros rEntradasLibros = new rEntradasLibros();
+            rEntradasLibros.Show();
+        }
 
         //----------------------------[ SalidasLibros ]----------------------------
-
-        //----------------------------[ Prestamos ]----------------------------
-
-        //----------------------------[ Devoluciones ]----------------------------
         private void rSalidasLibrosMenuItem_Click(object sender, RoutedEventArgs e)
         {
             rSalidasLibros rSalidasLibros = new rSalidasLibros();
             rSalidasLibros.Show();
         }
+
+        //----------------------------[ Prestamos ]----------------------------
+
+        //----------------------------[ Devoluciones ]----------------------------
+
+
+
         //——————————————————————————————————————————————[ EVENTOS - CONSULTAS ]——————————————————————————————————————————————
         //----------------------------[ Estudiantes ]----------------------------
         private void cEstudiantesMenuItem_Click(object sender, RoutedEventArgs e)
@@ -56,12 +68,14 @@ namespace ProyectoFinal_PrestamosLibros
             cEstudiantes cEstudiantes = new cEstudiantes();
             cEstudiantes.Show();
         }
+
         //----------------------------[ Editoriales ]----------------------------
         private void cUsuariosMenuItem_Click(object sender, RoutedEventArgs e)
         {
             cUsuarios cUsuarios = new cUsuarios();
             cUsuarios.Show();
         }
+
         //----------------------------[ EntradasLibros ]----------------------------
 
         //----------------------------[ SalidasLibros ]----------------------------
