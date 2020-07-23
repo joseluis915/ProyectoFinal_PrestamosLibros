@@ -29,7 +29,6 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally

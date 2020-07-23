@@ -209,7 +209,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "UsuarioId", "Apellidos", "Contrasena", "FechaCreacion", "NombreUsuario", "Nombres" },
-                values: new object[] { 1, "Hernandez Rodriguez", "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5", new DateTime(2020, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin", "Jose Anderson" });
+                values: new object[] { 1, "Hernandez Rodriguez", "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5", new DateTime(2020, 07, 20), "admin", "Jose Anderson" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Devoluciones_EstudianteId",

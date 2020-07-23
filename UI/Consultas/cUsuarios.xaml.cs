@@ -36,11 +36,11 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
                 listado = UsuariosBLL.GetList(c => true);
             }
 
-            //if (DesdeDataPicker.SelectedDate != null)
-            //    listado = UsuariosBLL.GetList(c => c.FechaIngreso.Date >= DesdeDataPicker.SelectedDate);
+            if (DesdeDatePicker.SelectedDate != null)
+                listado = UsuariosBLL.GetList(c => c.FechaCreacion.Date >= DesdeDatePicker.SelectedDate);
 
-            //if (HastaDatePicker.SelectedDate != null)
-            //    listado = UsuariosBLL.GetList(c => c.FechaIngreso.Date <= HastaDatePicker.SelectedDate);
+            if (HastaDatePicker.SelectedDate != null)
+                listado = UsuariosBLL.GetList(c => c.FechaCreacion.Date <= HastaDatePicker.SelectedDate);
 
             DatosDataGrid.ItemsSource = null;
             DatosDataGrid.ItemsSource = listado;
