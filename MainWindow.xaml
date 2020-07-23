@@ -36,10 +36,10 @@
 
             <StackPanel Orientation="Horizontal">
                 <Label Content="Ultima modificacion:" FontWeight="Bold" FontSize="18" FontStyle="Italic"/>
-                <Label Content="18/07/2020" FontSize="18" />
+                <Label Content="23/07/2020" FontSize="18" />
             </StackPanel>
 
-            <Label Content="©2020" FontWeight="Bold"  FontSize="16" FontStyle="Italic" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+            <Label Content="©2020 JL-AR Solutions" FontWeight="Bold"  FontSize="16" FontStyle="Italic" HorizontalAlignment="Center" Margin="0,20,0,0"/>
             <Label Content="Version: Beta 1.0" FontWeight="Bold" FontSize="16" FontStyle="Italic" HorizontalAlignment="Center"/>
             <!--———————————————————————————————————————————————————————————————————————————————————————————————-->
         </StackPanel>

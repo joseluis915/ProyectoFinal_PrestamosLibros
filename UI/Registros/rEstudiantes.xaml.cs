@@ -12,14 +12,31 @@ using System.Windows.Shapes;
 
 namespace ProyectoFinal_PrestamosLibros.UI.Registros
 {
-    /// <summary>
-    /// Interaction logic for rEstudiantes.xaml
-    /// </summary>
     public partial class rEstudiantes : Window
     {
         public rEstudiantes()
         {
             InitializeComponent();
+        }
+
+        private void BuscarButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NuevoButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GuardarButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EliminarButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
