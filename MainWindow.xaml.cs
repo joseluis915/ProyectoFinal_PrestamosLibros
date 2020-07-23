@@ -30,6 +30,11 @@ namespace ProyectoFinal_PrestamosLibros
             rEstudiantes rEstudiantes = new rEstudiantes();
             rEstudiantes.Show();
         }
+        private void rEditorialesMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rEditoriales rEditoriales = new rEditoriales();
+            rEditoriales.Show();
+        }
 
         private void cEstudiantesMenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -42,5 +47,6 @@ namespace ProyectoFinal_PrestamosLibros
             cUsuarios cUsuarios = new cUsuarios();
             cUsuarios.Show();
         }
+
     }
 }

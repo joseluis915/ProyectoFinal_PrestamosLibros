@@ -12,6 +12,7 @@
             <Menu Height="24" FontSize="15">
                 <MenuItem Header="Registros">
                     <MenuItem x:Name="rEstudiantesMenuItem" Click="rEstudiantesMenuItem_Click" Header="Registrar Estudiante"/>
+                    <MenuItem x:Name="rEditorialesMenuItem" Click="rEditorialesMenuItem_Click" Header="Registrar Editorial"/>
                 </MenuItem>
 
                 <MenuItem Header="Consultas">
