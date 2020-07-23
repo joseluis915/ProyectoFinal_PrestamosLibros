@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
         mc:Ignorable="d"
-Title="REGISTRAR ESTUDIANTE" Height="500" Width="600" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png">
+Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png">
     <Grid>
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">

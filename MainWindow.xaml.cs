@@ -20,33 +20,55 @@ namespace ProyectoFinal_PrestamosLibros
 {
     public partial class MainWindow : Window
     {
-        public MainWindow()//PRUEBA COMMIT ANDERSON
+        public MainWindow()
         {
             InitializeComponent();
         }
-
+        //——————————————————————————————————————————————[ EVENTOS - REGISTROS ]——————————————————————————————————————————————
+        //----------------------------[ Estudiantes ]----------------------------
         private void rEstudiantesMenuItem_Click(object sender, RoutedEventArgs e)
         {
             rEstudiantes rEstudiantes = new rEstudiantes();
             rEstudiantes.Show();
         }
+        //----------------------------[ Editoriales ]----------------------------
         private void rEditorialesMenuItem_Click(object sender, RoutedEventArgs e)
         {
             rEditoriales rEditoriales = new rEditoriales();
             rEditoriales.Show();
         }
+        //----------------------------[ EntradasLibros ]----------------------------
 
+        //----------------------------[ SalidasLibros ]----------------------------
+
+        //----------------------------[ Prestamos ]----------------------------
+
+        //----------------------------[ Devoluciones ]----------------------------
+        private void rSalidasLibrosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rSalidasLibros rSalidasLibros = new rSalidasLibros();
+            rSalidasLibros.Show();
+        }
+        //——————————————————————————————————————————————[ EVENTOS - CONSULTAS ]——————————————————————————————————————————————
+        //----------------------------[ Estudiantes ]----------------------------
         private void cEstudiantesMenuItem_Click(object sender, RoutedEventArgs e)
         {
             cEstudiantes cEstudiantes = new cEstudiantes();
             cEstudiantes.Show();
         }
-
+        //----------------------------[ Editoriales ]----------------------------
         private void cUsuariosMenuItem_Click(object sender, RoutedEventArgs e)
         {
             cUsuarios cUsuarios = new cUsuarios();
             cUsuarios.Show();
         }
+        //----------------------------[ EntradasLibros ]----------------------------
+
+        //----------------------------[ SalidasLibros ]----------------------------
+
+        //----------------------------[ Prestamos ]----------------------------
+
+        //----------------------------[ Devoluciones ]----------------------------
 
     }
 }
