@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
-    public partial class Migracion_Inicial3 : Migration
+    public partial class Migracion_Inicial4 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -158,8 +158,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     UsuarioId = table.Column<int>(nullable: false),
                     LibroId = table.Column<int>(nullable: false),
-                    Cantidad = table.Column<int>(nullable: false),
-                    Fecha = table.Column<DateTime>(nullable: false)
+                    Fecha = table.Column<DateTime>(nullable: false),
+                    Cantidad = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -209,7 +209,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "UsuarioId", "Apellidos", "Contrasena", "FechaCreacion", "NombreUsuario", "Nombres" },
-                values: new object[] { 1, "Hernandez Rodriguez", "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5", new DateTime(2020, 07, 20), "admin", "Jose Anderson" });
+                values: new object[] { 1, "Hernandez Rodriguez", "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5", new DateTime(2020, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin", "Jose Anderson" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Devoluciones_EstudianteId",

@@ -20,7 +20,7 @@
                 </Button>
             </StackPanel>
             <!--—————————————————————————————————————[ EstudianteId ]—————————————————————————————————————-->
-            <Label x:Name="EstudianteIdLabel" Content="Estudiante Id" FontWeight="Bold" Margin="0,5,0,0"  />
+            <Label Content="Estudiante Id" FontWeight="Bold" Margin="0,5,0,0"  />
             <TextBox x:Name="EstudianteIdTextBox" Text="{Binding EstudianteId}" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalAlignment="Left" />
             <!--—————————————————————————————————————[ Fecha Devolucion ]—————————————————————————————————————-->
             <StackPanel Orientation="Vertical">

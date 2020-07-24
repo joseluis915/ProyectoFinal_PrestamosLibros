@@ -20,18 +20,18 @@
                 </Button>
             </StackPanel>
             <!--—————————————————————————————————————[ EstudianteId ]—————————————————————————————————————-->
-            <Label x:Name="EstudianteIdLabel" Content="Estudiante Id" FontWeight="Bold" Margin="0,5,0,0"  />
+            <Label Content="Estudiante Id" FontWeight="Bold" Margin="0,5,0,0"  />
             <TextBox x:Name="EstudianteIdTextBox" Text="{Binding EstudianteId}" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalAlignment="Left" />
             <!--—————————————————————————————————————[ Fecha Prestamo y Vencimiento]—————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                 <!--—————————————————————————————————————[ Fecha Prestamo ]—————————————————————————————————————-->
                 <StackPanel Orientation="Vertical">
-                    <Label x:Name="FechaLabel" Content="Fecha Prestamo" FontWeight="Bold" />
+                    <Label Content="Fecha Prestamo" FontWeight="Bold" />
                     <DatePicker x:Name="FechaTextBox" Text="{Binding Fecha}" Height="30" Width="205" VerticalContentAlignment="Center"/>
                 </StackPanel>
                 <!--—————————————————————————————————————[ Fecha Vencimiento ]—————————————————————————————————————-->
                 <StackPanel Orientation="Vertical" Margin="50,0,0,0" >
-                    <Label x:Name="FechaVencimientoLabel" Content="Fecha Vencimiento" FontWeight="Bold" />
+                    <Label Content="Fecha Vencimiento" FontWeight="Bold" />
                     <DatePicker x:Name="FechaVencimientoTextBox" Text="{Binding FechaVencimiento}" Height="30" Width="205" VerticalContentAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
