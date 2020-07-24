@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
         mc:Ignorable="d"
-        Title="REGISTRAR ENTRADA DE LIBRO" Height="300" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" >
+        Title="REGISTRAR ENTRADA DE LIBRO" Height="370" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" >
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label Content="EntradaLibro Id" FontWeight="Bold" FontSize="16"/>
@@ -19,16 +19,13 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
-            <!--——————————————————————————————————————————————[ LibroId y Cantidad ]——————————————————————————————————————————————-->
-            <StackPanel Orientation="Horizontal" Margin="0,15,0,5">
-                <!--——————————————————————————————————————————————[ LibroId ]——————————————————————————————————————————————-->
-                <Label x:Name="LibroIdLabel" Content="Libro Id" FontWeight="Bold" />
-                <TextBox x:Name="LibroIdTextBox" Text="{Binding LibroId}" Height="30" VerticalContentAlignment="Center" Width="170" Margin="0,0,10,0"/>
+            <!--——————————————————————————————————————————————[ LibroId ]——————————————————————————————————————————————-->
+            <Label x:Name="LibroIdLabel" Content="Libro Id" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBox x:Name="LibroIdTextBox" Text="{Binding LibroId}" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalAlignment="Left" />
                 <!--——————————————————————————————————————————————[ Cantidad ]——————————————————————————————————————————————-->
                 <Label x:Name="CantidadLabel" Content="Cantidad" FontWeight="Bold"/>
-                <TextBox x:Name="CantidadTextBox" Text="{Binding Cantidad}" Height="30" VerticalContentAlignment="Center" Width="170"/>
-            </StackPanel>
-            <!--——————————————————————————————————————————————[ Fecha ]——————————————————————————————————————————————-->
+            <TextBox x:Name="CantidadTextBox" Text="{Binding Cantidad}" Height="30" VerticalContentAlignment="Center" />
+                <!--——————————————————————————————————————————————[ Fecha ]——————————————————————————————————————————————-->
             <Label x:Name="FechaLabel" Content="Fecha Nacimiento" FontWeight="Bold"/>
             <DatePicker x:Name="FechaTextBox" Text="{Binding Fecha}" Height="30" />
             <!--——————————————————————————————————————————————[ BOTON NUEVO ]——————————————————————————————————————————————-->
