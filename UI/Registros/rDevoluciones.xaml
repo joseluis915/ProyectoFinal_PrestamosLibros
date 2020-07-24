@@ -1,0 +1,114 @@
+﻿<Window x:Class="ProyectoFinal_PrestamosLibros.UI.Registros.rDevoluciones"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
+        mc:Ignorable="d"
+        Title="REGISTRO DE DEVOLUCIONES" Height="530" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Devolucion Id" FontWeight="Bold" FontSize="16"/>
+            <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
+            <StackPanel Orientation="Horizontal" Height="35">
+                <TextBox x:Name="ProyectoIdTextbox" Text="{Binding DevolucionId}" Width="240" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                <Button x:Name="BuscarButton" Margin="80,0,0,0" Width="120" Click="BuscarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="30" Source="/Resources/Buscar.png" />
+                        <Label Content="Buscar" FontSize="17" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <!--—————————————————————————————————————[ EstudianteId ]—————————————————————————————————————-->
+            <Label x:Name="EstudianteIdLabel" Content="Estudiante Id" FontWeight="Bold" Margin="0,5,0,0"  />
+            <TextBox x:Name="EstudianteIdTextBox" Text="{Binding EstudianteId}" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalAlignment="Left" />
+            <!--—————————————————————————————————————[ Fecha Devolucion ]—————————————————————————————————————-->
+            <StackPanel Orientation="Vertical">
+                <Label x:Name="FechaLabel" Content="Fecha Devolucion" FontWeight="Bold" />
+                <DatePicker x:Name="FechaTextBox" Text="{Binding Fecha}" Height="30" VerticalContentAlignment="Center"/>
+            </StackPanel>
+
+            <!--——————————————————————————————————————————————[ DETALLE ]——————————————————————————————————————————————-->
+            <StackPanel Orientation="Vertical">
+                <GroupBox Header="Detalle de Devoluciones" Margin="0,10,0,0">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <!--——————————————————————[ LibroId ]——————————————————————-->
+                            <StackPanel Orientation="Vertical">
+                                <Label Content="Libro Id"/>
+                                <ComboBox x:Name="LibroIdComboBox" Width="100" Margin="0,0,10,0"/>
+                            </StackPanel>
+                            <!--——————————————————————[ LibrosDevueltos ]——————————————————————-->
+                            <StackPanel Orientation="Vertical" Margin="0,0,10,0" >
+                                <Label Content="Libros Devueltos" HorizontalAlignment="Center"/>
+                                <TextBox x:Name="LibrosDevueltosTextBox" Height="23" Width="100"/>
+                            </StackPanel>
+                            <!--——————————————————————[ Dias ]——————————————————————-->
+                            <StackPanel Orientation="Vertical" Margin="0,0,20,0" >
+                                <Label Content="Dias Transcurridos" HorizontalAlignment="Center"/>
+                                <TextBox x:Name="DiasTextBox" Height="23" Width="100"/>
+                            </StackPanel>
+                            <!--——————————————————————[ AgregarFilaButton ]——————————————————————-->
+                            <Button x:Name="AgregarFilaButton" Click="AgregarFilaButton_Click" Height="30" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/Resources/Mas.png" Height="25"/>
+                                    <Label Content="Agregar fila"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <!--——————————————————————————————————————————————[ DATA GRID ]——————————————————————————————————————————————-->
+                        <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding Detalle}" Height="80" AutoGenerateColumns="False" Margin="0,10,0,0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Libro Id" Binding="{Binding LibroId}"/>
+                                <DataGridTextColumn Header="Libros Devueltos" Binding="{Binding LibrosDevueltos}"/>
+                                <DataGridTextColumn Header="Dias" Binding="{Binding Dias}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <!--——————————————————————[ RemoverFilaButton ]——————————————————————-->
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0">
+                            <Button x:Name="RemoverFilaButton" Click="RemoverFilaButton_Click" Width="175">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/Resources/Eliminar.png" Height="25"/>
+                                    <Label Content="Remover fila seleccionada"/>
+                                </StackPanel>
+                            </Button>
+                            <!--——————————————————————[ TiempoTotal ]——————————————————————-->
+                            <Label Content="Devueltos Total" Margin="60,0,0,0" FontWeight="Bold" />
+                            <TextBox x:Name="LibrosDevueltosTotalTextBox" Text="{Binding LibrosDevueltosTotal}" Width="130" IsReadOnly="True" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+            <!--——————————————————————————————————————————————[ DETALLE FIN ]——————————————————————————————————————————————-->
+
+            <!--——————————————————————————————————————————————[ BOTON NUEVO ]——————————————————————————————————————————————-->
+            <StackPanel Orientation="Horizontal" Height="35" Margin="0,15,0,0" HorizontalAlignment="Center">
+                <Button x:Name="NuevoButton" Click="NuevoButton_Click" Width="120">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="25" Source="/Resources/Crear.png"/>
+                        <Label Content="Nuevo" FontSize="17" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <!--——————————————————————————————————————————————[ BOTON GUARDAR ]——————————————————————————————————————————————-->
+                <Button x:Name="GuardarButton" Click="GuardarButton_Click" Width="120" Margin="50,0,0,0" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="30" Source="/Resources/Guardar.png"/>
+                        <Label Content="Guardar" FontSize="17" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <!--——————————————————————————————————————————————[ BOTON ELIMINAR ]——————————————————————————————————————————————-->
+                <Button x:Name="EliminarButton" Click="EliminarButton_Click" Width="120" Margin="50,0,0,0" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="30" Source="/Resources/Eliminar.png"/>
+                        <Label Content="Eliminar" FontSize="17" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
+            <Label Content="Creacion: 24/07/2020                   ©2020 JL-AR Solutions                          Version: Beta 1.0" 
+                   FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,5,0,0" />
+            <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
+        </StackPanel>
+    </Grid>
+</Window>

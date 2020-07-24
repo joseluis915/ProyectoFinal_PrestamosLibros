@@ -16,7 +16,7 @@
                     <MenuItem x:Name="rEntradasLibrosMenuItem" Click="rEntradasLibrosMenuItem_Click" Header="Registrar Entrada de Libro"/>
                     <MenuItem x:Name="rSalidasLibrosMenuItem" Click="rSalidasLibrosMenuItem_Click" Header="Registrar Salida de Libro"/>
                     <MenuItem x:Name="rPrestamosMenuItem" Click="rPrestamosMenuItem_Click" Header="Registrar Prestamo"/>
-
+                    <MenuItem x:Name="rDevolucionesMenuItem" Click="rDevolucionesMenuItem_Click" Header="Registrar Devolucion"/>
                 </MenuItem>
 
                 <MenuItem Header="Consultas">

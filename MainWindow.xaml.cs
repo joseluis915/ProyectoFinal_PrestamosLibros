@@ -61,9 +61,13 @@ namespace ProyectoFinal_PrestamosLibros
             rPrestamos rPrestamos = new rPrestamos();
             rPrestamos.Show();
         }
+
         //----------------------------[ Devoluciones ]----------------------------
-
-
+       private void rDevolucionesMenuItem_Click(object sender, RoutedEventArgs e)
+       {
+            rDevoluciones rDevoluciones = new rDevoluciones();
+            rDevoluciones.Show();
+        }
 
         //——————————————————————————————————————————————[ EVENTOS - CONSULTAS ]——————————————————————————————————————————————
         //----------------------------[ Estudiantes ]----------------------------
@@ -93,5 +97,7 @@ namespace ProyectoFinal_PrestamosLibros
             MessageBox.Show($"Propietario:\t\t{PropietarioLabel.Content}\n\nVersion:\t\t\t{VersionLabel.Content}\n\nCreacion:\t\t{CreacionLabel.Content}\n\nUltima Modificacion:\t{ModificacionLabel.Content}\n\nPara mas informacion:\tejemplo@ucne.edu.do",
                 "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
+       
     }
 }
