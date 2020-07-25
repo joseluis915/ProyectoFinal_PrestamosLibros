@@ -9,8 +9,8 @@ using ProyectoFinal_PrestamosLibros.DAL;
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200725184523_Migracion_Inicial5")]
-    partial class Migracion_Inicial5
+    [Migration("20200725234429_Migracion_6")]
+    partial class Migracion_6
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,6 +40,33 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Devoluciones");
+                });
+
+            modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.DevolucionesDetalle", b =>
+                {
+                    b.Property<int>("DevolucionDetalleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("DevolucionId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Dias")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("LibroId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("LibrosDevueltos")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("DevolucionDetalleId");
+
+                    b.HasIndex("DevolucionId");
+
+                    b.HasIndex("LibroId");
+
+                    b.ToTable("DevolucionesDetalle");
                 });
 
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.Editoriales", b =>
@@ -186,6 +213,33 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.ToTable("Prestamos");
                 });
 
+            modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.PrestamosDetalle", b =>
+                {
+                    b.Property<int>("PrestamoDetalleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CantidadLibro")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("LibroId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("PrestamoId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PrestamosId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("PrestamoDetalleId");
+
+                    b.HasIndex("LibroId");
+
+                    b.HasIndex("PrestamoId");
+
+                    b.ToTable("PrestamosDetalle");
+                });
+
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.SalidasLibros", b =>
                 {
                     b.Property<int>("SalidaLibroId")
@@ -265,6 +319,21 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.DevolucionesDetalle", b =>
+                {
+                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Devoluciones", null)
+                        .WithMany("Detalle")
+                        .HasForeignKey("DevolucionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Libros", "libros")
+                        .WithMany()
+                        .HasForeignKey("LibroId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.Editoriales", b =>
                 {
                     b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "Usuario")
@@ -276,7 +345,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
 
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.EntradasLibros", b =>
                 {
-                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Libros", "libros")
+                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Libros", "eLibro")
                         .WithMany()
                         .HasForeignKey("LibroId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -322,9 +391,22 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.SalidasLibros", b =>
+            modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.PrestamosDetalle", b =>
                 {
                     b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Libros", "libros")
+                        .WithMany()
+                        .HasForeignKey("LibroId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Prestamos", null)
+                        .WithMany("Detalle")
+                        .HasForeignKey("PrestamoId");
+                });
+
+            modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.SalidasLibros", b =>
+                {
+                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Libros", "sLibro")
                         .WithMany()
                         .HasForeignKey("LibroId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -25,7 +25,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             //—————————————————————————————————————[ VALORES DEL ComboBox ]—————————————————————————————————————
             LibroIdComboBox.ItemsSource = LibrosBLL.GetList();
             LibroIdComboBox.SelectedValuePath = "LibroId";
-            LibroIdComboBox.DisplayMemberPath = "LibroId";
+            LibroIdComboBox.DisplayMemberPath = "Titulo";
         }
         //——————————————————————————————————————————————————————————————[ Cargar ]———————————————————————————————————————————————————————————————
         private void Cargar()

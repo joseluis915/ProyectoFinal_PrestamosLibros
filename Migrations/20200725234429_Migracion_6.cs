@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
-    public partial class Migracion_Inicial5 : Migration
+    public partial class Migracion_6 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -206,6 +206,62 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "DevolucionesDetalle",
+                columns: table => new
+                {
+                    DevolucionDetalleId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    DevolucionId = table.Column<int>(nullable: false),
+                    LibroId = table.Column<int>(nullable: false),
+                    LibrosDevueltos = table.Column<int>(nullable: false),
+                    Dias = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DevolucionesDetalle", x => x.DevolucionDetalleId);
+                    table.ForeignKey(
+                        name: "FK_DevolucionesDetalle_Devoluciones_DevolucionId",
+                        column: x => x.DevolucionId,
+                        principalTable: "Devoluciones",
+                        principalColumn: "DevolucionId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_DevolucionesDetalle_Libros_LibroId",
+                        column: x => x.LibroId,
+                        principalTable: "Libros",
+                        principalColumn: "LibroId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PrestamosDetalle",
+                columns: table => new
+                {
+                    PrestamoDetalleId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    PrestamosId = table.Column<int>(nullable: false),
+                    LibroId = table.Column<int>(nullable: false),
+                    CantidadLibro = table.Column<int>(nullable: false),
+                    PrestamoId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PrestamosDetalle", x => x.PrestamoDetalleId);
+                    table.ForeignKey(
+                        name: "FK_PrestamosDetalle_Libros_LibroId",
+                        column: x => x.LibroId,
+                        principalTable: "Libros",
+                        principalColumn: "LibroId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_PrestamosDetalle_Prestamos_PrestamoId",
+                        column: x => x.PrestamoId,
+                        principalTable: "Prestamos",
+                        principalColumn: "PrestamoId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "UsuarioId", "Apellidos", "Contrasena", "FechaCreacion", "NombreUsuario", "Nombres" },
@@ -220,6 +276,16 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 name: "IX_Devoluciones_UsuarioId",
                 table: "Devoluciones",
                 column: "UsuarioId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DevolucionesDetalle_DevolucionId",
+                table: "DevolucionesDetalle",
+                column: "DevolucionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DevolucionesDetalle_LibroId",
+                table: "DevolucionesDetalle",
+                column: "LibroId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Editoriales_UsuarioId",
@@ -257,6 +323,16 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_PrestamosDetalle_LibroId",
+                table: "PrestamosDetalle",
+                column: "LibroId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PrestamosDetalle_PrestamoId",
+                table: "PrestamosDetalle",
+                column: "PrestamoId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_SalidasLibros_LibroId",
                 table: "SalidasLibros",
                 column: "LibroId");
@@ -270,7 +346,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Devoluciones");
+                name: "DevolucionesDetalle");
 
             migrationBuilder.DropTable(
                 name: "Editoriales");
@@ -279,16 +355,22 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 name: "EntradasLibros");
 
             migrationBuilder.DropTable(
-                name: "Prestamos");
+                name: "PrestamosDetalle");
 
             migrationBuilder.DropTable(
                 name: "SalidasLibros");
 
             migrationBuilder.DropTable(
-                name: "Estudiantes");
+                name: "Devoluciones");
+
+            migrationBuilder.DropTable(
+                name: "Prestamos");
 
             migrationBuilder.DropTable(
                 name: "Libros");
+
+            migrationBuilder.DropTable(
+                name: "Estudiantes");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");
