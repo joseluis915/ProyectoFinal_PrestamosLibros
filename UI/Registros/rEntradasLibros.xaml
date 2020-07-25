@@ -23,7 +23,7 @@
             <Label Content="Libro Id" FontWeight="Bold" Margin="0,10,0,0"/>
             <TextBox x:Name="LibroIdTextBox" Text="{Binding LibroId}" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalAlignment="Left" TextChanged="LibroIdTextBox_TextChanged" />
             <!--——————————————————————————————————————————————[ Fecha ]——————————————————————————————————————————————-->
-            <Label x:Name="FechaLabel" Content="Fecha" FontWeight="Bold"/>
+            <Label Content="Fecha" FontWeight="Bold"/>
             <DatePicker x:Name="FechaDatePicker" SelectedDate="{Binding Fecha}" Height="30" VerticalContentAlignment="Center" />
             <!--——————————————————————————————————————————————[ Cantidad ]——————————————————————————————————————————————-->
             <Label Content="Cantidad" FontWeight="Bold"/>
