@@ -174,5 +174,26 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 
             return lista;
         }
+        //——————————————————————————————————————————————[ GetList ]——————————————————————————————————————————————
+        public static List<Libros> GetList()
+        {
+            List<Libros> libros = new List<Libros>();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                libros = contexto.Libros.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return libros;
+        }
     }
 }

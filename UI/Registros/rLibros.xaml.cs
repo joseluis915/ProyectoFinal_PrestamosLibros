@@ -39,7 +39,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         private bool Validar()
         {
             bool Validado = true;
-            if (LibroIdTextbox.Text.Length == 0)
+            if (LibroIdTextBox.Text.Length == 0)
             {
                 Validado = false;
                 MessageBox.Show("Transaccion Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -50,7 +50,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         //——————————————————————————————————————————————————————————————[ Buscar ]———————————————————————————————————————————————————————————————
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            Libros encontrado = LibrosBLL.Buscar(Utilidades.ToInt(LibroIdTextbox.Text));
+            Libros encontrado = LibrosBLL.Buscar(Utilidades.ToInt(LibroIdTextBox.Text));
 
             if (encontrado != null)
             {
@@ -63,7 +63,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 this.DataContext = this.libros;
                 MessageBox.Show($"Esta Entrada de libro no fue encontrada.\n\nAsegurese que existe o cree una nueva.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 Limpiar();
-                LibroIdTextbox.Focus();
+                LibroIdTextBox.Focus();
             }
         }
         //——————————————————————————————————————————————————————————————[ Nuevo ]———————————————————————————————————————————————————————————————
@@ -79,42 +79,45 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     return;
 
                 //———————————————————————————————————————————————————————[ VALIDAR SI ESTA VACIO ]———————————————————————————————————————————————————————
-                if (LibroIdTextbox.Text.Trim() == "")
+                //—————————————————————————————————[ Libro Id ]—————————————————————————————————
+                if (LibroIdTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Libro Id) esta vacio.\n\nEscriba una Id de Libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    LibroIdTextbox.Clear();
-                    LibroIdTextbox.Focus();
+                    MessageBox.Show("El Campo (Libro Id) esta vacio.\n\nAsigne un Id al Libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    LibroIdTextBox.Text = "0";
+                    LibroIdTextBox.Focus();
+                    LibroIdTextBox.SelectAll();
                     return;
                 }
-
-                if (TituloTextBox.Text.Trim() == "")
+                //—————————————————————————————————[ Titulo ]—————————————————————————————————
+                if (TituloTextBox.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("El Campo (Titulo) esta vacio.\n\nEscriba un de Titulo.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     TituloTextBox.Clear();
                     TituloTextBox.Focus();
                     return;
                 }
-
-                if (ISBNTextBox.Text.Trim() == "")
+                //—————————————————————————————————[ ISBN ]—————————————————————————————————
+                if (ISBNTextBox.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("El Campo (ISBN) esta vacio.\n\nEscriba un de ISBN.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     ISBNTextBox.Clear();
                     ISBNTextBox.Focus();
                     return;
                 }
-
-                if (FechaDatePicker.Text.Trim() == "")
+                //—————————————————————————————————[ Fecha ]—————————————————————————————————
+                if (FechaDatePicker.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show($"El Campo (Fecha) esta vacio.\n\nSeleccione una fecha.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     FechaDatePicker.Focus();
                     return;
                 }
-
-                if (ExistenciaTextBox.Text.Trim() == "")
+                //—————————————————————————————————[ Existencia ]—————————————————————————————————
+                if (ExistenciaTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show($"El Campo (Existencia) esta vacio.\n\nEscriba la existencia actual.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    ExistenciaTextBox.Clear();
+                    MessageBox.Show("El Campo (Existencia) esta vacio.\n\nEscriba la existencia altual del Libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ExistenciaTextBox.Text = "0";
                     ExistenciaTextBox.Focus();
+                    ExistenciaTextBox.SelectAll();
                     return;
                 }
                 //———————————————————————————————————————————————————————[ VALIDAR SI ESTA VACIO - FIN ]———————————————————————————————————————————————————————
@@ -132,7 +135,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
             {
-                if (LibrosBLL.Eliminar(Utilidades.ToInt(LibroIdTextbox.Text)))
+                if (LibrosBLL.Eliminar(Utilidades.ToInt(LibroIdTextBox.Text)))
                 {
                     Limpiar();
                     MessageBox.Show("Registro Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -148,25 +151,25 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         {
             try
             {
-                if (LibroIdTextbox.Text.Trim() != "")
+                if (LibroIdTextBox.Text.Trim() != string.Empty)
                 {
-                    int.Parse(LibroIdTextbox.Text);
+                    int.Parse(LibroIdTextBox.Text);
                 }
             }
             catch
             {
                 MessageBox.Show($"El valor digitado en el campo (Libro Id) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                LibroIdTextbox.Clear();
-                LibroIdTextbox.Focus();
+                LibroIdTextBox.Text = "0";
+                LibroIdTextBox.Focus();
+                LibroIdTextBox.SelectAll();
             }
         }
-
-        //——————————————————————————————————————————[ Cantidad ]——————————————————————————————————————————
+        //——————————————————————————————————————————[ Existencia ]——————————————————————————————————————————
         private void ExistenciaTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
             {
-                if (ExistenciaTextBox.Text.Trim() != "")
+                if (ExistenciaTextBox.Text.Trim() != string.Empty)
                 {
                     int.Parse(ExistenciaTextBox.Text);
                 }
@@ -174,8 +177,9 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             catch
             {
                 MessageBox.Show($"El valor digitado en el campo (Existencia) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                ExistenciaTextBox.Clear();
+                ExistenciaTextBox.Text = "0";
                 ExistenciaTextBox.Focus();
+                ExistenciaTextBox.SelectAll();
             }
         }
     }

@@ -19,7 +19,7 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public int LibroId { get; set; }
         //———————————————————————————[ForeingKey LibroId]———————————————————————————
         [ForeignKey("LibroId")]
-        public Libros libros { get; set; } = new Libros();
+        public Libros sLibro { get; set; } = new Libros();
         //————————————————————————————————————————————————————————————————————————————
         public int Cantidad { get; set; }
         public DateTime Fecha { get; set; } = DateTime.Now;

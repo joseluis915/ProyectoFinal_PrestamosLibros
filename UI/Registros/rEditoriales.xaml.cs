@@ -39,7 +39,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         private bool Validar()
         {
             bool Validado = true;
-            if (EditorialIdTextbox.Text.Length == 0)
+            if (EditorialIdTextBox.Text.Length == 0)
             {
                 Validado = false;
                 MessageBox.Show("Transaccion Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -50,7 +50,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         //——————————————————————————————————————————————————————————————[ Buscar ]———————————————————————————————————————————————————————————————
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            Editoriales encontrado = EditorialesBLL.Buscar(Utilidades.ToInt(EditorialIdTextbox.Text));
+            Editoriales encontrado = EditorialesBLL.Buscar(Utilidades.ToInt(EditorialIdTextBox.Text));
 
             if (encontrado != null)
             {
@@ -63,7 +63,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 this.DataContext = this.editoriales;
                 MessageBox.Show($"Esta Editorial no fue encontrada.\n\nAsegurese que existe o cree una nueva.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 Limpiar();
-                EditorialIdTextbox.Focus();
+                EditorialIdTextBox.Focus();
             }
         }
         //——————————————————————————————————————————————————————————————[ Nuevo ]———————————————————————————————————————————————————————————————
@@ -79,15 +79,18 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     return;
 
                 //———————————————————————————————————————————————————————[ VALIDAR SI ESTA VACIO ]———————————————————————————————————————————————————————
-                if (EditorialIdTextbox.Text.Trim() == "")
+
+                //—————————————————————————————————[ Editorial Id]—————————————————————————————————
+                if (EditorialIdTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Editorial Id) esta vacio.\n\nAsigne una Id a la Editorial.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    EditorialIdTextbox.Clear();
-                    EditorialIdTextbox.Focus();
+                    MessageBox.Show("El Campo (Editorial Id) esta vacio.\n\nAsigne un Id al Editorial.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    EditorialIdTextBox.Text = "0";
+                    EditorialIdTextBox.Focus();
+                    EditorialIdTextBox.SelectAll();
                     return;
                 }
-
-                if (DescripcionTextBox.Text.Trim() == "")
+                //—————————————————————————————————[ Descripcion ]—————————————————————————————————
+                if (DescripcionTextBox.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("El Campo (Descripcion) esta vacio.\n\nDescriba la Editorial.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     DescripcionTextBox.Clear();
@@ -109,7 +112,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
             {
-                if (EditorialesBLL.Eliminar(Utilidades.ToInt(EditorialIdTextbox.Text)))
+                if (EditorialesBLL.Eliminar(Utilidades.ToInt(EditorialIdTextBox.Text)))
                 {
                     Limpiar();
                     MessageBox.Show("Registro Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -120,21 +123,22 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         }
         //—————————————————————————————————————————————————————————————[ TEXT CHANGED ]—————————————————————————————————————————————————————————————
 
-        //——————————————————————————————————————————[ EditorialId ]——————————————————————————————————————————
+        //——————————————————————————————————————————[ Editorial Id ]——————————————————————————————————————————
         private void EditorialIdTextbox_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
             {
-                if (EditorialIdTextbox.Text.Trim() != "")
+                if (EditorialIdTextBox.Text.Trim() != string.Empty)
                 {
-                    int.Parse(EditorialIdTextbox.Text);
+                    int.Parse(EditorialIdTextBox.Text);
                 }
             }
             catch
             {
                 MessageBox.Show($"El valor digitado en el campo (Editorial Id) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                EditorialIdTextbox.Clear();
-                EditorialIdTextbox.Focus();
+                EditorialIdTextBox.Text = "0";
+                EditorialIdTextBox.Focus();
+                EditorialIdTextBox.SelectAll();
             }
         }
     }

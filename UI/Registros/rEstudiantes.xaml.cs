@@ -35,14 +35,14 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         {
             this.estudiantes = new Estudiantes();
             this.DataContext = estudiantes;
-            EstudianteIdTextbox.Focus();
-            EstudianteIdTextbox.SelectAll();
+            EstudianteIdTextBox.Focus();
+            EstudianteIdTextBox.SelectAll();
         }
         //——————————————————————————————————————————————————————————————[ Validar ]——————————————————————————————————————————————————————————————
         private bool Validar()
         {
             bool Validado = true;
-            if (EstudianteIdTextbox.Text.Length == 0)
+            if (EstudianteIdTextBox.Text.Length == 0)
             {
                 Validado = false;
                 MessageBox.Show("Transaccion Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -53,7 +53,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         //——————————————————————————————————————————————————————————————[ Buscar ]———————————————————————————————————————————————————————————————
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            Estudiantes encontrado = EstudiantesBLL.Buscar(Utilidades.ToInt(EstudianteIdTextbox.Text));
+            Estudiantes encontrado = EstudiantesBLL.Buscar(Utilidades.ToInt(EstudianteIdTextBox.Text));
 
             if (encontrado != null)
             {
@@ -66,7 +66,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 this.DataContext = this.estudiantes;
                 MessageBox.Show($"Esta Estudiante no fue encontrado.\n\nAsegurese que existe o cree uno nuevo.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 Limpiar();
-                EstudianteIdTextbox.Focus();
+                EstudianteIdTextBox.Focus();
             }
         }
         //——————————————————————————————————————————————————————————————[ Nuevo ]———————————————————————————————————————————————————————————————
@@ -82,24 +82,27 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     return;
 
                 //———————————————————————————————————————————————————————[ VALIDAR SI ESTA VACIO ]———————————————————————————————————————————————————————
-                //———————————————————————————————[ EstudianteId ]———————————————————————————————
-                if (EstudianteIdTextbox.Text.Trim() == "")
+
+                //———————————————————————————————[ Estudiante Id ]———————————————————————————————
+                if (EstudianteIdTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Editorial Id) esta vacio.\n\nAsigne una Id a la Editorial.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    EstudianteIdTextbox.Clear();
-                    EstudianteIdTextbox.Focus();
+                    MessageBox.Show("El Campo (Estudiante Id) esta vacio.\n\nAsigne un Id al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    EstudianteIdTextBox.Text = "0";
+                    EstudianteIdTextBox.Focus();
+                    EstudianteIdTextBox.SelectAll();
                     return;
                 }
                 //———————————————————————————————[ Matricula ]———————————————————————————————
-                if (MatriculaTextBox.Text.Trim() == "")
+                if (MatriculaTextBox.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("El Campo (Matricula) esta vacio.\n\nAsigne una Matricula al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    MatriculaTextBox.Clear();
+                    MatriculaTextBox.Text = "0";
                     MatriculaTextBox.Focus();
+                    MatriculaTextBox.SelectAll();
                     return;
                 }
                 //———————————————————————————————[ Nombres ]———————————————————————————————
-                if (NombresTextBox.Text.Trim() == "")
+                if (NombresTextBox.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("El Campo (Nombres) esta vacio.\n\nAsigne un Nombre al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     NombresTextBox.Clear();
@@ -107,7 +110,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     return;
                 }
                 //———————————————————————————————[ Apellidos ]———————————————————————————————
-                if (ApellidosTextBox.Text.Trim() == "")
+                if (ApellidosTextBox.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("El Campo (Apellidos) esta vacio.\n\nAsigne un Apellido al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     ApellidosTextBox.Clear();
@@ -115,11 +118,12 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     return;
                 }
                 //———————————————————————————————[ Cedula ]———————————————————————————————
-                if (CedulaTextBox.Text.Trim() == "")
+                if (CedulaTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Cedula) esta vacio.\n\nAsigne un Cedula al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    CedulaTextBox.Clear();
+                    MessageBox.Show("El Campo (Cedula) esta vacio.\n\nAsigne una Cedula al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    CedulaTextBox.Text = "0";
                     CedulaTextBox.Focus();
+                    CedulaTextBox.SelectAll();
                     return;
                 }
                 //———————————————————————————————[ Genero ]———————————————————————————————
@@ -130,15 +134,23 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     return;
                 }
                 //———————————————————————————————[ Telefono ]———————————————————————————————
-                if (TelefonoTextBox.Text.Trim() == "")
+                if (TelefonoTextBox.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("El Campo (Telefono) esta vacio.\n\nAsigne un Telefono al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    TelefonoTextBox.Clear();
+                    TelefonoTextBox.Text = "0";
                     TelefonoTextBox.Focus();
+                    TelefonoTextBox.SelectAll();
+                    return;
+                }
+                //———————————————————————————————[ Fecha Nacimiento ]———————————————————————————————
+                if (FechaNacimientoDatePicker.Text.Trim() == string.Empty)
+                {
+                    MessageBox.Show("El Campo (Fecha Nacimiento) esta vacio.\n\nAsigne una Fecha de Nacimiento al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    FechaNacimientoDatePicker.Focus();
                     return;
                 }
                 //———————————————————————————————[ Direccion ]———————————————————————————————
-                if (DireccionTextBox.Text.Trim() == "")
+                if (DireccionTextBox.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("El Campo (Direccion) esta vacio.\n\nAsigne una Direccion al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     DireccionTextBox.Clear();
@@ -146,7 +158,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     return;
                 }
                 //———————————————————————————————[ Correo ]———————————————————————————————
-                if (CorreoTextBox.Text.Trim() == "")
+                if (CorreoTextBox.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("El Campo (Correo) esta vacio.\n\nAsigne una Correo al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     CorreoTextBox.Clear();
@@ -168,7 +180,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
             {
-                if (EstudiantesBLL.Eliminar(Utilidades.ToInt(EstudianteIdTextbox.Text)))
+                if (EstudiantesBLL.Eliminar(Utilidades.ToInt(EstudianteIdTextBox.Text)))
                 {
                     Limpiar();
                     MessageBox.Show("Registro Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -184,24 +196,17 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         {
             try
             {
-                if (EstudianteIdTextbox.Text.Trim() != string.Empty)
+                if (EstudianteIdTextBox.Text.Trim() != string.Empty)
                 {
-                    int.Parse(EstudianteIdTextbox.Text);
-                }
-                else
-                {
-                    MessageBox.Show("El Campo (Estudiante Id) esta vacio.\n\nAsigne un Id al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    EstudianteIdTextbox.Text = "0";
-                    EstudianteIdTextbox.Focus();
-                    EstudianteIdTextbox.SelectAll();
+                    int.Parse(EstudianteIdTextBox.Text);
                 }
             }
             catch
             {
                 MessageBox.Show($"El valor digitado en el campo (Estudiante Id) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                EstudianteIdTextbox.Text = "0";
-                EstudianteIdTextbox.Focus();
-                EstudianteIdTextbox.SelectAll();
+                EstudianteIdTextBox.Text = "0";
+                EstudianteIdTextBox.Focus();
+                EstudianteIdTextBox.SelectAll();
             }
         }
         //—————————————————————————————————[ Matricula ]—————————————————————————————————
@@ -212,13 +217,6 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 if (MatriculaTextBox.Text.Trim() != string.Empty)
                 {
                     int.Parse(MatriculaTextBox.Text);
-                }
-                else
-                {
-                    MessageBox.Show("El Campo (Matricula) esta vacio.\n\nAsigne una Matricula al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    MatriculaTextBox.Text = "0";
-                    MatriculaTextBox.Focus();
-                    MatriculaTextBox.SelectAll();
                 }
             }
             catch
@@ -238,17 +236,10 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 {
                     int.Parse(CedulaTextBox.Text);
                 }
-                else
-                {
-                    MessageBox.Show("El Campo (Matricula) esta vacio.\n\nAsigne una Matricula al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    CedulaTextBox.Text = "0";
-                    CedulaTextBox.Focus();
-                    CedulaTextBox.SelectAll();
-                }
             }
             catch
             {
-                MessageBox.Show("El valor digitado en el campo (Matricula) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("El valor digitado en el campo (Cedula) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 CedulaTextBox.Text = "0";
                 CedulaTextBox.Focus();
                 CedulaTextBox.SelectAll();
@@ -263,17 +254,10 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 {
                     int.Parse(TelefonoTextBox.Text);
                 }
-                else
-                {
-                    MessageBox.Show("El Campo (Matricula) esta vacio.\n\nAsigne una Matricula al Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    TelefonoTextBox.Text = "0";
-                    TelefonoTextBox.Focus();
-                    TelefonoTextBox.SelectAll();
-                }
             }
             catch
             {
-                MessageBox.Show("El valor digitado en el campo (Matricula) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("El valor digitado en el campo (Telefono) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Warning);
                 TelefonoTextBox.Text = "0";
                 TelefonoTextBox.Focus();
                 TelefonoTextBox.SelectAll();

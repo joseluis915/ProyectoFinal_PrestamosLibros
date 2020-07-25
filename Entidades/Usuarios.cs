@@ -18,12 +18,7 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
 
         //public Usuarios()
         //{
-        //    UsuarioId = 0;
-        //    Nombres = string.Empty;
-        //    Apellidos = string.Empty;
         //    FechaCreacion = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-        //    NombreUsuario = string.Empty;
-        //    Contrasena = string.Empty;
         //}
     }
 }

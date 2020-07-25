@@ -16,7 +16,7 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
             <Label Content="Estudiante Id" FontWeight="Bold" FontSize="16"/>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="EstudianteIdTextbox" Text="{Binding EstudianteId}" Width="270" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="EstudianteIdTextbox_TextChanged"/>
+                <TextBox x:Name="EstudianteIdTextBox" Text="{Binding EstudianteId}" Width="270" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="EstudianteIdTextbox_TextChanged"/>
                 <Button x:Name="BuscarButton" Margin="109,0,0,0" Width="120" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Buscar.png" />
@@ -39,7 +39,7 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
             <!--——————————————————————————————————————————————[ Cedula y Genero ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
                 <!--—————————————————————————————[ Cedula ]—————————————————————————————-->
-                <Label Content=" Cedula" FontWeight="Bold"/>
+                <Label Content="    Cedula" FontWeight="Bold"/>
                 <TextBox x:Name="CedulaTextBox" Text="{Binding Cedula}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,20,0" TextChanged="CedulaTextBox_TextChanged"/>
                 <!--—————————————————————————————[ Generos ]—————————————————————————————-->
                 <Label Content="Genero: " FontWeight="Bold"/>
@@ -57,7 +57,7 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
                 <TextBox x:Name="TelefonoTextBox" Text="{Binding Telefono}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,10,0" TextChanged="TelefonoTextBox_TextChanged"/>
                 <!--—————————————————————————————[ FechaNacimiento ]—————————————————————————————-->
                 <Label Content="Fecha Nacimiento" FontWeight="Bold"/>
-                <DatePicker x:Name="FechaNacimientoTextBox" SelectedDate="{Binding FechaNacimiento}" Height="30" VerticalContentAlignment="Center" Width="150"/>
+                <DatePicker x:Name="FechaNacimientoDatePicker" SelectedDate="{Binding FechaNacimiento}" Height="30" VerticalContentAlignment="Center" Width="150"/>
             </StackPanel>
             <!--——————————————————————————————————————————————[ Direccion ]——————————————————————————————————————————————-->
             <Label Content="Direccion" FontWeight="Bold"/>

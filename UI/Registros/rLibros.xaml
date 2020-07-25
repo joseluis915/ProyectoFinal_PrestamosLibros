@@ -11,7 +11,7 @@
             <Label Content="Libro Id" FontWeight="Bold" FontSize="16"/>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="LibroIdTextbox" Text="{Binding LibroId}" Width="200" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="LibroIdTextbox_TextChanged"/>
+                <TextBox x:Name="LibroIdTextBox" Text="{Binding LibroId}" Width="200" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="LibroIdTextbox_TextChanged"/>
                 <Button x:Name="BuscarButton" Margin="80,0,0,0" Width="120" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Buscar.png" />

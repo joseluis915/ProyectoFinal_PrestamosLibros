@@ -22,6 +22,10 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         {
             InitializeComponent();
             this.DataContext = salidasLibros;
+            //—————————————————————————————————————[ VALORES DEL ComboBox ]—————————————————————————————————————
+            LibroIdComboBox.ItemsSource = LibrosBLL.GetList();
+            LibroIdComboBox.SelectedValuePath = "LibroId";
+            LibroIdComboBox.DisplayMemberPath = "LibroId";
         }
         //——————————————————————————————————————————————————————————————[ Cargar ]———————————————————————————————————————————————————————————————
         private void Cargar()
@@ -39,7 +43,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         private bool Validar()
         {
             bool Validado = true;
-            if (LibroIdTextBox.Text.Length == 0)
+            if (SalidaLibroIdTextBox.Text.Length == 0)
             {
                 Validado = false;
                 MessageBox.Show("Transaccion Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -50,7 +54,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         //——————————————————————————————————————————————————————————————[ Buscar ]———————————————————————————————————————————————————————————————
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            SalidasLibros encontrado = SalidasLibrosBLL.Buscar(Utilidades.ToInt(SalidaLibroIdTextbox.Text));
+            SalidasLibros encontrado = SalidasLibrosBLL.Buscar(Utilidades.ToInt(SalidaLibroIdTextBox.Text));
 
             if (encontrado != null)
             {
@@ -63,7 +67,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 this.DataContext = this.salidasLibros;
                 MessageBox.Show($"Esta Entrada de libro no fue encontrada.\n\nAsegurese que existe o cree una nueva.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 Limpiar();
-                LibroIdTextBox.Focus();
+                SalidaLibroIdTextBox.Focus();
             }
         }
         //——————————————————————————————————————————————————————————————[ Nuevo ]———————————————————————————————————————————————————————————————
@@ -79,36 +83,38 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     return;
 
                 //———————————————————————————————————————————————————————[ VALIDAR SI ESTA VACIO ]———————————————————————————————————————————————————————
-                if (SalidaLibroIdTextbox.Text.Trim() == "")
+                //—————————————————————————————————[ SalidaLibro Id ]—————————————————————————————————
+                if (SalidaLibroIdTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Libro Id) esta vacio.\n\nDebe asignar una Id la salida del libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    SalidaLibroIdTextbox.Clear();
-                    SalidaLibroIdTextbox.Focus();
+                    MessageBox.Show("El Campo (SalidaLibro Id) esta vacio.\n\nDebe asignar un Id a la Salida del Libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    SalidaLibroIdTextBox.Text = "0";
+                    SalidaLibroIdTextBox.Focus();
+                    SalidaLibroIdTextBox.SelectAll();
                     return;
                 }
-
-                if (LibroIdTextBox.Text.Trim() == "")
+                //—————————————————————————————————[ Libro Id ]—————————————————————————————————
+                if (LibroIdComboBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Libro Id) esta vacio.\n\nEscriba una Id para la salida del libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    LibroIdTextBox.Clear();
-                    LibroIdTextBox.Focus();
+                    MessageBox.Show("El Campo (Libro Id) esta vacio.\n\nAsigne un Id al Libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    LibroIdComboBox.Focus();
                     return;
                 }
-                if (FechaDatePicker.Text.Trim() == "")
+                //—————————————————————————————————[ Fecha ]—————————————————————————————————
+                if (FechaDatePicker.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show($"El Campo (Fecha) esta vacio.\n\nSeleccione una fecha.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"El Campo (Fecha) esta vacio.\n\nSeleccione una fecha para la Entrada del Libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     FechaDatePicker.Focus();
                     return;
                 }
-
-                if (CantidadTextBox.Text.Trim() == "")
+                //—————————————————————————————————[ Cantidad ]—————————————————————————————————
+                if (CantidadTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show($"El Campo (Cantidad) esta vacio.\n\nEscriba una cantidad.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    CantidadTextBox.Clear();
+                    MessageBox.Show("El Campo (Cantidad) esta vacio.\n\nEscriba la cantidad de Libros.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    CantidadTextBox.Text = "0";
                     CantidadTextBox.Focus();
+                    CantidadTextBox.SelectAll();
                     return;
                 }
-
                 //———————————————————————————————————————————————————————[ VALIDAR SI ESTA VACIO - FIN ]———————————————————————————————————————————————————————
                 var paso = SalidasLibrosBLL.Guardar(salidasLibros);
                 if (paso)
@@ -124,7 +130,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
             {
-                if (SalidasLibrosBLL.Eliminar(Utilidades.ToInt(LibroIdTextBox.Text)))
+                if (SalidasLibrosBLL.Eliminar(Utilidades.ToInt(SalidaLibroIdTextBox.Text)))
                 {
                     Limpiar();
                     MessageBox.Show("Registro Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -135,47 +141,33 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         }
         //—————————————————————————————————————————————————————————————[ TEXT CHANGED ]—————————————————————————————————————————————————————————————
 
-        //——————————————————————————————————————————[ SalidaLibro Id ]——————————————————————————————————————————
-        private void EntradaLibroIdTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        //——————————————————————————————————————————[ SalidaLibro Id]——————————————————————————————————————————
+        private void SalidaLibroIdTextbox_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
             {
-                if (SalidaLibroIdTextbox.Text.Trim() != "")
+                if (SalidaLibroIdTextBox.Text.Trim() != string.Empty)
                 {
-                    int.Parse(SalidaLibroIdTextbox.Text);
+                    int.Parse(SalidaLibroIdTextBox.Text);
                 }
             }
             catch
             {
-                MessageBox.Show($"El valor digitado en el campo (SalidaLibro Id) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                SalidaLibroIdTextbox.Clear();
-                SalidaLibroIdTextbox.Focus();
+                MessageBox.Show($"El valor digitado en el campo (EntradaLibro Id) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                SalidaLibroIdTextBox.Text = "0";
+                SalidaLibroIdTextBox.Focus();
+                SalidaLibroIdTextBox.SelectAll();
             }
         }
+
         //——————————————————————————————————————————[ Libro Id ]——————————————————————————————————————————
-        private void LibroIdTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            try
-            {
-                if (LibroIdTextBox.Text.Trim() != "")
-                {
-                    int.Parse(LibroIdTextBox.Text);
-                }
-            }
-            catch
-            {
-                MessageBox.Show($"El valor digitado en el campo (Libro Id) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                LibroIdTextBox.Clear();
-                LibroIdTextBox.Focus();
-            }
-        }
 
         //——————————————————————————————————————————[ Cantidad ]——————————————————————————————————————————
         private void CantidadTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
             {
-                if (CantidadTextBox.Text.Trim() != "")
+                if (CantidadTextBox.Text.Trim() != string.Empty)
                 {
                     int.Parse(CantidadTextBox.Text);
                 }
@@ -183,8 +175,9 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             catch
             {
                 MessageBox.Show($"El valor digitado en el campo (Cantidad) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                CantidadTextBox.Clear();
+                CantidadTextBox.Text = "0";
                 CantidadTextBox.Focus();
+                CantidadTextBox.SelectAll();
             }
         }
     }

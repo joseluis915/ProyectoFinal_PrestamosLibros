@@ -23,14 +23,8 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         //————————————————————————————————————————————————————————————————————————————
         public DateTime Fecha { get; set; } = DateTime.Now;
         public DateTime FechaVencimiento { get; set; } = DateTime.Now;
-
-        //public Prestamos()
-        //{
-        //    PrestamoId = 0;
-        //    //UsuarioId = 0;
-        //    EstudianteId = 0;
-        //    Fecha = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-        //    FechaVencimiento = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-        //}
+        //———————————————————————————[ForeingKey DevolucionId]———————————————————————————
+        [ForeignKey("PrestamoId")]
+        public virtual List<PrestamosDetalle> Detalle { get; set; } = new List<PrestamosDetalle>();
     }
 }

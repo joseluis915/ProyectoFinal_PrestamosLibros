@@ -22,5 +22,8 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public Estudiantes estudiantes { get; set; } = new Estudiantes();
         //————————————————————————————————————————————————————————————————————————————
         public DateTime Fecha { get; set; } = DateTime.Now;
+        //———————————————————————————[ForeingKey DevolucionId]———————————————————————————
+        [ForeignKey("DevolucionId")]
+        public virtual List<DevolucionesDetalle> Detalle { get; set; } = new List<DevolucionesDetalle>();
     }
 }
