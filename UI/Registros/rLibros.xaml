@@ -11,7 +11,7 @@
             <Label Content="Libro Id" FontWeight="Bold" FontSize="16"/>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="SalidaLibroIdTextbox" Text="{Binding LibroId}" Width="200" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="LibroIdTextbox" Text="{Binding LibroId}" Width="200" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="LibroIdTextbox_TextChanged"/>
                 <Button x:Name="BuscarButton" Margin="80,0,0,0" Width="120" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Buscar.png" />
@@ -30,7 +30,7 @@
             <DatePicker x:Name="FechaDatePicker" SelectedDate="{Binding Fecha}" Height="30" VerticalContentAlignment="Center"/>
             <!--——————————————————————————————————————————————[ Existencia ]——————————————————————————————————————————————-->
             <Label Content="Existencia" FontWeight="Bold"/>
-            <TextBox x:Name="ExistenciaTextBox" Text="{Binding Existencia}" Height="30" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="ExistenciaTextBox" Text="{Binding Existencia}" Height="30" VerticalContentAlignment="Center" TextChanged="ExistenciaTextBox_TextChanged"/>
             <!--——————————————————————————————————————————————[ BOTON NUEVO ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35" Margin="0,15,0,0" HorizontalAlignment="Center">
                 <Button x:Name="NuevoButton" Click="NuevoButton_Click" Width="120">
