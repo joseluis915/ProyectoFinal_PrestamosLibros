@@ -41,6 +41,13 @@ namespace ProyectoFinal_PrestamosLibros
             rEditoriales.Show();
         }
 
+        //----------------------------[ Libros ]----------------------------------
+        private void rLibrosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rLibros rLibros = new rLibros();
+            rLibros.Show();
+        }
+
         //----------------------------[ EntradasLibros ]----------------------------
         private void rEntradasLibrosMenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -96,8 +103,6 @@ namespace ProyectoFinal_PrestamosLibros
         {
             MessageBox.Show($"Propietario:\t\t{PropietarioLabel.Content}\n\nVersion:\t\t\t{VersionLabel.Content}\n\nCreacion:\t\t{CreacionLabel.Content}\n\nUltima Modificacion:\t{ModificacionLabel.Content}\n\nPara mas informacion:\tejemplo@ucne.edu.do",
                 "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-       
+        }        
     }
 }
