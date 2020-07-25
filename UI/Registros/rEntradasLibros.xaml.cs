@@ -50,19 +50,19 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         //——————————————————————————————————————————————————————————————[ Buscar ]———————————————————————————————————————————————————————————————
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            EntradasLibros encontrado = EntradasLibrosBLL.Buscar(entradasLibros.EntradaLibroId);
+            EntradasLibros encontrado = EntradasLibrosBLL.Buscar(Utilidades.ToInt(EntradaLibroIdTextbox.Text));
 
             if (encontrado != null)
             {
-                entradasLibros = encontrado;
+                this.entradasLibros = encontrado;
                 Cargar();
             }
             else
             {
+                this.entradasLibros = new EntradasLibros();
+                this.DataContext = this.entradasLibros;
                 MessageBox.Show($"Esta Entrada de libro no fue encontrada.\n\nAsegurese que existe o cree una nueva.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 Limpiar();
-                //—————————————————————————————————————[ Limpiar y hacer focus en el Id]—————————————————————————————————————
-                LibroIdTextBox.Text = "";
                 LibroIdTextBox.Focus();
             }
         }
@@ -110,7 +110,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 }
 
                 //———————————————————————————————————————————————————————[ VALIDAR SI ESTA VACIO - FIN ]———————————————————————————————————————————————————————
-                var paso = EntradasLibrosBLL.Guardar(this.entradasLibros);
+                var paso = EntradasLibrosBLL.Guardar(entradasLibros);
                 if (paso)
                 {
                     Limpiar();

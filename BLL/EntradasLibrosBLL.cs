@@ -90,15 +90,15 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 
             return paso;
         }
-        //——————————————————————————————————————————————[ GETLIST ]——————————————————————————————————————————————
-        public static List<EntradasLibros> GetList(Expression<Func<EntradasLibros, bool>> criterio)
+        //——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————
+        public static EntradasLibros Buscar(int id)
         {
-            List<EntradasLibros> lista = new List<EntradasLibros>();
             Contexto contexto = new Contexto();
+            EntradasLibros entradasLibros;
 
             try
             {
-                lista = contexto.EntradasLibros.Where(criterio).ToList();
+                entradasLibros = contexto.EntradasLibros.Find(id);
             }
             catch (Exception)
             {
@@ -109,17 +109,17 @@ namespace ProyectoFinal_PrestamosLibros.BLL
                 contexto.Dispose();
             }
 
-            return lista;
+            return entradasLibros;
         }
-        //——————————————————————————————————————————————[ GET ]——————————————————————————————————————————————
-        public static List<EntradasLibros> GetPrestamos()
+        //——————————————————————————————————————————————[ GETLIST ]——————————————————————————————————————————————
+        public static List<EntradasLibros> GetList(Expression<Func<EntradasLibros, bool>> criterio)
         {
             List<EntradasLibros> lista = new List<EntradasLibros>();
             Contexto contexto = new Contexto();
 
             try
             {
-                lista = contexto.EntradasLibros.ToList();
+                lista = contexto.EntradasLibros.Where(criterio).ToList();
             }
             catch (Exception)
             {
@@ -153,15 +153,15 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 
             return encontrado;
         }
-        //——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————
-        public static EntradasLibros Buscar(int id)
+        //——————————————————————————————————————————————[ GET ]——————————————————————————————————————————————
+        public static List<EntradasLibros> GetPrestamos()
         {
+            List<EntradasLibros> lista = new List<EntradasLibros>();
             Contexto contexto = new Contexto();
-            EntradasLibros entradasLibros;
 
             try
             {
-                entradasLibros = contexto.EntradasLibros.Find(id);
+                lista = contexto.EntradasLibros.ToList();
             }
             catch (Exception)
             {
@@ -172,7 +172,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
                 contexto.Dispose();
             }
 
-            return entradasLibros;
+            return lista;
         }
     }
 }

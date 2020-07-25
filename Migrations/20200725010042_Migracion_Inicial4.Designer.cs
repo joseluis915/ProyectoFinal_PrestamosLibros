@@ -9,7 +9,7 @@ using ProyectoFinal_PrestamosLibros.DAL;
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200724233631_Migracion_Inicial4")]
+    [Migration("20200725010042_Migracion_Inicial4")]
     partial class Migracion_Inicial4
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
