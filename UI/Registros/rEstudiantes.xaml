@@ -4,15 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
+        xmlns:convertidor="clr-namespace:ProyectoFinal_PrestamosLibros.Resources.Extra"
         mc:Ignorable="d"
 Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png">
+    <Window.Resources>
+        <convertidor:GenderConverter x:Key="GenderConverter"/>
+    </Window.Resources>
     <Grid>
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label Content="Estudiante Id" FontWeight="Bold" FontSize="16"/>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="EstudianteIdTextbox" Text="{Binding EstudianteId}" Width="270" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="EstudianteIdTextbox" Text="{Binding EstudianteId}" Width="270" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="EstudianteIdTextbox_TextChanged"/>
                 <Button x:Name="BuscarButton" Margin="109,0,0,0" Width="120" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Buscar.png" />
@@ -22,7 +26,7 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
             </StackPanel>
             <!--——————————————————————————————————————————————[ Matricula ]——————————————————————————————————————————————-->
             <Label Content="Matricula" FontWeight="Bold"  Margin="0,10,0,0"/>
-            <TextBox x:Name="MatriculaTextBox" Text="{Binding Matricula}" Height="30" Width="100" HorizontalAlignment="Left"/>
+            <TextBox x:Name="MatriculaTextBox" Text="{Binding Matricula}" Height="30" Width="100" HorizontalAlignment="Left" VerticalContentAlignment="Center" TextChanged="MatriculaTextBox_TextChanged"/>
             <!--——————————————————————————————————————————————[ Nombres y Apellidos]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Margin="0,15,0,5">
                 <!--—————————————————————————————[ Nombres ]—————————————————————————————-->
@@ -36,17 +40,21 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
             <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
                 <!--—————————————————————————————[ Cedula ]—————————————————————————————-->
                 <Label Content=" Cedula" FontWeight="Bold"/>
-                <TextBox x:Name="CedulaTextBox" Text="{Binding Cedula}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,20,0"/>
-                <!--—————————————————————————————[ Genero ]—————————————————————————————-->
-                <Label x:Name="GeneroLabel" Content="Genero: " FontWeight="Bold"/>
-                <RadioButton x:Name="FemeninoRadioButton" Content="Femenino" IsChecked="{Binding Genero}" VerticalAlignment="Center" Margin="0,0,20,0"/>
-                <RadioButton x:Name="MasculinoRadioButton" Content="Masculino" IsChecked="{Binding Genero}" VerticalAlignment="Center" />
+                <TextBox x:Name="CedulaTextBox" Text="{Binding Cedula}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,20,0" TextChanged="CedulaTextBox_TextChanged"/>
+                <!--—————————————————————————————[ Generos ]—————————————————————————————-->
+                <Label Content="Genero: " FontWeight="Bold"/>
+                <RadioButton x:Name="FemeninoRadioButton" GroupName="Generos" Content="Femenino" 
+                             IsChecked="{Binding Genero, Converter={StaticResource ResourceKey=GenderConverter}, ConverterParameter=Femenina}" 
+                             Margin="0,0,20,0" VerticalContentAlignment="Center"/>
+                <RadioButton x:Name="MasculinoRadioButton" GroupName="Generos" Content="Masculino" 
+                             IsChecked="{Binding Genero, Converter={StaticResource ResourceKey=GenderConverter}, ConverterParameter=Masculino}" 
+                              VerticalContentAlignment="Center"/>
             </StackPanel>
             <!--——————————————————————————————————————————————[ Telefono y FechaNacimiento ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
                 <!--—————————————————————————————[ Telefono ]—————————————————————————————-->
                 <Label Content=" Telefono" FontWeight="Bold"/>
-                <TextBox x:Name="TelefonoTextBox" Text="{Binding Telefono}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,10,0"/>
+                <TextBox x:Name="TelefonoTextBox" Text="{Binding Telefono}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,10,0" TextChanged="TelefonoTextBox_TextChanged"/>
                 <!--—————————————————————————————[ FechaNacimiento ]—————————————————————————————-->
                 <Label Content="Fecha Nacimiento" FontWeight="Bold"/>
                 <DatePicker x:Name="FechaNacimientoTextBox" SelectedDate="{Binding FechaNacimiento}" Height="30" VerticalContentAlignment="Center" Width="150"/>

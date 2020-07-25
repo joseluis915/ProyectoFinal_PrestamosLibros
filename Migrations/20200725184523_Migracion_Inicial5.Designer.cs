@@ -9,8 +9,8 @@ using ProyectoFinal_PrestamosLibros.DAL;
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200725010042_Migracion_Inicial4")]
-    partial class Migracion_Inicial4
+    [Migration("20200725184523_Migracion_Inicial5")]
+    partial class Migracion_Inicial5
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -97,8 +97,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<string>("Apellidos")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Cedula")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Cedula")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Correo")
                         .HasColumnType("TEXT");
@@ -112,14 +112,14 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<string>("Genero")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Matricula")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Matricula")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Nombres")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Telefono")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Telefono")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("INTEGER");

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
-    public partial class Migracion_Inicial4 : Migration
+    public partial class Migracion_Inicial5 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -51,13 +51,13 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     EstudianteId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     UsuarioId = table.Column<int>(nullable: false),
-                    Matricula = table.Column<string>(nullable: true),
+                    Matricula = table.Column<int>(nullable: false),
                     Nombres = table.Column<string>(nullable: true),
                     Apellidos = table.Column<string>(nullable: true),
                     FechaNacimiento = table.Column<DateTime>(nullable: false),
-                    Cedula = table.Column<string>(nullable: true),
+                    Cedula = table.Column<int>(nullable: false),
                     Genero = table.Column<string>(nullable: true),
-                    Telefono = table.Column<string>(nullable: true),
+                    Telefono = table.Column<int>(nullable: false),
                     Direccion = table.Column<string>(nullable: true),
                     Correo = table.Column<string>(nullable: true)
                 },

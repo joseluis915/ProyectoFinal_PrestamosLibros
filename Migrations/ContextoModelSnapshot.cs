@@ -95,8 +95,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<string>("Apellidos")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Cedula")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Cedula")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Correo")
                         .HasColumnType("TEXT");
@@ -110,14 +110,14 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<string>("Genero")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Matricula")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Matricula")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Nombres")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Telefono")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Telefono")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("INTEGER");

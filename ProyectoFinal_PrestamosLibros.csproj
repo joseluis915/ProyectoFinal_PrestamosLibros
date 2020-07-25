@@ -8,28 +8,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Agendar.png" />
-	  <None Remove="Resources\Anonimo.png" />
-	  <None Remove="Resources\Buscar.png" />
-	  <None Remove="Resources\Cancelar.png" />
-	  <None Remove="Resources\Candado.png" />
-	  <None Remove="Resources\Carcular.png" />
-	  <None Remove="Resources\Crear.png" />
-	  <None Remove="Resources\Documento.png" />
-	  <None Remove="Resources\Eliminar.png" />
-	  <None Remove="Resources\Entrar.png" />
-	  <None Remove="Resources\Fecha.png" />
-	  <None Remove="Resources\Guardar.png" />
-	  <None Remove="Resources\Home.png" />
-	  <None Remove="Resources\Key.png" />
-	  <None Remove="Resources\Limpiar.png" />
-	  <None Remove="Resources\Lista.png" />
-	  <None Remove="Resources\Mas.png" />
-	  <None Remove="Resources\Usuario.png" />
-	  <None Remove="Resources\Usuarios.png" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Folder Include="DAL\" />
 	  <Folder Include="Data\" />
 	</ItemGroup>
@@ -44,9 +22,6 @@
 
 	<ItemGroup>
 	  <Resource Include="Resources\Agendar.png">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Resource>
-	  <Resource Include="Resources\Anonimo.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\Buscar.png">
@@ -115,6 +90,12 @@
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Resources\Anonimo.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>
