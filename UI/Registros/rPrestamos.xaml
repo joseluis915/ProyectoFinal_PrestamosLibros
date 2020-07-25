@@ -27,12 +27,12 @@
                 <!--—————————————————————————————————————[ Fecha Prestamo ]—————————————————————————————————————-->
                 <StackPanel Orientation="Vertical">
                     <Label Content="Fecha Prestamo" FontWeight="Bold" />
-                    <DatePicker x:Name="FechaTextBox" Text="{Binding Fecha}" Height="30" Width="205" VerticalContentAlignment="Center"/>
+                    <DatePicker x:Name="FechaTextBox" SelectedDate="{Binding Fecha}" Height="30" Width="205" VerticalContentAlignment="Center"/>
                 </StackPanel>
                 <!--—————————————————————————————————————[ Fecha Vencimiento ]—————————————————————————————————————-->
                 <StackPanel Orientation="Vertical" Margin="50,0,0,0" >
                     <Label Content="Fecha Vencimiento" FontWeight="Bold" />
-                    <DatePicker x:Name="FechaVencimientoTextBox" Text="{Binding FechaVencimiento}" Height="30" Width="205" VerticalContentAlignment="Center"/>
+                    <DatePicker x:Name="FechaVencimientoTextBox" SelectedDate="{Binding FechaVencimiento}" Height="30" Width="205" VerticalContentAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
 

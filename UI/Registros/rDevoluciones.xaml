@@ -25,7 +25,7 @@
             <!--—————————————————————————————————————[ Fecha Devolucion ]—————————————————————————————————————-->
             <StackPanel Orientation="Vertical">
                 <Label x:Name="FechaLabel" Content="Fecha Devolucion" FontWeight="Bold" />
-                <DatePicker x:Name="FechaTextBox" Text="{Binding Fecha}" Height="30" VerticalContentAlignment="Center"/>
+                <DatePicker x:Name="FechaTextBox" SelectedDate="{Binding Fecha}" Height="30" VerticalContentAlignment="Center"/>
             </StackPanel>
 
             <!--——————————————————————————————————————————————[ DETALLE ]——————————————————————————————————————————————-->
