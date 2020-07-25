@@ -22,7 +22,7 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
             </StackPanel>
             <!--——————————————————————————————————————————————[ Matricula ]——————————————————————————————————————————————-->
             <Label Content="Matricula" FontWeight="Bold"  Margin="0,10,0,0"/>
-            <TextBox x:Name="MatriculaTextBox" Text="{Binding Matricula}" Height="30" Width="150" HorizontalAlignment="Left"/>
+            <TextBox x:Name="MatriculaTextBox" Text="{Binding Matricula}" Height="30" Width="100" HorizontalAlignment="Left"/>
             <!--——————————————————————————————————————————————[ Nombres y Apellidos]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Margin="0,15,0,5">
                 <!--—————————————————————————————[ Nombres ]—————————————————————————————-->
@@ -49,7 +49,7 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
                 <TextBox x:Name="TelefonoTextBox" Text="{Binding Telefono}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,10,0"/>
                 <!--—————————————————————————————[ FechaNacimiento ]—————————————————————————————-->
                 <Label Content="Fecha Nacimiento" FontWeight="Bold"/>
-                <DatePicker x:Name="FechaNacimientoTextBox" Text="{Binding FechaNacimiento}" Height="30" VerticalContentAlignment="Center" Width="150"/>
+                <DatePicker x:Name="FechaNacimientoTextBox" SelectedDate="{Binding FechaNacimiento}" Height="30" VerticalContentAlignment="Center" Width="150"/>
             </StackPanel>
             <!--——————————————————————————————————————————————[ Direccion ]——————————————————————————————————————————————-->
             <Label Content="Direccion" FontWeight="Bold"/>

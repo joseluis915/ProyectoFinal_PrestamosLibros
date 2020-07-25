@@ -11,8 +11,8 @@
             <Label Content="Editorial Id" FontWeight="Bold" FontSize="16"/>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="EditorialIdTextbox" Text="{Binding EditorialId}" Width="235" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="EditorialIdTextbox_TextChanged"/>
-                <Button x:Name="BuscarButton" Margin="109,0,0,0" Width="120" Click="BuscarButton_Click">
+                <TextBox x:Name="EditorialIdTextbox" Text="{Binding EditorialId}" Width="200" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="EditorialIdTextbox_TextChanged"/>
+                <Button x:Name="BuscarButton" Margin="80,0,0,0" Width="120" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Buscar.png" />
                         <Label Content="Buscar" FontSize="17" FontWeight="Bold"/>

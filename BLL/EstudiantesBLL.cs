@@ -10,25 +10,25 @@ using ProyectoFinal_PrestamosLibros.Entidades;
 
 namespace ProyectoFinal_PrestamosLibros.BLL
 {
-    public class EditorialesBLL
+    public class EstudiantesBLL
     {
         //——————————————————————————————————————————————[ GUARDAR ]——————————————————————————————————————————————
-        public static bool Guardar(Editoriales editoriales)
+        public static bool Guardar(Estudiantes estudiantes)
         {
-            if (!Existe(editoriales.EditorialId))
-                return Insertar(editoriales);
+            if (!Existe(estudiantes.EstudianteId))
+                return Insertar(estudiantes);
             else
-                return Modificar(editoriales);
+                return Modificar(estudiantes);
         }
         //——————————————————————————————————————————————[ INSERTAR ]——————————————————————————————————————————————
-        private static bool Insertar(Editoriales editoriales)
+        private static bool Insertar(Estudiantes estudiantes)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                contexto.Editoriales.Add(editoriales);
+                contexto.Estudiantes.Add(estudiantes);
                 paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
@@ -43,14 +43,14 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             return paso;
         }
         //——————————————————————————————————————————————[ MODIFICAR ]——————————————————————————————————————————————
-        public static bool Modificar(Editoriales editoriales)
+        public static bool Modificar(Estudiantes estudiantes)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                contexto.Entry(editoriales).State = EntityState.Modified;
+                contexto.Entry(estudiantes).State = EntityState.Modified;
                 paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
@@ -72,10 +72,10 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 
             try
             {
-                var editoriales = contexto.Editoriales.Find(id);
-                if (editoriales != null)
+                var estudiantes = contexto.Estudiantes.Find(id);
+                if (estudiantes != null)
                 {
-                    contexto.Editoriales.Remove(editoriales);
+                    contexto.Estudiantes.Remove(estudiantes);
                     paso = contexto.SaveChanges() > 0;
                 }
             }
@@ -91,14 +91,14 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             return paso;
         }
         //——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————
-        public static Editoriales Buscar(int id)
+        public static Estudiantes Buscar(int id)
         {
             Contexto contexto = new Contexto();
-            Editoriales editoriales;
+            Estudiantes estudiantes;
 
             try
             {
-                editoriales = contexto.Editoriales.Find(id);
+                estudiantes = contexto.Estudiantes.Find(id);
             }
             catch (Exception)
             {
@@ -109,17 +109,17 @@ namespace ProyectoFinal_PrestamosLibros.BLL
                 contexto.Dispose();
             }
 
-            return editoriales;
+            return estudiantes;
         }
         //——————————————————————————————————————————————[ GETLIST ]——————————————————————————————————————————————
-        public static List<Editoriales> GetList(Expression<Func<Editoriales, bool>> criterio)
+        public static List<Estudiantes> GetList(Expression<Func<Estudiantes, bool>> criterio)
         {
-            List<Editoriales> lista = new List<Editoriales>();
+            List<Estudiantes> lista = new List<Estudiantes>();
             Contexto contexto = new Contexto();
 
             try
             {
-                lista = contexto.Editoriales.Where(criterio).ToList();
+                lista = contexto.Estudiantes.Where(criterio).ToList();
             }
             catch (Exception)
             {
@@ -140,7 +140,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 
             try
             {
-                encontrado = contexto.Editoriales.Any(e => e.EditorialId == id);
+                encontrado = contexto.Estudiantes.Any(e => e.EstudianteId == id);
             }
             catch (Exception)
             {
@@ -154,14 +154,14 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             return encontrado;
         }
         //——————————————————————————————————————————————[ GET ]——————————————————————————————————————————————
-        public static List<Editoriales> GetPrestamos()
+        public static List<Estudiantes> GetPrestamos()
         {
-            List<Editoriales> lista = new List<Editoriales>();
+            List<Estudiantes> lista = new List<Estudiantes>();
             Contexto contexto = new Contexto();
 
             try
             {
-                lista = contexto.Editoriales.ToList();
+                lista = contexto.Estudiantes.ToList();
             }
             catch (Exception)
             {
