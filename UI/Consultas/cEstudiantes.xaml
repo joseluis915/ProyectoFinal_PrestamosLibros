@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Consultas"
         mc:Ignorable="d"
-        Title="CONSULTAR ESTUDIANTE" Height="450" Width="680" WindowStartupLocation="CenterScreen" Icon="/Resources/Lista.png" >
+        Title="CONSULTAR ESTUDIANTES" Height="450" Width="680" WindowStartupLocation="CenterScreen" Icon="/Resources/Lista.png" >
     <Grid>
         <StackPanel Orientation="Vertical" Margin="0,5,0,0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Height="60">
@@ -41,7 +41,7 @@
                 <!--——————————————————————————————————————————————[ DATA GRID ]——————————————————————————————————————————————-->
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Width="635" >
-                <DataGrid x:Name="DatosDataGrid" Height="330"  IsReadOnly="True"/>
+                <DataGrid x:Name="DatosDataGrid" Height="330" IsReadOnly="True"/>
             </StackPanel>
         </StackPanel>
     </Grid>
