@@ -22,11 +22,11 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
             {
                 switch (FiltroComboBox.SelectedIndex)
                 {
-                    case 0: //UsuarioId
+                    case 0:
                         listado = UsuariosBLL.GetList(u => u.UsuarioId == Utilidades.ToInt(CriterioTextBox.Text));
                         break;
 
-                    case 1: //Nombres                       
+                    case 1:                     
                         listado = UsuariosBLL.GetList(e => e.Nombres.Contains(CriterioTextBox.Text, StringComparison.OrdinalIgnoreCase));
                         break;
                 }

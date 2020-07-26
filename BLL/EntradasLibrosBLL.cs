@@ -154,7 +154,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             return encontrado;
         }
         //——————————————————————————————————————————————[ GET ]——————————————————————————————————————————————
-        public static List<EntradasLibros> GetPrestamos()
+        public static List<EntradasLibros> GetEntradasLibros()
         {
             List<EntradasLibros> lista = new List<EntradasLibros>();
             Contexto contexto = new Contexto();

@@ -154,7 +154,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             return encontrado;
         }
         //——————————————————————————————————————————————[ GET ]——————————————————————————————————————————————
-        public static List<Estudiantes> GetPrestamos()
+        public static List<Estudiantes> GetEstudiantes()
         {
             List<Estudiantes> lista = new List<Estudiantes>();
             Contexto contexto = new Contexto();

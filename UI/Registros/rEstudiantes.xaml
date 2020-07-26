@@ -44,7 +44,7 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
                 <!--—————————————————————————————[ Generos ]—————————————————————————————-->
                 <Label Content="Genero: " FontWeight="Bold"/>
                 <RadioButton x:Name="FemeninoRadioButton" GroupName="Generos" Content="Femenino" 
-                             IsChecked="{Binding Genero, Converter={StaticResource ResourceKey=GenderConverter}, ConverterParameter=Femenina}" 
+                             IsChecked="{Binding Genero, Converter={StaticResource ResourceKey=GenderConverter}, ConverterParameter=Femenino}" 
                              Margin="0,0,20,0" VerticalContentAlignment="Center"/>
                 <RadioButton x:Name="MasculinoRadioButton" GroupName="Generos" Content="Masculino" 
                              IsChecked="{Binding Genero, Converter={StaticResource ResourceKey=GenderConverter}, ConverterParameter=Masculino}" 

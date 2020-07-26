@@ -11,19 +11,19 @@
 
             <StackPanel Orientation="Horizontal" Height="58">
                 <StackPanel>
-                    <Label Content="Desde:"/>
+                    <Label Content="Nacimiento Desde:"/>
                     <DatePicker x:Name="DesdeDatePicker" />
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Margin="5,0">
-                    <Label Content="Hasta:" />
+                    <Label Content="Nacimiento Hasta:" />
                     <DatePicker x:Name="HastaDatePicker"/>
                 </StackPanel>
 
                 <StackPanel Margin="5,0">
                     <Label Content="Filtro:" />
-                    <ComboBox x:Name="FiltroComboBox" Width="95" Height="24" >
-                        <ComboBoxItem Content="Todo"/>
+                    <ComboBox x:Name="FiltroComboBox" Width="95" Height="24">
+                        <ComboBoxItem Content="Id"/>
                     </ComboBox>
                 </StackPanel>
 
