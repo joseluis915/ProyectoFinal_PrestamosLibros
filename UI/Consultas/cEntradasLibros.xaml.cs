@@ -30,7 +30,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
                 switch (FiltroComboBox.SelectedIndex)
                 {
                     case 0:
-                        listado = EntradasLibrosBLL.GetList(l => l.LibroId == Utilidades.ToInt(CriterioTextBox.Text));
+                        listado = EntradasLibrosBLL.GetList(e => e.EntradaLibroId == Utilidades.ToInt(CriterioTextBox.Text));
                         break;
                 }
             }
