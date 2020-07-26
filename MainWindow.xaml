@@ -21,8 +21,12 @@
                 </MenuItem>
 
                 <MenuItem Header="Consultas">
-                    <MenuItem x:Name="cUsuariosMenuItem" Click="cUsuariosMenuItem_Click" Header="Consultar Usuario"/>
-                    <MenuItem x:Name="cEstudiantesMenuItem" Click="cEstudiantesMenuItem_Click" Header="Consultar Estudiante"/>
+                    <MenuItem x:Name="cUsuariosMenuItem" Click="cUsuariosMenuItem_Click" Header="Consultar Usuarios"/>
+                    <MenuItem x:Name="cEstudiantesMenuItem" Click="cEstudiantesMenuItem_Click" Header="Consultar Estudiantes"/>
+                    <MenuItem x:Name="cLibrosMenuItem" Click="cLibrosMenuItem_Click" Header="Consultar Libros"/>
+                    <MenuItem x:Name="cEditorialesMenuItem" Click="cEditorialesMenuItem_Click" Header="Consultar Editoriales"/>
+                    <MenuItem x:Name="cEntradasLibrosMenuItem" Click="cEntradasLibrosMenuItem_Click" Header="Consultar Entradas de Libros"/>
+                    <MenuItem x:Name="cSalidasLibrosMenuItem" Click="cSalidasLibrosMenuItem_Click" Header="Consultar Salidas de Libros"/>
                 </MenuItem>
 
                 <MenuItem x:Name="InformacionMenuItem" Click="InformacionMenuItem_Click" Header="Informacion"/>

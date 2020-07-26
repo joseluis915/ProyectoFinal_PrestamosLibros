@@ -77,32 +77,51 @@ namespace ProyectoFinal_PrestamosLibros
         }
 
         //——————————————————————————————————————————————[ EVENTOS - CONSULTAS ]——————————————————————————————————————————————
+        //----------------------------[ Usuarios ]----------------------------
+        private void cUsuariosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cUsuarios cUsuarios = new cUsuarios();
+            cUsuarios.Show();
+        }
         //----------------------------[ Estudiantes ]----------------------------
         private void cEstudiantesMenuItem_Click(object sender, RoutedEventArgs e)
         {
             cEstudiantes cEstudiantes = new cEstudiantes();
             cEstudiantes.Show();
         }
-
-        //----------------------------[ Editoriales ]----------------------------
-        private void cUsuariosMenuItem_Click(object sender, RoutedEventArgs e)
+        //----------------------------[ Libros ]----------------------------
+        private void cLibrosMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            cUsuarios cUsuarios = new cUsuarios();
-            cUsuarios.Show();
+            cLibros cLibros = new cLibros();
+            cLibros.Show();
         }
-
+        //----------------------------[ Editoriales ]----------------------------
+        private void cEditorialesMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cEditoriales cEditoriales = new cEditoriales();
+            cEditoriales.Show();
+        }
         //----------------------------[ EntradasLibros ]----------------------------
-
+        private void cEntradasLibrosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cEntradasLibros cEntradasLibros = new cEntradasLibros();
+            cEntradasLibros.Show();
+        }
         //----------------------------[ SalidasLibros ]----------------------------
-
+        private void cSalidasLibrosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cSalidasLibros cSalidasLibros = new cSalidasLibros();
+            cSalidasLibros.Show();
+        }
         //----------------------------[ Prestamos ]----------------------------
 
         //----------------------------[ Devoluciones ]----------------------------
 
+        //——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————
         private void InformacionMenuItem_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show($"Propietario:\t\t{PropietarioLabel.Content}\n\nVersion:\t\t\t{VersionLabel.Content}\n\nCreacion:\t\t{CreacionLabel.Content}\n\nUltima Modificacion:\t{ModificacionLabel.Content}\n\nPara mas informacion:\tejemplo@ucne.edu.do",
                 "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-        }        
+        }
     }
 }
