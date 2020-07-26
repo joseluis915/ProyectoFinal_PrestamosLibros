@@ -21,7 +21,7 @@
             </StackPanel>
             <!--——————————————————————————————————————————————[ LibroId ]——————————————————————————————————————————————-->
             <Label Content="Libro Id" FontWeight="Bold" Margin="0,10,0,0"/>
-            <ComboBox x:Name="LibroIdComboBox" Text="{Binding eLibro.LibroId}" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+            <ComboBox x:Name="LibroIdComboBox" SelectedValue="{Binding LibroId}" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
             <!--——————————————————————————————————————————————[ Fecha ]——————————————————————————————————————————————-->
             <Label Content="Fecha" FontWeight="Bold"/>
             <DatePicker x:Name="FechaDatePicker" SelectedDate="{Binding Fecha}" Height="30" VerticalContentAlignment="Center" />

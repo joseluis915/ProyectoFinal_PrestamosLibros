@@ -169,7 +169,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 if (CantidadTextBox.Text.Trim() != string.Empty)
                 {
-                    int.Parse(CantidadTextBox.Text);
+                    Convert.ToDouble(CantidadTextBox.Text);
                 }
             }
             catch

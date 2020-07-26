@@ -15,10 +15,5 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public DateTime FechaCreacion { get; set; } = DateTime.Now;
         public String NombreUsuario { get; set; }
         public String Contrasena { get; set; }
-
-        //public Usuarios()
-        //{
-        //    FechaCreacion = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-        //}
     }
 }

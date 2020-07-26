@@ -28,14 +28,9 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("DevolucionId");
 
                     b.HasIndex("EstudianteId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Devoluciones");
                 });
@@ -76,12 +71,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("EditorialId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Editoriales");
                 });
@@ -92,8 +82,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Cantidad")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Cantidad")
+                        .HasColumnType("REAL");
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
@@ -101,14 +91,9 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<int>("LibroId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("EntradaLibroId");
 
                     b.HasIndex("LibroId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("EntradasLibros");
                 });
@@ -122,8 +107,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<string>("Apellidos")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Cedula")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Cedula")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("Correo")
                         .HasColumnType("TEXT");
@@ -137,21 +122,16 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<string>("Genero")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Matricula")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Matricula")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("Nombres")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Telefono")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Telefono")
+                        .HasColumnType("REAL");
 
                     b.HasKey("EstudianteId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Estudiantes");
                 });
@@ -162,8 +142,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Existencia")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Existencia")
+                        .HasColumnType("REAL");
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
@@ -174,12 +154,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<string>("Titulo")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("LibroId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Libros");
                 });
@@ -199,14 +174,9 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<DateTime>("FechaVencimiento")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("PrestamoId");
 
                     b.HasIndex("EstudianteId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Prestamos");
                 });
@@ -244,8 +214,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Cantidad")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Cantidad")
+                        .HasColumnType("REAL");
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
@@ -253,14 +223,9 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<int>("LibroId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("SalidaLibroId");
 
                     b.HasIndex("LibroId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("SalidasLibros");
                 });
@@ -309,12 +274,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .HasForeignKey("EstudianteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.DevolucionesDetalle", b =>
@@ -332,44 +291,11 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.Editoriales", b =>
-                {
-                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.EntradasLibros", b =>
                 {
                     b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Libros", "eLibro")
                         .WithMany()
                         .HasForeignKey("LibroId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.Estudiantes", b =>
-                {
-                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.Libros", b =>
-                {
-                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -379,12 +305,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Estudiantes", "estudiantes")
                         .WithMany()
                         .HasForeignKey("EstudianteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -407,12 +327,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Libros", "sLibro")
                         .WithMany()
                         .HasForeignKey("LibroId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

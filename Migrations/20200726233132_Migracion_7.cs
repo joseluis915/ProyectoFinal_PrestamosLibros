@@ -3,10 +3,60 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
-    public partial class Migracion_6 : Migration
+    public partial class Migracion_7 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Editoriales",
+                columns: table => new
+                {
+                    EditorialId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Descripcion = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Editoriales", x => x.EditorialId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Estudiantes",
+                columns: table => new
+                {
+                    EstudianteId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Matricula = table.Column<double>(nullable: false),
+                    Nombres = table.Column<string>(nullable: true),
+                    Apellidos = table.Column<string>(nullable: true),
+                    FechaNacimiento = table.Column<DateTime>(nullable: false),
+                    Cedula = table.Column<double>(nullable: false),
+                    Genero = table.Column<string>(nullable: true),
+                    Telefono = table.Column<double>(nullable: false),
+                    Direccion = table.Column<string>(nullable: true),
+                    Correo = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Estudiantes", x => x.EstudianteId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Libros",
+                columns: table => new
+                {
+                    LibroId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Titulo = table.Column<string>(nullable: true),
+                    ISBN = table.Column<string>(nullable: true),
+                    Existencia = table.Column<double>(nullable: false),
+                    Fecha = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Libros", x => x.LibroId);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
@@ -25,83 +75,11 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Editoriales",
-                columns: table => new
-                {
-                    EditorialId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    UsuarioId = table.Column<int>(nullable: false),
-                    Descripcion = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Editoriales", x => x.EditorialId);
-                    table.ForeignKey(
-                        name: "FK_Editoriales_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuarioId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Estudiantes",
-                columns: table => new
-                {
-                    EstudianteId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    UsuarioId = table.Column<int>(nullable: false),
-                    Matricula = table.Column<int>(nullable: false),
-                    Nombres = table.Column<string>(nullable: true),
-                    Apellidos = table.Column<string>(nullable: true),
-                    FechaNacimiento = table.Column<DateTime>(nullable: false),
-                    Cedula = table.Column<int>(nullable: false),
-                    Genero = table.Column<string>(nullable: true),
-                    Telefono = table.Column<int>(nullable: false),
-                    Direccion = table.Column<string>(nullable: true),
-                    Correo = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Estudiantes", x => x.EstudianteId);
-                    table.ForeignKey(
-                        name: "FK_Estudiantes_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuarioId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Libros",
-                columns: table => new
-                {
-                    LibroId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    UsuarioId = table.Column<int>(nullable: false),
-                    Titulo = table.Column<string>(nullable: true),
-                    ISBN = table.Column<string>(nullable: true),
-                    Existencia = table.Column<int>(nullable: false),
-                    Fecha = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Libros", x => x.LibroId);
-                    table.ForeignKey(
-                        name: "FK_Libros_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuarioId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Devoluciones",
                 columns: table => new
                 {
                     DevolucionId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UsuarioId = table.Column<int>(nullable: false),
                     EstudianteId = table.Column<int>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false)
                 },
@@ -114,12 +92,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         principalTable: "Estudiantes",
                         principalColumn: "EstudianteId",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Devoluciones_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuarioId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -128,7 +100,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 {
                     PrestamoId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UsuarioId = table.Column<int>(nullable: false),
                     EstudianteId = table.Column<int>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false),
                     FechaVencimiento = table.Column<DateTime>(nullable: false)
@@ -142,12 +113,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         principalTable: "Estudiantes",
                         principalColumn: "EstudianteId",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Prestamos_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuarioId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -156,10 +121,9 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 {
                     EntradaLibroId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UsuarioId = table.Column<int>(nullable: false),
                     LibroId = table.Column<int>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false),
-                    Cantidad = table.Column<int>(nullable: false)
+                    Cantidad = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -170,12 +134,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         principalTable: "Libros",
                         principalColumn: "LibroId",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_EntradasLibros_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuarioId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -184,9 +142,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 {
                     SalidaLibroId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UsuarioId = table.Column<int>(nullable: false),
                     LibroId = table.Column<int>(nullable: false),
-                    Cantidad = table.Column<int>(nullable: false),
+                    Cantidad = table.Column<double>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -197,12 +154,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         column: x => x.LibroId,
                         principalTable: "Libros",
                         principalColumn: "LibroId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SalidasLibros_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuarioId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -273,11 +224,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 column: "EstudianteId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Devoluciones_UsuarioId",
-                table: "Devoluciones",
-                column: "UsuarioId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_DevolucionesDetalle_DevolucionId",
                 table: "DevolucionesDetalle",
                 column: "DevolucionId");
@@ -288,39 +234,14 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 column: "LibroId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Editoriales_UsuarioId",
-                table: "Editoriales",
-                column: "UsuarioId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_EntradasLibros_LibroId",
                 table: "EntradasLibros",
                 column: "LibroId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EntradasLibros_UsuarioId",
-                table: "EntradasLibros",
-                column: "UsuarioId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Estudiantes_UsuarioId",
-                table: "Estudiantes",
-                column: "UsuarioId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Libros_UsuarioId",
-                table: "Libros",
-                column: "UsuarioId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Prestamos_EstudianteId",
                 table: "Prestamos",
                 column: "EstudianteId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Prestamos_UsuarioId",
-                table: "Prestamos",
-                column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PrestamosDetalle_LibroId",
@@ -336,11 +257,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 name: "IX_SalidasLibros_LibroId",
                 table: "SalidasLibros",
                 column: "LibroId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SalidasLibros_UsuarioId",
-                table: "SalidasLibros",
-                column: "UsuarioId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -361,6 +277,9 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 name: "SalidasLibros");
 
             migrationBuilder.DropTable(
+                name: "Usuarios");
+
+            migrationBuilder.DropTable(
                 name: "Devoluciones");
 
             migrationBuilder.DropTable(
@@ -371,9 +290,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
 
             migrationBuilder.DropTable(
                 name: "Estudiantes");
-
-            migrationBuilder.DropTable(
-                name: "Usuarios");
         }
     }
 }

@@ -16,13 +16,13 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         //[ForeignKey("UsuarioId")]
         //public Usuarios Usuario { get; set; } = new Usuarios();
         //————————————————————————————————————————————————————————————————————————————
-        public int Matricula { get; set; }
+        public double Matricula { get; set; }
         public String Nombres { get; set; }
         public String Apellidos { get; set; }
         public DateTime FechaNacimiento { get; set; } = DateTime.Now;
-        public int Cedula { get; set; }
+        public double Cedula { get; set; }
         public String Genero { get; set; }
-        public int Telefono { get; set; }
+        public double Telefono { get; set; }
         public String Direccion { get; set; }
         public String Correo { get; set; }
     }

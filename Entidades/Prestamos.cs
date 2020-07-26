@@ -11,10 +11,10 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
     {
         [Key]
         public int PrestamoId { get; set; }
-        public int UsuarioId { get; set; }
+        //public int UsuarioId { get; set; }
         //———————————————————————————[ForeingKey UsuarioId]———————————————————————————
-        [ForeignKey("UsuarioId")]
-        public Usuarios Usuario { get; set; } = new Usuarios();
+        //[ForeignKey("UsuarioId")]
+        //public Usuarios Usuario { get; set; } = new Usuarios();
         //————————————————————————————————————————————————————————————————————————————
         public int EstudianteId { get; set; }
         //———————————————————————————[ForeingKey EstudianteId]———————————————————————————

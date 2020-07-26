@@ -216,7 +216,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 if (MatriculaTextBox.Text.Trim() != string.Empty)
                 {
-                    int.Parse(MatriculaTextBox.Text);
+                    Convert.ToDouble(MatriculaTextBox.Text);
                 }
             }
             catch
@@ -234,7 +234,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 if (CedulaTextBox.Text.Trim() != string.Empty)
                 {
-                    int.Parse(CedulaTextBox.Text);
+                    Convert.ToDouble(CedulaTextBox.Text);
                 }
             }
             catch
@@ -252,7 +252,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 if (TelefonoTextBox.Text.Trim() != string.Empty)
                 {
-                    int.Parse(TelefonoTextBox.Text);
+                    Convert.ToDouble(TelefonoTextBox.Text);
                 }
             }
             catch
