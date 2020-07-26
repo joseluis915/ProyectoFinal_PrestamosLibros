@@ -5,44 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Consultas"
         mc:Ignorable="d"
-        Title="CONSULTAR ESTUDIANTE" Height="450" Width="650" WindowStartupLocation="CenterScreen" Icon="/Resources/Lista.png" >
+        Title="CONSULTAR ESTUDIANTE" Height="450" Width="680" WindowStartupLocation="CenterScreen" Icon="/Resources/Lista.png" >
     <Grid>
         <StackPanel Orientation="Vertical" Margin="0,5,0,0" HorizontalAlignment="Center">
-
-            <StackPanel Orientation="Horizontal" Height="58">
+            <StackPanel Orientation="Horizontal" Height="60">
+                <!--——————————————————————————————————————————————[ DESDE ]——————————————————————————————————————————————-->
                 <StackPanel>
-                    <Label Content="Nacimiento Desde:"/>
-                    <DatePicker x:Name="DesdeDatePicker" />
+                    <Label Content="Desde:"/>
+                    <DatePicker x:Name="DesdeDatePicker" Margin="0,0,15,0" />
                 </StackPanel>
-
-                <StackPanel Orientation="Vertical" Margin="5,0">
-                    <Label Content="Nacimiento Hasta:" />
+                <!--——————————————————————————————————————————————[ HASTA ]——————————————————————————————————————————————-->
+                <StackPanel Orientation="Vertical" Margin="0,0,20,0" >
+                    <Label Content="Hasta:" />
                     <DatePicker x:Name="HastaDatePicker"/>
                 </StackPanel>
-
-                <StackPanel Margin="5,0">
+                <!--——————————————————————————————————————————————[ FILTRO ]——————————————————————————————————————————————-->
+                <StackPanel  Margin="0,0,10,0" >
                     <Label Content="Filtro:" />
-                    <ComboBox x:Name="FiltroComboBox" Width="95" Height="24">
+                    <ComboBox x:Name="FiltroComboBox" Width="95" Height="24" >
                         <ComboBoxItem Content="Id"/>
                     </ComboBox>
                 </StackPanel>
-
+                <!--——————————————————————————————————————————————[ CRITERIO ]——————————————————————————————————————————————-->
                 <StackPanel Margin="5,0">
                     <Label Content="Critero:"/>
-                    <TextBox x:Name="CriterioTextBox" Width="95" Height="24" Margin="0,0,5,0" VerticalAlignment="Center" />
-
+                    <TextBox x:Name="CriterioTextBox" Width="95" Height="24" Margin="0,0,10,0" VerticalContentAlignment="Center" />
                 </StackPanel>
-
+                <!--——————————————————————————————————————————————[ CONSULTAR ]——————————————————————————————————————————————-->
                 <Button x:Name="ConsultarButton" Height="30" Width="90" Click="ConsultarButton_Click" >
                     <StackPanel Orientation="Horizontal" >
-                        <Image Source="/Resources/Buscar.png" Width="25"  />
-                        <Label Content="Consultar" />
+                        <Image Source="/Resources/Buscar.png"/>
+                        <Label Content="Consultar"/>
                     </StackPanel>
                 </Button>
-
+                <!--——————————————————————————————————————————————[ DATA GRID ]——————————————————————————————————————————————-->
             </StackPanel>
-            <StackPanel HorizontalAlignment="Left" >
-                <DataGrid x:Name="DatosDataGrid" Height="350" Width="605"/>
+            <StackPanel HorizontalAlignment="Left" Width="635" >
+                <DataGrid x:Name="DatosDataGrid" Height="330"  IsReadOnly="True"/>
             </StackPanel>
         </StackPanel>
     </Grid>
