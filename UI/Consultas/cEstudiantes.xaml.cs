@@ -42,6 +42,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
             }
             else
             {
+                MessageBox.Show("Has dejado el Campo (Criterio) vacio.\n\nPor lo tanto, aparecerán todos los Estudiantes", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                 listado = EstudiantesBLL.GetList(c => true);
             }
 
