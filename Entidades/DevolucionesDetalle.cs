@@ -4,6 +4,7 @@ using System.Text;
 //Using agregados
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace ProyectoFinal_PrestamosLibros.Entidades
 {
@@ -13,11 +14,11 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public int DevolucionDetalleId { get; set; }
         public int DevolucionId { get; set; }
         public int LibroId { get; set; }
-        //———————————————————————————[ForeingKey UsuarioId]———————————————————————————
-        [ForeignKey("LibroId")]
-        public Libros libros { get; set; } = new Libros();
-        //————————————————————————————————————————————————————————————————————————————
         public int LibrosDevueltos { get; set; }
         public int Dias { get; set; }
+
+        //———————————————————————————[ ForeingKey ]———————————————————————————
+        [ForeignKey("LibroId")]
+        public Libros libros { get; set; } = new Libros();
     }
 }

@@ -11,8 +11,8 @@ namespace ProyectoFinal_PrestamosLibros.DAL
     {
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Estudiantes> Estudiantes { get; set; }
-        public DbSet<Libros> Libros { get; set; }
         public DbSet<Editoriales> Editoriales { get; set; }
+        public DbSet<Libros> Libros { get; set; }
         public DbSet<EntradasLibros> EntradasLibros { get; set; }
         public DbSet<SalidasLibros> SalidasLibros { get; set; }
         public DbSet<Prestamos> Prestamos { get; set; }
@@ -21,7 +21,7 @@ namespace ProyectoFinal_PrestamosLibros.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.EnableSensitiveDataLogging().UseSqlite(@"Data Source = Data\ProyectoFinal_PrestamosLibros.DB");
+            optionsBuilder.UseSqlite(@"Data Source = Data\ProyectoFinal_PrestamosLibros.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

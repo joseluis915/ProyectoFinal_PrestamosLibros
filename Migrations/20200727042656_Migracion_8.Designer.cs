@@ -9,8 +9,8 @@ using ProyectoFinal_PrestamosLibros.DAL;
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200726233132_Migracion_7")]
-    partial class Migracion_7
+    [Migration("20200727042656_Migracion_8")]
+    partial class Migracion_8
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -176,6 +176,9 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<DateTime>("FechaVencimiento")
                         .HasColumnType("TEXT");
 
+                    b.Property<double>("LibrosTotal")
+                        .HasColumnType("REAL");
+
                     b.HasKey("PrestamoId");
 
                     b.HasIndex("EstudianteId");
@@ -189,7 +192,10 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CantidadLibro")
+                    b.Property<double>("CantidadLibro")
+                        .HasColumnType("REAL");
+
+                    b.Property<int>("EstudianteId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("LibroId")

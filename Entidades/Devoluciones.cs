@@ -11,19 +11,19 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
     {
         [Key]
         public int DevolucionId { get; set; }
-        //public int UsuarioId { get; set; }
-        //———————————————————————————[ForeingKey UsuarioId]———————————————————————————
-        //[ForeignKey("UsuarioId")]
-        //public Usuarios Usuario { get; set; } = new Usuarios();
-        //————————————————————————————————————————————————————————————————————————————
         public int EstudianteId { get; set; }
-        //———————————————————————————[ForeingKey EstudianteId]———————————————————————————
-        [ForeignKey("EstudianteId")]
-        public Estudiantes estudiantes { get; set; } = new Estudiantes();
-        //————————————————————————————————————————————————————————————————————————————
         public DateTime Fecha { get; set; } = DateTime.Now;
-        //———————————————————————————[ForeingKey DevolucionId]———————————————————————————
+        
+        //———————————————————————————[ ForeingKey ]———————————————————————————
         [ForeignKey("DevolucionId")]
         public virtual List<DevolucionesDetalle> Detalle { get; set; } = new List<DevolucionesDetalle>();
+
+        [ForeignKey("EstudianteId")]
+        public Estudiantes estudiantes { get; set; } = new Estudiantes();
     }
 }
+//public int UsuarioId { get; set; }
+//———————————————————————————[ForeingKey UsuarioId]———————————————————————————
+//[ForeignKey("UsuarioId")]
+//public Usuarios Usuario { get; set; } = new Usuarios();
+//————————————————————————————————————————————————————————————————————————————

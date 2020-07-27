@@ -11,7 +11,7 @@
             <Label Content="Prestamo Id" FontWeight="Bold" FontSize="16"/>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="ProyectoIdTextbox" Text="{Binding PrestamoId}" Width="240" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="PrestamoIdTextbox" Text="{Binding PrestamoId}" Width="240" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="PrestamoIdTextbox_TextChanged"/>
                 <Button x:Name="BuscarButton" Margin="80,0,0,0" Width="120" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Buscar.png" />
@@ -21,7 +21,7 @@
             </StackPanel>
             <!--—————————————————————————————————————[ EstudianteId ]—————————————————————————————————————-->
             <Label Content="Estudiante Id" FontWeight="Bold" Margin="0,5,0,0"  />
-            <TextBox x:Name="EstudianteIdTextBox" Text="{Binding EstudianteId}" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalAlignment="Left" />
+            <ComboBox x:Name="EstudianteIdComboBox" SelectedValue="{Binding EstudianteId}" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalAlignment="Left" />
             <!--—————————————————————————————————————[ Fecha Prestamo y Vencimiento]—————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                 <!--—————————————————————————————————————[ Fecha Prestamo ]—————————————————————————————————————-->
@@ -49,7 +49,7 @@
                             <!--——————————————————————[ Cantidad ]——————————————————————-->
                             <StackPanel Orientation="Vertical" Margin="0,0,40,0" >
                                 <Label Content="Cantidad" HorizontalAlignment="Center"/>
-                                <TextBox x:Name="CantidadLibroTextBox" Height="23" Width="100"/>
+                                <TextBox x:Name="CantidadLibroTextBox" Height="23" Width="100" VerticalContentAlignment="Center" TextChanged="CantidadLibroTextBox_TextChanged"/>
                             </StackPanel>
                             <!--——————————————————————[ AgregarFilaButton ]——————————————————————-->
                             <Button x:Name="AgregarFilaButton" Click="AgregarFilaButton_Click" Height="30" >
@@ -63,21 +63,22 @@
                         <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding Detalle}" Height="80" AutoGenerateColumns="False" Margin="0,10,0,0">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Libro Id" Binding="{Binding LibroId}"/>
+                                <DataGridTextColumn Header="Titulo" Binding="{Binding libros.Titulo}"/>
                                 <DataGridTextColumn Header="Cantidad" Binding="{Binding CantidadLibro}"/>
                             </DataGrid.Columns>
                         </DataGrid>
 
                         <!--——————————————————————[ RemoverFilaButton ]——————————————————————-->
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0">
-                            <Button x:Name="RemoverFilaButton" Click="RemoverFilaButton_Click" Width="175">
+                            <Button x:Name="RemoverFilaButton" Click="RemoverFilaButton_Click" Width="175" Margin="0,0,65,0" >
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/Resources/Eliminar.png" Height="25"/>
                                     <Label Content="Remover fila seleccionada"/>
                                 </StackPanel>
                             </Button>
                             <!--——————————————————————[ TiempoTotal ]——————————————————————-->
-                            <Label Content="Total" Margin="105,0,0,0" FontWeight="Bold" />
-                            <TextBox x:Name="CantidadTotalTextBox" Text="{Binding CantidadTotal}" Width="130" IsReadOnly="True" VerticalContentAlignment="Center"/>
+                            <Label Content="Libros Total" FontWeight="Bold" />
+                            <TextBox x:Name="LibrosTotalTextBox" Text="{Binding LibrosTotal}" Width="130" IsReadOnly="True" VerticalContentAlignment="Center"/>
                         </StackPanel>
                     </StackPanel>
                 </GroupBox>
