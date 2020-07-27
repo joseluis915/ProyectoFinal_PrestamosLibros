@@ -82,7 +82,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             Contexto contexto = new Contexto();
             try
             {
-                var proyectos = contexto.Prestamos.Find(id);
+                var proyectos = PrestamosBLL.Buscar(id);
                 if (proyectos != null)
                 {
                     contexto.Prestamos.Remove(proyectos);

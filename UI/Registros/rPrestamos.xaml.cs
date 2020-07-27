@@ -81,6 +81,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 PrestamosId = this.prestamos.PrestamoId,
                 LibroId = Convert.ToInt32(LibroIdComboBox.SelectedValue.ToString()),
+                //libros = (Libros)LibroIdComboBox.SelectedItem,
                 CantidadLibro = Convert.ToSingle(CantidadLibroTextBox.Text)
             };
             //——————————————————————————————[ Nombre en el ComboBox ]——————————————————————————————
@@ -92,21 +93,31 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             Cargar();
 
             LibroIdComboBox.SelectedIndex = -1;
-            CantidadLibroTextBox.Clear();
+            CantidadLibroTextBox.Text = "1";
         }
         //——————————————————————————————————————————————————————————————[ Remover Fila ]———————————————————————————————————————————————————————————————
         private void RemoverFilaButton_Click(object sender, RoutedEventArgs e)
         {
-            if (DetalleDataGrid.Items.Count >= 1 && DetalleDataGrid.SelectedIndex <= DetalleDataGrid.Items.Count - 1)
+            try
             {
-                prestamos.Detalle.RemoveAt(DetalleDataGrid.SelectedIndex);
-                Cargar();
+                double total = Convert.ToDouble(CantidadLibroTextBox.Text);
+                if (DetalleDataGrid.Items.Count >= 1 && DetalleDataGrid.SelectedIndex <= DetalleDataGrid.Items.Count - 1)
+                {
+                    prestamos.Detalle.RemoveAt(DetalleDataGrid.SelectedIndex);
+                    prestamos.LibrosTotal -= total;
+                    Cargar();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No has seleccionado ninguna Fila\n\nSeleccione la Fila a Remover.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         //——————————————————————————————————————————————————————————————[ Nuevo ]———————————————————————————————————————————————————————————————
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
+            CantidadLibroTextBox.Text = "1";
         }
         //——————————————————————————————————————————————————————————————[ Guardar ]———————————————————————————————————————————————————————————————
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
@@ -173,24 +184,6 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 PrestamoIdTextbox.Text = "0";
                 PrestamoIdTextbox.Focus();
                 PrestamoIdTextbox.SelectAll();
-            }
-        }
-        //——————————————————————————————————————————[ Cantidad Libro ]——————————————————————————————————————————
-        private void CantidadLibroTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            try
-            {
-                if (CantidadLibroTextBox.Text.Trim() != string.Empty)
-                {
-                    double.Parse(CantidadLibroTextBox.Text);
-                }
-            }
-            catch
-            {
-                MessageBox.Show($"El valor digitado en el campo (Cantidad Libros) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                CantidadLibroTextBox.Text = "0";
-                CantidadLibroTextBox.Focus();
-                CantidadLibroTextBox.SelectAll();
             }
         }
     }

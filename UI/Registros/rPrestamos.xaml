@@ -48,8 +48,8 @@
                             </StackPanel>
                             <!--——————————————————————[ Cantidad ]——————————————————————-->
                             <StackPanel Orientation="Vertical" Margin="0,0,40,0" >
-                                <Label Content="Cantidad" HorizontalAlignment="Center"/>
-                                <TextBox x:Name="CantidadLibroTextBox" Height="23" Width="100" VerticalContentAlignment="Center" TextChanged="CantidadLibroTextBox_TextChanged"/>
+                                <Label Content="Cantidad (Max 1)" HorizontalAlignment="Center"/>
+                                <TextBox x:Name="CantidadLibroTextBox" Height="23" Width="100" Text="1" IsReadOnly="True" VerticalContentAlignment="Center"/>
                             </StackPanel>
                             <!--——————————————————————[ AgregarFilaButton ]——————————————————————-->
                             <Button x:Name="AgregarFilaButton" Click="AgregarFilaButton_Click" Height="30" >
