@@ -28,6 +28,9 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
+                    b.Property<double>("Total")
+                        .HasColumnType("REAL");
+
                     b.HasKey("DevolucionId");
 
                     b.HasIndex("EstudianteId");
@@ -44,14 +47,14 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<int>("DevolucionId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Dias")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Dias")
+                        .HasColumnType("REAL");
 
                     b.Property<int>("LibroId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("LibrosDevueltos")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("LibrosDevueltos")
+                        .HasColumnType("REAL");
 
                     b.HasKey("DevolucionDetalleId");
 

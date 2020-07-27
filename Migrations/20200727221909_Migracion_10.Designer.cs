@@ -9,8 +9,8 @@ using ProyectoFinal_PrestamosLibros.DAL;
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200727155306_Migracion_9")]
-    partial class Migracion_9
+    [Migration("20200727221909_Migracion_10")]
+    partial class Migracion_10
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,9 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
+                    b.Property<double>("Total")
+                        .HasColumnType("REAL");
+
                     b.HasKey("DevolucionId");
 
                     b.HasIndex("EstudianteId");
@@ -46,14 +49,14 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<int>("DevolucionId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Dias")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Dias")
+                        .HasColumnType("REAL");
 
                     b.Property<int>("LibroId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("LibrosDevueltos")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("LibrosDevueltos")
+                        .HasColumnType("REAL");
 
                     b.HasKey("DevolucionDetalleId");
 
