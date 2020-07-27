@@ -34,7 +34,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Login
         //———————————————————————————————————————————————————[ INGRESAR ]———————————————————————————————————————————————————
         private void IngresarButton_Click(object sender, RoutedEventArgs e)
         {
-            bool paso = LoginBLL.Validar(NombreUsuarioTextBox.Text, ContrasenaPasswordBox.Password);
+            bool paso = UsuariosBLL.Autenticar(NombreUsuarioTextBox.Text, ContrasenaPasswordBox.Password);
 
             if (paso)
             {
@@ -46,6 +46,33 @@ namespace ProyectoFinal_PrestamosLibros.UI.Login
                 MessageBox.Show("Nombre de Usuario o Contraseña incorrecta", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 ContrasenaPasswordBox.Clear();
                 NombreUsuarioTextBox.Focus();
+            }
+        }
+        //———————————————————————————————————————————————————[ NOMBRE USUARIO - ENTER ]———————————————————————————————————————————————————
+        private void NombreUsuarioTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                 ContrasenaPasswordBox.Focus();
+            }
+        }
+        //———————————————————————————————————————————————————[CONTRASEÑA - ENTER ]———————————————————————————————————————————————————
+        private void ContrasenaPasswordBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                bool paso = UsuariosBLL.Autenticar(NombreUsuarioTextBox.Text, ContrasenaPasswordBox.Password);
+
+                if (paso)
+                {
+                    MenuPrincipal.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Nombre de Usuario o Contraseña incorrecta", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    ContrasenaPasswordBox.Clear();
+                    NombreUsuarioTextBox.Focus();
+                }
             }
         }
     }

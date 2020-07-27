@@ -160,6 +160,31 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             
             return Lista;
         }
+        //———————————————————————————————————————————————————[ AUTENTICAR ]———————————————————————————————————————————————————
+        public static bool Autenticar(string nombreusuario, string contrasena)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                var autenticar = from usuario in contexto.Usuarios where usuario.NombreUsuario == nombreusuario && usuario.Contrasena == GetSHA256(contrasena) select usuario;
+                if (autenticar.Count() > 0)
+                    paso = true;
+                else
+                    paso = false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return paso;
+        }
         //———————————————————————————————————————————————————[ ENCRIPTAR CLAVE ]———————————————————————————————————————————————————
         private static string GetSHA256(string str)
         {
