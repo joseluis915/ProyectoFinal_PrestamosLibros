@@ -95,6 +95,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
 
             LibroIdComboBox.SelectedIndex = -1;
             LibrosDevueltosTextBox.Text = "1";
+            DiasTextBox.Clear();
         }
         //——————————————————————————————————————————————————————————————[ Remover Fila ]———————————————————————————————————————————————————————————————
         private void RemoverFilaButton_Click(object sender, RoutedEventArgs e)

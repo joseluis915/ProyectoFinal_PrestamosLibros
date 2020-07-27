@@ -120,6 +120,11 @@ namespace ProyectoFinal_PrestamosLibros
             cPrestamos.Show();
         }
         //----------------------------[ Devoluciones ]----------------------------
+        private void cDevolucionesMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cDevoluciones cDevoluciones = new cDevoluciones();
+            cDevoluciones.Show();
+        }
 
         //——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————
         private void InformacionMenuItem_Click(object sender, RoutedEventArgs e)

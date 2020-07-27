@@ -28,6 +28,7 @@
                     <MenuItem x:Name="cEntradasLibrosMenuItem" Click="cEntradasLibrosMenuItem_Click" Header="Consultar Entradas de Libros"/>
                     <MenuItem x:Name="cSalidasLibrosMenuItem" Click="cSalidasLibrosMenuItem_Click" Header="Consultar Salidas de Libros"/>
                     <MenuItem x:Name="cPrestamosMenuItem" Click="cPrestamosMenuItem_Click" Header="Consultar Prestamos"/>
+                    <MenuItem x:Name="cDevolucionesMenuItem" Click="cDevolucionesMenuItem_Click" Header="Consultar Devoluciones"/>
                 </MenuItem>
 
                 <MenuItem x:Name="InformacionMenuItem" Click="InformacionMenuItem_Click" Header="Informacion"/>
