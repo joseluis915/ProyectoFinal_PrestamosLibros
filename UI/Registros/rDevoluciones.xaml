@@ -11,7 +11,7 @@
             <Label Content="Devolucion Id" FontWeight="Bold" FontSize="16"/>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="ProyectoIdTextbox" Text="{Binding DevolucionId}" Width="240" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="DevolucionIdTextbox" Text="{Binding DevolucionId}" Width="240" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
                 <Button x:Name="BuscarButton" Margin="80,0,0,0" Width="120" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Buscar.png" />
@@ -21,7 +21,7 @@
             </StackPanel>
             <!--—————————————————————————————————————[ EstudianteId ]—————————————————————————————————————-->
             <Label Content="Estudiante Id" FontWeight="Bold" Margin="0,5,0,0"  />
-            <TextBox x:Name="EstudianteIdTextBox" Text="{Binding EstudianteId}" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalAlignment="Left" />
+            <ComboBox x:Name="EstudianteIdComboBox" SelectedValue="{Binding EstudianteId}" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalAlignment="Left" />
             <!--—————————————————————————————————————[ Fecha Devolucion ]—————————————————————————————————————-->
             <StackPanel Orientation="Vertical">
                 <Label x:Name="FechaLabel" Content="Fecha Devolucion" FontWeight="Bold" />
@@ -41,7 +41,7 @@
                             <!--——————————————————————[ LibrosDevueltos ]——————————————————————-->
                             <StackPanel Orientation="Vertical" Margin="0,0,10,0" >
                                 <Label Content="Libros Devueltos" HorizontalAlignment="Center"/>
-                                <TextBox x:Name="LibrosDevueltosTextBox" Height="23" Width="100"/>
+                                <TextBox x:Name="LibrosDevueltosTextBox" Height="23" Width="100" IsReadOnly="True" Text="1"/>
                             </StackPanel>
                             <!--——————————————————————[ Dias ]——————————————————————-->
                             <StackPanel Orientation="Vertical" Margin="0,0,20,0" >
