@@ -70,15 +70,15 @@
 
                         <!--——————————————————————[ RemoverFilaButton ]——————————————————————-->
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0">
-                            <Button x:Name="RemoverFilaButton" Click="RemoverFilaButton_Click" Width="175" Margin="0,0,65,0" >
+                            <Button x:Name="RemoverFilaButton" Click="RemoverFilaButton_Click" Width="175" Margin="0,0,55,0" >
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/Resources/Eliminar.png" Height="25"/>
                                     <Label Content="Remover fila seleccionada"/>
                                 </StackPanel>
                             </Button>
                             <!--——————————————————————[ TiempoTotal ]——————————————————————-->
-                            <Label Content="Libros Total" FontWeight="Bold" />
-                            <TextBox x:Name="LibrosTotalTextBox" Text="{Binding LibrosTotal}" Width="130" IsReadOnly="True" VerticalContentAlignment="Center"/>
+                            <Label Content="Cantidad Total" FontWeight="Bold" />
+                            <TextBox x:Name="CantidadTotalTextBox" Text="{Binding LibrosTotal}" Width="130" IsReadOnly="True" VerticalContentAlignment="Center"/>
                         </StackPanel>
                     </StackPanel>
                 </GroupBox>
