@@ -27,6 +27,7 @@
                     <MenuItem x:Name="cLibrosMenuItem" Click="cLibrosMenuItem_Click" Header="Consultar Libros"/>
                     <MenuItem x:Name="cEntradasLibrosMenuItem" Click="cEntradasLibrosMenuItem_Click" Header="Consultar Entradas de Libros"/>
                     <MenuItem x:Name="cSalidasLibrosMenuItem" Click="cSalidasLibrosMenuItem_Click" Header="Consultar Salidas de Libros"/>
+                    <MenuItem x:Name="cPrestamosMenuItem" Click="cPrestamosMenuItem_Click" Header="Consultar Prestamos"/>
                 </MenuItem>
 
                 <MenuItem x:Name="InformacionMenuItem" Click="InformacionMenuItem_Click" Header="Informacion"/>
@@ -44,7 +45,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <Label Content="Ultima modificacion:" FontWeight="Bold" FontSize="18" FontStyle="Italic"/>
-                <Label x:Name="ModificacionLabel" Content="24/07/2020" FontSize="18" />
+                <Label x:Name="ModificacionLabel" Content="27/07/2020" FontSize="18" />
             </StackPanel>
 
             <Label x:Name="PropietarioLabel" Content="©2020 JL-AR Solutions" FontWeight="Bold"  FontSize="16" FontStyle="Italic" HorizontalAlignment="Center" Margin="0,20,0,0"/>

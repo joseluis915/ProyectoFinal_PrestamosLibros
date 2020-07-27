@@ -114,7 +114,11 @@ namespace ProyectoFinal_PrestamosLibros
             cSalidasLibros.Show();
         }
         //----------------------------[ Prestamos ]----------------------------
-
+        private void cPrestamosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cPrestamos cPrestamos = new cPrestamos();
+            cPrestamos.Show();
+        }
         //----------------------------[ Devoluciones ]----------------------------
 
         //——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————
