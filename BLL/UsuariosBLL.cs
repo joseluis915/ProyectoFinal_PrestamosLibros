@@ -32,7 +32,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             {
                 contexto.Dispose();
             }
-            
+
             return encontrado;
         }
         //———————————————————————————————————————————————————[ GUARDAR - REGISTRO ]———————————————————————————————————————————————————
@@ -71,7 +71,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             Contexto contexto = new Contexto();
             bool modificado = false;
             usuario.Contrasena = GetSHA256(usuario.Contrasena);
-            
+
             try
             {
                 contexto.Entry(usuario).State = EntityState.Modified;
@@ -85,7 +85,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             {
                 contexto.Dispose();
             }
-            
+
             return modificado;
         }
         //———————————————————————————————————————————————————[ ELIMINAR - REGISTRO ]———————————————————————————————————————————————————
@@ -113,7 +113,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             {
                 contexto.Dispose();
             }
-            
+
             return eliminado;
         }
         //———————————————————————————————————————————————————[ BUSCAR - REGISTRO ]———————————————————————————————————————————————————
@@ -135,7 +135,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             {
                 contexto.Dispose();
             }
-            
+
             return usuario;
         }
         //———————————————————————————————————————————————————[ LISTAR ]———————————————————————————————————————————————————
@@ -157,7 +157,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             {
                 contexto.Dispose();
             }
-            
+
             return Lista;
         }
         //———————————————————————————————————————————————————[ AUTENTICAR ]———————————————————————————————————————————————————
@@ -168,11 +168,13 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 
             try
             {
-                var autenticar = from usuario in contexto.Usuarios where usuario.NombreUsuario == nombreusuario && usuario.Contrasena == GetSHA256(contrasena) select usuario;
-                if (autenticar.Count() > 0)
-                    paso = true;
-                else
-                    paso = false;
+                paso = contexto.Usuarios.Any(u => u.NombreUsuario.Equals(nombreusuario) && u.Contrasena.Equals(GetSHA256(contrasena)));
+                
+                //var autenticar = from usuario in contexto.Usuarios where usuario.NombreUsuario == nombreusuario && usuario.Contrasena == GetSHA256(contrasena) select usuario;
+                //if (autenticar.Count() > 0)
+                //    paso = true;
+                //else
+                //    paso = false;
             }
             catch (Exception)
             {
@@ -194,7 +196,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             StringBuilder sb = new StringBuilder();
             stream = sha256.ComputeHash(encoding.GetBytes(str));
             for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
-            
+
             return sb.ToString();
         }
     }
