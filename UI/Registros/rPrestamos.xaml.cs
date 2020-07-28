@@ -81,11 +81,11 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 PrestamosId = this.prestamos.PrestamoId,
                 LibroId = Convert.ToInt32(LibroIdComboBox.SelectedValue.ToString()),
-                //libros = (Libros)LibroIdComboBox.SelectedItem,
+                //——————————————————————————————[ Nombre en el ComboBox ]——————————————————————————————
+                libros = (Libros)LibroIdComboBox.SelectedItem,
+                //—————————————————————————————————————————————————————————————————————————————————————
                 CantidadLibro = Convert.ToSingle(CantidadLibroTextBox.Text)
             };
-            //——————————————————————————————[ Nombre en el ComboBox ]——————————————————————————————
-            //filaDetalle.libros = (Libros)LibroIdComboBox.SelectedItem;
             //——————————————————————————————[Tiempo Total]——————————————————————————————
             prestamos.LibrosTotal += Convert.ToDouble(CantidadLibroTextBox.Text.ToString());
             //——————————————————————————————————————————————————————————————————————————

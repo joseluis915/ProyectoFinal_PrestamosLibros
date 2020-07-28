@@ -81,11 +81,12 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 DevolucionId = this.devoluciones.DevolucionId,
                 LibroId = Convert.ToInt32(LibroIdComboBox.SelectedValue.ToString()),
-                //libros = (Libros)LibroIdComboBox.SelectedItem,
+                //——————————————————————————————[ Nombre en el ComboBox ]——————————————————————————————
+                libros = (Libros)LibroIdComboBox.SelectedItem,
+                //—————————————————————————————————————————————————————————————————————————————————————
                 LibrosDevueltos = Convert.ToSingle(LibrosDevueltosTextBox.Text),
-                Dias = Convert.ToSingle(LibrosDevueltosTextBox.Text)
+                Dias = double.Parse(LibrosDevueltosTextBox.Text)
             };
-            //——————————————————————————————[ Nombre en el ComboBox ]——————————————————————————————
             //filaDetalle.libros = (Libros)LibroIdComboBox.SelectedItem;
             //——————————————————————————————[Tiempo Total]——————————————————————————————
             devoluciones.Total += Convert.ToDouble(LibrosDevueltosTextBox.Text.ToString());

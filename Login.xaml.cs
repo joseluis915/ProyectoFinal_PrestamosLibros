@@ -19,7 +19,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Login
     {
         Usuarios usuarios = new Usuarios();
         MainWindow MenuPrincipal = new MainWindow();
-        
+
         public Login()
         {
             InitializeComponent();
@@ -31,13 +31,28 @@ namespace ProyectoFinal_PrestamosLibros.UI.Login
 
             Application.Current.Shutdown();
         }
+        //———————————————————————————————————————————————————[ CANCELAR ]———————————————————————————————————————————————————
+        private void CancelarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
         //———————————————————————————————————————————————————[ INGRESAR ]———————————————————————————————————————————————————
         private void IngresarButton_Click(object sender, RoutedEventArgs e)
         {
             bool paso = UsuariosBLL.Autenticar(NombreUsuarioTextBox.Text, ContrasenaPasswordBox.Password);
 
+            //—————————————————————————————————[ NombreUsuario Vacio]—————————————————————————————————
+            if (NombreUsuarioTextBox.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("El Campo (Nombre Usuario) esta vacio.\n\nPorfavor, escriba su nombre de usuario.", "Precaución", MessageBoxButton.OK, MessageBoxImage.Warning);
+                NombreUsuarioTextBox.Clear();
+                NombreUsuarioTextBox.Focus();
+                return;
+            }
+
             if (paso)
             {
+                this.Hide();
                 MenuPrincipal.Show();
                 //this.WindowState = WindowState.Minimized; //Minimiza el LogIn
             }
@@ -53,7 +68,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Login
         {
             if (e.Key == Key.Return)
             {
-                 ContrasenaPasswordBox.Focus();
+                ContrasenaPasswordBox.Focus();
             }
         }
         //———————————————————————————————————————————————————[CONTRASEÑA - ENTER ]———————————————————————————————————————————————————
@@ -65,6 +80,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Login
 
                 if (paso)
                 {
+                    this.Hide();
                     MenuPrincipal.Show();
                 }
                 else

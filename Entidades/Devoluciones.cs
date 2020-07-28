@@ -11,6 +11,7 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
     {
         [Key]
         public int DevolucionId { get; set; }
+        public int UsuarioId { get; set; }
         public int EstudianteId { get; set; }
         public DateTime Fecha { get; set; } = DateTime.Now;
         public double Total { get; set; }
@@ -19,12 +20,10 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         [ForeignKey("DevolucionId")]
         public virtual List<DevolucionesDetalle> Detalle { get; set; } = new List<DevolucionesDetalle>();
 
+        [ForeignKey("UsuarioId")]
+        public virtual Usuarios Usuario { get; set; } = new Usuarios();
+
         [ForeignKey("EstudianteId")]
         public Estudiantes estudiantes { get; set; } = new Estudiantes();
     }
 }
-//public int UsuarioId { get; set; }
-//———————————————————————————[ForeingKey UsuarioId]———————————————————————————
-//[ForeignKey("UsuarioId")]
-//public Usuarios Usuario { get; set; } = new Usuarios();
-//————————————————————————————————————————————————————————————————————————————

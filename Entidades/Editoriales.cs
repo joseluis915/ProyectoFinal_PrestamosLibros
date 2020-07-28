@@ -11,11 +11,11 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
     {
         [Key]
         public int EditorialId { get; set; }
-        //public int UsuarioId { get; set; }
-        //———————————————————————————[ForeingKey UsuarioId]———————————————————————————
-        //[ForeignKey("UsuarioId")]
-        //public Usuarios Usuario { get; set; } = new Usuarios();
-        //————————————————————————————————————————————————————————————————————————————
+        public int UsuarioId { get; set; }
         public String Descripcion { get; set; }
+
+        //———————————————————————————[ ForeingKey ]———————————————————————————
+        [ForeignKey("UsuarioId")]
+        public virtual Usuarios Usuario { get; set; } = new Usuarios();
     }
 }

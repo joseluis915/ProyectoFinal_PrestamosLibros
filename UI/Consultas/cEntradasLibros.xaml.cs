@@ -36,7 +36,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
             }
             else
             {
-                MessageBox.Show("Has dejado el Campo (Criterio) vacio.\n\nPor lo tanto, se mostrarán todas las Entradas de Libros", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                //MessageBox.Show("Has dejado el Campo (Criterio) vacio.\n\nPor lo tanto, se mostrarán todas las Entradas de Libros", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                 listado = EntradasLibrosBLL.GetList(c => true);
             }
 

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Login"
         xmlns:PasswordHelper="clr-namespace:ProyectoFinal_PrestamosLibros.Resources.PasswordHelper"
         mc:Ignorable="d"
-        Title="LogIn" Height="350" Width="350" WindowStartupLocation="CenterScreen" Icon="/Resources/Entrar.png" >
+        Title="LogIn" Height="360" Width="360" WindowStartupLocation="CenterScreen" Icon="/Resources/Entrar.png" >
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Center">
             <!--—————————————————————————————————————————[ IMAGEN Y TITULO ]—————————————————————————————————————————-->
@@ -16,19 +16,26 @@
             <Label Content="Nombre Usuario" Margin="25,5,0,0"/>
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Resources/Usuario.png" Height="30" />
-                <TextBox x:Name="NombreUsuarioTextBox" Text="{Binding NombreUsuario}" Width="255" VerticalContentAlignment="Center" KeyDown="NombreUsuarioTextBox_KeyDown" />
+                <TextBox x:Name="NombreUsuarioTextBox" Text="{Binding NombreUsuario}" Width="235" VerticalContentAlignment="Center" KeyDown="NombreUsuarioTextBox_KeyDown" />
             </StackPanel>
             <!--—————————————————————————————————————————[ CONTRASEÑA ]—————————————————————————————————————————-->
             <Label Content="Contraseña" Margin="25,10,0,0" />
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Resources/Candado.png" Height="30" />
-                <PasswordBox x:Name="ContrasenaPasswordBox" PasswordHelper:PasswordHelper.Attach="True" PasswordHelper:PasswordHelper.Password="{Binding Contrasena, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="255" VerticalContentAlignment="Center" KeyDown="ContrasenaPasswordBox_KeyDown"/>
+                <PasswordBox x:Name="ContrasenaPasswordBox" PasswordHelper:PasswordHelper.Attach="True" PasswordHelper:PasswordHelper.Password="{Binding Contrasena, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="235" VerticalContentAlignment="Center" KeyDown="ContrasenaPasswordBox_KeyDown"/>
             </StackPanel>
-            
-            <StackPanel Margin="0,25,0,0">
-                <Button x:Name="IngresarButton" Click="IngresarButton_Click" Width="110" Height="35" BorderBrush="#FFBEBEBE">
+            <StackPanel Orientation="Horizontal" Margin="0,25,0,0" HorizontalAlignment="Center" >
+                <!--—————————————————————————————————————————[ BOTON CANCELAR ]—————————————————————————————————————————-->
+                <Button x:Name="CancelarButton" Click="CancelarButton_Click" Width="100" BorderBrush="#FFBEBEBE" Margin="0,0,35,0" >
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/Entrar.png"/>
+                        <Image Source="/Resources/Cancelar.png" Height="25" />
+                        <Label Content="Cancelar" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </Button>
+                <!--—————————————————————————————————————————[ BOTON INGRESAR ]—————————————————————————————————————————-->
+                <Button x:Name="IngresarButton" Click="IngresarButton_Click" Width="100" BorderBrush="#FFBEBEBE">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Entrar.png" Height="25"/>
                         <Label Content="Ingresar" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
                 </Button>

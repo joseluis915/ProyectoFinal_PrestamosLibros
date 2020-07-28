@@ -16,7 +16,7 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
             <Label Content="Estudiante Id" FontWeight="Bold" FontSize="16"/>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="EstudianteIdTextBox" Text="{Binding EstudianteId}" Width="270" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="EstudianteIdTextbox_TextChanged"/>
+                <TextBox x:Name="EstudianteIdTextBox" Text="{Binding EstudianteId}" Width="265" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="EstudianteIdTextbox_TextChanged"/>
                 <Button x:Name="BuscarButton" Margin="109,0,0,0" Width="120" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Buscar.png" />
@@ -24,11 +24,13 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
                     </StackPanel>
                 </Button>
             </StackPanel>
-            <!--——————————————————————————————————————————————[ Matricula ]——————————————————————————————————————————————-->
-            <Label Content="Matricula" FontWeight="Bold"  Margin="0,10,0,0"/>
-            <TextBox x:Name="MatriculaTextBox" Text="{Binding Matricula}" Height="30" Width="100" HorizontalAlignment="Left" VerticalContentAlignment="Center" TextChanged="MatriculaTextBox_TextChanged"/>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <!--——————————————————————————————————————————————[ Matricula ]——————————————————————————————————————————————-->
+                <Label Content="Matricula" FontWeight="Bold" />
+                <TextBox x:Name="MatriculaTextBox" Text="{Binding Matricula}" Height="30" Width="100" VerticalContentAlignment="Center" TextChanged="MatriculaTextBox_TextChanged"/>
+            </StackPanel>
             <!--——————————————————————————————————————————————[ Nombres y Apellidos]——————————————————————————————————————————————-->
-            <StackPanel Orientation="Horizontal" Margin="0,15,0,5">
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,5">
                 <!--—————————————————————————————[ Nombres ]—————————————————————————————-->
                 <Label Content="Nombres" FontWeight="Bold"/>
                 <TextBox x:Name="NombresTextBox" Text="{Binding Nombres}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,10,0"/>

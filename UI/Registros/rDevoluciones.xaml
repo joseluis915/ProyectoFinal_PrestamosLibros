@@ -60,6 +60,7 @@
                         <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding Detalle}" Height="80" AutoGenerateColumns="False" Margin="0,10,0,0">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Libro Id" Binding="{Binding LibroId}"/>
+                                <DataGridTextColumn Header="Titulo" Binding="{Binding libros.Titulo}"/>
                                 <DataGridTextColumn Header="Libros Devueltos" Binding="{Binding LibrosDevueltos}"/>
                                 <DataGridTextColumn Header="Dias" Binding="{Binding Dias}"/>
                             </DataGrid.Columns>

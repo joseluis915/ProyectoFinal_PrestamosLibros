@@ -20,11 +20,15 @@ namespace ProyectoFinal_PrestamosLibros
 {
     public partial class MainWindow : Window
     {
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Current.Shutdown();
+        }
         public MainWindow()
         {
             InitializeComponent();
         }
-
 
         //——————————————————————————————————————————————[ EVENTOS - REGISTROS ]——————————————————————————————————————————————
         //----------------------------[ Estudiantes ]----------------------------

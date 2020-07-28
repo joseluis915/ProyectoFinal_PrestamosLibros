@@ -30,7 +30,7 @@
             <DatePicker x:Name="FechaDatePicker" SelectedDate="{Binding Fecha}" Height="30" VerticalContentAlignment="Center"/>
             <!--——————————————————————————————————————————————[ Existencia ]——————————————————————————————————————————————-->
             <Label Content="Existencia" FontWeight="Bold"/>
-            <TextBox x:Name="ExistenciaTextBox" Text="{Binding Existencia}" Height="30" VerticalContentAlignment="Center" TextChanged="ExistenciaTextBox_TextChanged"/>
+            <TextBox x:Name="ExistenciaTextBox" Text="{Binding Existencia}" Height="30" VerticalContentAlignment="Center" TextChanged="ExistenciaTextBox_TextChanged" IsReadOnly="True"/>
             <!--——————————————————————————————————————————————[ BOTON NUEVO ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35" Margin="0,15,0,0" HorizontalAlignment="Center">
                 <Button x:Name="NuevoButton" Click="NuevoButton_Click" Width="120">

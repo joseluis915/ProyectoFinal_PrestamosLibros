@@ -11,17 +11,16 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
     {
         [Key]
         public int SalidaLibroId { get; set; }
-        //public int UsuarioId { get; set; }
-        //———————————————————————————[ForeingKey UsuarioId]———————————————————————————
-        //[ForeignKey("UsuarioId")]
-        //public Usuarios Usuario { get; set; } = new Usuarios();
-        //————————————————————————————————————————————————————————————————————————————
+        public int UsuarioId { get; set; }
         public int LibroId { get; set; }
-        //———————————————————————————[ForeingKey LibroId]———————————————————————————
+        public int Cantidad { get; set; }
+        public DateTime Fecha { get; set; } = DateTime.Now;
+
+        //———————————————————————————[ ForeingKey ]———————————————————————————
+        [ForeignKey("UsuarioId")]
+        public virtual Usuarios Usuario { get; set; } = new Usuarios();
+
         [ForeignKey("LibroId")]
         public virtual Libros sLibro { get; set; }
-        //————————————————————————————————————————————————————————————————————————————
-        public double Cantidad { get; set; }
-        public DateTime Fecha { get; set; } = DateTime.Now;
     }
 }

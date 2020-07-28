@@ -32,6 +32,12 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 
             try
             {
+                foreach (var item in devoluciones.Detalle)
+                {
+                    item.libros.Existencia += item.LibrosDevueltos;
+                    contexto.Entry(item.libros).State = EntityState.Modified;
+                }
+
                 contexto.Devoluciones.Add(devoluciones);
                 paso = contexto.SaveChanges() > 0;
             }

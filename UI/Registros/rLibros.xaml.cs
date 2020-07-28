@@ -164,22 +164,16 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 LibroIdTextBox.SelectAll();
             }
         }
-        //——————————————————————————————————————————[ Existencia ]——————————————————————————————————————————
+
         private void ExistenciaTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            try
+            if (ExistenciaTextBox.Text != "0")
             {
-                if (ExistenciaTextBox.Text.Trim() != string.Empty)
-                {
-                    Convert.ToDouble(ExistenciaTextBox.Text);
-                }
+                ExistenciaTextBox.Foreground = Brushes.Red;
             }
-            catch
+            else
             {
-                MessageBox.Show($"El valor digitado en el campo (Existencia) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                ExistenciaTextBox.Text = "0";
-                ExistenciaTextBox.Focus();
-                ExistenciaTextBox.SelectAll();
+                ExistenciaTextBox.Foreground = Brushes.Green;
             }
         }
     }

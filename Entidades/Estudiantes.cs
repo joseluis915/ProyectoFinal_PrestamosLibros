@@ -11,19 +11,19 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
     {
         [Key]
         public int EstudianteId { get; set; }
-        //public int UsuarioId { get; set; }
-        //———————————————————————————[ForeingKey UsuarioId]———————————————————————————
-        //[ForeignKey("UsuarioId")]
-        //public Usuarios Usuario { get; set; } = new Usuarios();
-        //————————————————————————————————————————————————————————————————————————————
-        public double Matricula { get; set; }
+        public int UsuarioId { get; set; }
+        public int Matricula { get; set; }
         public String Nombres { get; set; }
         public String Apellidos { get; set; }
         public DateTime FechaNacimiento { get; set; } = DateTime.Now;
-        public double Cedula { get; set; }
+        public long Cedula { get; set; }
         public String Genero { get; set; }
-        public double Telefono { get; set; }
+        public long Telefono { get; set; }
         public String Direccion { get; set; }
         public String Correo { get; set; }
+
+        //———————————————————————————[ ForeingKey ]———————————————————————————
+        [ForeignKey("UsuarioId")]
+        public virtual Usuarios Usuario { get; set; } = new Usuarios();
     }
 }
