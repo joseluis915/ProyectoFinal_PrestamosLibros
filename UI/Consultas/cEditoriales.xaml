@@ -6,6 +6,16 @@
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Consultas"
         mc:Ignorable="d"
         Title="CONSULTAR EDITORIALES" Height="450" Width="680" WindowStartupLocation="CenterScreen" Icon="/Resources/Lista.png" >
+    <Window.Resources>
+        <Style x:Key="Centrar" TargetType="DataGridCell">
+            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="CentrarYColorear" TargetType="DataGridCell">
+            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#FFE1E1E1"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <StackPanel Orientation="Vertical" Margin="0,5,0,0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Height="60">
@@ -41,7 +51,13 @@
                 <!--——————————————————————————————————————————————[ DATA GRID ]——————————————————————————————————————————————-->
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Width="635" >
-                <DataGrid x:Name="DatosDataGrid" Height="330" IsReadOnly="True"/>
+                <DataGrid x:Name="DatosDataGrid" Height="330" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Editorial Id" Binding="{Binding EditorialId}" CellStyle="{StaticResource Centrar}"/>
+                        <DataGridTextColumn Header="Usuario Id" Binding="{Binding Usuario.UsuarioId}" CellStyle="{StaticResource CentrarYColorear}"/>
+                        <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}" CellStyle="{StaticResource Centrar}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>
         </StackPanel>
     </Grid>
