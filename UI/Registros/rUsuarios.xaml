@@ -1,17 +1,18 @@
-﻿<Window x:Class="ProyectoFinal_PrestamosLibros.UI.Registros.rLibros"
+﻿<Window x:Class="ProyectoFinal_PrestamosLibros.UI.Registros.rUsuarios"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
+        xmlns:PasswordHelper="clr-namespace:ProyectoFinal_PrestamosLibros.Resources.PasswordHelper"
         mc:Ignorable="d"
-        Title="REGISTRO DE LIBRO" Height="420" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" >
+        Title="Registro de Usuario" Height="530" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" >
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Content="Libro Id" FontWeight="Bold" FontSize="16"/>
+            <Label Content="Usuario Id" FontWeight="Bold" FontSize="16"/>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="LibroIdTextBox" Text="{Binding LibroId}" Width="200" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="LibroIdTextbox_TextChanged"/>
+                <TextBox x:Name="UsuarioIdTextBox" Text="{Binding UsuarioId}" Width="200" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
                 <Button x:Name="BuscarButton" Margin="80,0,0,0" Width="120" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Buscar.png" />
@@ -19,18 +20,24 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
-            <!--——————————————————————————————————————————————[ Titulo ]——————————————————————————————————————————————-->
-            <Label Content="Titulo" FontWeight="Bold" Margin="0,0,10,0"/>
-            <TextBox x:Name="TituloTextBox" Text="{Binding Titulo}" Height="30" VerticalContentAlignment="Center" />
-            <!--——————————————————————————————————————————————[ ISBN ]——————————————————————————————————————————————-->
-            <Label Content="ISBN" FontWeight="Bold" Margin="0,0,10,0"/>
-            <TextBox x:Name="ISBNTextBox" Text="{Binding ISBN}" Height="30" VerticalContentAlignment="Center" />
+            <!--——————————————————————————————————————————————[ Nombres ]——————————————————————————————————————————————-->
+            <Label Content="Nombres" FontWeight="Bold" Margin="0,0,10,0"/>
+            <TextBox x:Name="NombresTextBox" Text="{Binding Nombres}" Height="30" VerticalContentAlignment="Center" />
+            <!--——————————————————————————————————————————————[ Nombres ]——————————————————————————————————————————————-->
+            <Label Content="Apellidos" FontWeight="Bold" Margin="0,0,10,0"/>
+            <TextBox x:Name="ApellidosTextBox" Text="{Binding Apellidos}" Height="30" VerticalContentAlignment="Center" />
             <!--——————————————————————————————————————————————[ Fecha ]——————————————————————————————————————————————-->
-            <Label Content="Fecha" FontWeight="Bold"/>
-            <DatePicker x:Name="FechaDatePicker" SelectedDate="{Binding Fecha}" Height="30" VerticalContentAlignment="Center"/>
-            <!--——————————————————————————————————————————————[ Existencia ]——————————————————————————————————————————————-->
-            <Label Content="Existencia" FontWeight="Bold"/>
-            <TextBox x:Name="ExistenciaTextBox" Text="{Binding Existencia}" Height="30" VerticalContentAlignment="Center" TextChanged="ExistenciaTextBox_TextChanged" IsReadOnly="True"/>
+            <Label Content="Fecha Creación" FontWeight="Bold"/>
+            <DatePicker x:Name="FechaCreacionDatePicker" SelectedDate="{Binding FechaCreacion}" Height="30" VerticalContentAlignment="Center"/>
+            <!--——————————————————————————————————————————————[ Nombre Usuario ]——————————————————————————————————————————————-->
+            <Label Content="Nombre Usuario" FontWeight="Bold"/>
+            <TextBox x:Name="NombreUsuarioTextBox" Text="{Binding NombreUsuario}" Height="30" VerticalContentAlignment="Center" />
+            <!--——————————————————————————————————————————————[ Contraseña ]——————————————————————————————————————————————-->
+            <Label Content="Contraseña" FontWeight="Bold"/>
+            <PasswordBox x:Name="ContrasenaPasswordBox" PasswordHelper:PasswordHelper.Attach="True" PasswordHelper:PasswordHelper.Password="{Binding Contrasena, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="30" VerticalContentAlignment="Center"/>
+            <!--——————————————————————————————————————————————[ Confirmar Contraseña ]——————————————————————————————————————————————-->
+            <Label Content="Confirmar Contraseña" FontWeight="Bold"/>
+            <PasswordBox x:Name="ConfirmarContrasenaPasswordBox" Height="30" VerticalContentAlignment="Center"/>
             <!--——————————————————————————————————————————————[ BOTON NUEVO ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35" Margin="0,15,0,0" HorizontalAlignment="Center">
                 <Button x:Name="NuevoButton" Click="NuevoButton_Click" Width="120">
@@ -55,7 +62,7 @@
                 </Button>
             </StackPanel>
             <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
-            <Label Content="Creacion: 24/07/2020                   ©2020 JL-AR Solutions                          Version: Beta 1.0" 
+            <Label Content="Creacion: 29/07/2020                   ©2020 JL-AR Solutions                          Version: Beta 1.0" 
                    FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,5,0,0" />
             <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
         </StackPanel>

@@ -6,16 +6,6 @@
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Consultas"
         mc:Ignorable="d"
         Title="CONSULTAR PRESTAMOS" Height="450" Width="680" WindowStartupLocation="CenterScreen" Icon="/Resources/Lista.png" >
-    <Window.Resources>
-        <Style x:Key="Centrar" TargetType="DataGridCell">
-            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
-        </Style>
-
-        <Style x:Key="CentrarYColorear" TargetType="DataGridCell">
-            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
-            <Setter Property="Background" Value="#FFE1E1E1"/>
-        </Style>
-    </Window.Resources>
     <Grid>
         <StackPanel Orientation="Vertical" Margin="0,5,0,0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Height="60">
@@ -51,15 +41,15 @@
                 <!--——————————————————————————————————————————————[ DATA GRID ]——————————————————————————————————————————————-->
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Width="635" >
-                <DataGrid x:Name="DatosDataGrid" Height="330" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid x:Name="DatosDataGrid" Height="330" IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="Gainsboro" TextBlock.TextAlignment="Center">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Préstamo Id" Binding="{Binding PrestamoId}" CellStyle="{StaticResource Centrar}"/>
-                        <DataGridTextColumn Header="Usuario Id" Binding="{Binding UsuarioId}" CellStyle="{StaticResource CentrarYColorear}"/>
-                        <DataGridTextColumn Header="Estudiante Id" Binding="{Binding EstudianteId}" CellStyle="{StaticResource Centrar}"/>
-                        <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha, StringFormat='dd/MM/yyyy'}" CellStyle="{StaticResource CentrarYColorear}"/>
-                        <DataGridTextColumn Header="Fecha Vencimiento" Binding="{Binding FechaVencimiento, StringFormat='dd/MM/yyyy'}" CellStyle="{StaticResource Centrar}"/>
-                        <DataGridTextColumn Header="Libros Total" Binding="{Binding LibrosTotal}" CellStyle="{StaticResource CentrarYColorear}"/>
-                        <DataGridTextColumn Header="Detalle" Binding="{Binding Detalle}" CellStyle="{StaticResource Centrar}"/>
+                        <DataGridTextColumn Header="Préstamo Id" Binding="{Binding PrestamoId}"/>
+                        <DataGridTextColumn Header="Usuario Id" Binding="{Binding UsuarioId}"/>
+                        <DataGridTextColumn Header="Estudiante Id" Binding="{Binding EstudianteId}"/>
+                        <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha, StringFormat='dd/MM/yyyy'}"/>
+                        <DataGridTextColumn Header="Fecha Vencimiento" Binding="{Binding FechaVencimiento, StringFormat='dd/MM/yyyy'}"/>
+                        <DataGridTextColumn Header="Libros Total" Binding="{Binding LibrosTotal}"/>
+                        <DataGridTextColumn Header="Detalle" Binding="{Binding Detalle}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
