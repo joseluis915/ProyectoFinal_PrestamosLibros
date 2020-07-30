@@ -6,17 +6,6 @@
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Consultas"
         mc:Ignorable="d"
         Title="CONSULTAR USUARIOS" Height="450" Width="680" WindowStartupLocation="CenterScreen" Icon="/Resources/Lista.png" >
-    <Window.Resources>
-        <Style x:Key="Centrar" TargetType="DataGridCell">
-            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
-        </Style>
-
-        <Style x:Key="CentrarYColorear" TargetType="DataGridCell">
-            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
-            <Setter Property="Background" Value="#FFE1E1E1"/>
-        </Style>
-    </Window.Resources>
-
     <Grid>
         <StackPanel Orientation="Vertical" Margin="0,5,0,0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Height="60">
@@ -52,14 +41,14 @@
                 <!--——————————————————————————————————————————————[ DATA GRID ]——————————————————————————————————————————————-->
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Width="635" >
-                <DataGrid x:Name="DatosDataGrid" Height="330" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid x:Name="DatosDataGrid" Height="330" IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="Gainsboro" TextBlock.TextAlignment="Center">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Usuario Id" Binding="{Binding UsuarioId}" CellStyle="{StaticResource Centrar}"/>
-                        <DataGridTextColumn Header="Nombres" Binding="{Binding Nombres}" CellStyle="{StaticResource Centrar}"/>
-                        <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}" CellStyle="{StaticResource Centrar}"/>
-                        <DataGridTextColumn Header="Fecha Creación" Binding="{Binding FechaCreacion, StringFormat='dd/MM/yyyy'}" CellStyle="{StaticResource CentrarYColorear}"/>
-                        <DataGridTextColumn Header="Usuario" Binding="{Binding NombreUsuario}" CellStyle="{StaticResource Centrar}"/>
-                        <DataGridTextColumn Header="Contraseña" Binding="{Binding Contrasena}" CellStyle="{StaticResource CentrarYColorear}"/>
+                        <DataGridTextColumn Header="Usuario Id" Binding="{Binding UsuarioId}"/>
+                        <DataGridTextColumn Header="Nombres" Binding="{Binding Nombres}"/>
+                        <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}"/>
+                        <DataGridTextColumn Header="Fecha Creación" Binding="{Binding FechaCreacion, StringFormat='dd/MM/yyyy'}"/>
+                        <DataGridTextColumn Header="Usuario" Binding="{Binding NombreUsuario}"/>
+                        <DataGridTextColumn Header="Contraseña" Binding="{Binding Contrasena}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

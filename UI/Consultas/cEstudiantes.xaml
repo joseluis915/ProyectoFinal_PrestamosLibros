@@ -6,16 +6,6 @@
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Consultas"
         mc:Ignorable="d"
         Title="CONSULTAR ESTUDIANTES" Height="450" Width="680" WindowStartupLocation="CenterScreen" Icon="/Resources/Lista.png" >
-    <Window.Resources>
-        <Style x:Key="Centrar" TargetType="DataGridCell">
-            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
-        </Style>
-
-        <Style x:Key="CentrarYColorear" TargetType="DataGridCell">
-            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
-            <Setter Property="Background" Value="#FFE1E1E1"/>
-        </Style>
-    </Window.Resources>
     <Grid>
         <StackPanel Orientation="Vertical" Margin="0,5,0,0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Height="60">
@@ -51,19 +41,19 @@
                 <!--——————————————————————————————————————————————[ DATA GRID ]——————————————————————————————————————————————-->
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Width="635" >
-                <DataGrid x:Name="DatosDataGrid" Height="330" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid x:Name="DatosDataGrid" Height="330" IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="Gainsboro" TextBlock.TextAlignment="Center">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Estudiante Id" Binding="{Binding EstudianteId}" CellStyle="{StaticResource Centrar}"/>
-                        <DataGridTextColumn Header="Usuario Id" Binding="{Binding UsuarioId}" CellStyle="{StaticResource CentrarYColorear}"/>
-                        <DataGridTextColumn Header="Matricula" Binding="{Binding Matricula, StringFormat='####-####'}" CellStyle="{StaticResource Centrar}"/>
-                        <DataGridTextColumn Header="Nombres" Binding="{Binding Nombres}" CellStyle="{StaticResource CentrarYColorear}"/>
-                        <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}" CellStyle="{StaticResource Centrar}"/>
-                        <DataGridTextColumn Header="Fecha Nacimiento" Binding="{Binding FechaNacimiento, StringFormat='dd/MM/yyyy'}" CellStyle="{StaticResource CentrarYColorear}"/>
-                        <DataGridTextColumn Header="Cédula" Binding="{Binding Cedula, StringFormat='###-#######-#'}" CellStyle="{StaticResource Centrar}"/>
-                        <DataGridTextColumn Header="Género" Binding="{Binding Genero}" CellStyle="{StaticResource CentrarYColorear}"/>
-                        <DataGridTextColumn Header="Teléfono" Binding="{Binding Telefono, StringFormat='(###) ###-####'}" CellStyle="{StaticResource Centrar}"/>
-                        <DataGridTextColumn Header="Dirección" Binding="{Binding Direccion}" CellStyle="{StaticResource CentrarYColorear}"/>
-                        <DataGridTextColumn Header="Correo" Binding="{Binding Correo}" CellStyle="{StaticResource Centrar}"/>
+                        <DataGridTextColumn Header="Estudiante Id" Binding="{Binding EstudianteId}"/>
+                        <DataGridTextColumn Header="Usuario Id" Binding="{Binding UsuarioId}"/>
+                        <DataGridTextColumn Header="Matricula" Binding="{Binding Matricula, StringFormat='####-####'}"/>
+                        <DataGridTextColumn Header="Nombres" Binding="{Binding Nombres}"/>
+                        <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}"/>
+                        <DataGridTextColumn Header="Fecha Nacimiento" Binding="{Binding FechaNacimiento, StringFormat='dd/MM/yyyy'}"/>
+                        <DataGridTextColumn Header="Cédula" Binding="{Binding Cedula, StringFormat='###-#######-#'}"/>
+                        <DataGridTextColumn Header="Género" Binding="{Binding Genero}"/>
+                        <DataGridTextColumn Header="Teléfono" Binding="{Binding Telefono, StringFormat='(###) ###-####'}"/>
+                        <DataGridTextColumn Header="Dirección" Binding="{Binding Direccion}"/>
+                        <DataGridTextColumn Header="Correo" Binding="{Binding Correo}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
