@@ -31,6 +31,12 @@ namespace ProyectoFinal_PrestamosLibros
         }
 
         //——————————————————————————————————————————————[ EVENTOS - REGISTROS ]——————————————————————————————————————————————
+        //----------------------------[ Usuarios ]----------------------------
+        private void rUsuariosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rUsuarios rUsuarios = new rUsuarios();
+            rUsuarios.Show();
+        }
         //----------------------------[ Estudiantes ]----------------------------
         private void rEstudiantesMenuItem_Click(object sender, RoutedEventArgs e)
         {

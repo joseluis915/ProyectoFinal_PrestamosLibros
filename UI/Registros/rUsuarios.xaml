@@ -31,13 +31,13 @@
             <DatePicker x:Name="FechaCreacionDatePicker" SelectedDate="{Binding FechaCreacion}" Height="30" VerticalContentAlignment="Center"/>
             <!--——————————————————————————————————————————————[ Nombre Usuario ]——————————————————————————————————————————————-->
             <Label Content="Nombre Usuario" FontWeight="Bold"/>
-            <TextBox x:Name="NombreUsuarioTextBox" Text="{Binding NombreUsuario}" Height="30" VerticalContentAlignment="Center" />
+            <TextBox x:Name="NombreUsuarioTextBox" Text="{Binding NombreUsuario}" Height="30" VerticalContentAlignment="Center"/>
             <!--——————————————————————————————————————————————[ Contraseña ]——————————————————————————————————————————————-->
             <Label Content="Contraseña" FontWeight="Bold"/>
             <PasswordBox x:Name="ContrasenaPasswordBox" PasswordHelper:PasswordHelper.Attach="True" PasswordHelper:PasswordHelper.Password="{Binding Contrasena, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="30" VerticalContentAlignment="Center"/>
             <!--——————————————————————————————————————————————[ Confirmar Contraseña ]——————————————————————————————————————————————-->
             <Label Content="Confirmar Contraseña" FontWeight="Bold"/>
-            <PasswordBox x:Name="ConfirmarContrasenaPasswordBox" Height="30" VerticalContentAlignment="Center"/>
+            <PasswordBox x:Name="ConfirmarContrasenaPasswordBox" PasswordHelper:PasswordHelper.Attach="True" Height="30" VerticalContentAlignment="Center"/>
             <!--——————————————————————————————————————————————[ BOTON NUEVO ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35" Margin="0,15,0,0" HorizontalAlignment="Center">
                 <Button x:Name="NuevoButton" Click="NuevoButton_Click" Width="120">
