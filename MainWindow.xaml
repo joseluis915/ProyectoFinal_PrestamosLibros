@@ -10,28 +10,131 @@
         <StackPanel>
             <!--——————————————————————————————————————————————[ MENU ITEMS ]——————————————————————————————————————————————-->
             <Menu Height="24" FontSize="15">
+                <!--—————————————————————————————————————————[ Registros ]—————————————————————————————————————————-->
                 <MenuItem Header="Registros">
-                    <MenuItem x:Name="rUsuariosMenuItem" Click="rUsuariosMenuItem_Click" Header="Registrar Usuario"/>
-                    <MenuItem x:Name="rEstudiantesMenuItem" Click="rEstudiantesMenuItem_Click" Header="Registrar Estudiante"/>
-                    <MenuItem x:Name="rEditorialesMenuItem" Click="rEditorialesMenuItem_Click" Header="Registrar Editorial"/>
-                    <MenuItem x:Name="rLibrosMenuItem" Click="rLibrosMenuItem_Click" Header="Registrar Libro"/>
-                    <MenuItem x:Name="rEntradasLibrosMenuItem" Click="rEntradasLibrosMenuItem_Click" Header="Registrar Entrada de Libro"/>
-                    <MenuItem x:Name="rSalidasLibrosMenuItem" Click="rSalidasLibrosMenuItem_Click" Header="Registrar Salida de Libro"/>
-                    <MenuItem x:Name="rPrestamosMenuItem" Click="rPrestamosMenuItem_Click" Header="Registrar Prestamo"/>
-                    <MenuItem x:Name="rDevolucionesMenuItem" Click="rDevolucionesMenuItem_Click" Header="Registrar Devolucion"/>
-                </MenuItem>
+                    <MenuItem x:Name="rUsuariosMenuItem" Click="rUsuariosMenuItem_Click" Header="Registrar Usuario">
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Usuario.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    
+                    <MenuItem x:Name="rEstudiantesMenuItem" Click="rEstudiantesMenuItem_Click" Header="Registrar Estudiante">
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Identificacion.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
 
+                    <MenuItem Header="Libro y Editorial">
+                        <MenuItem x:Name="rLibrosMenuItem" Click="rLibrosMenuItem_Click" Header="Registrar Libro">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Libro.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="rEditorialesMenuItem" Click="rEditorialesMenuItem_Click" Header="Registrar Editorial">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Identificacion.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Libros.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem Header="Entrada y Salida de Libros">
+                        <MenuItem x:Name="rEntradasLibrosMenuItem" Click="rEntradasLibrosMenuItem_Click" Header="Registrar Entrada de Libro">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Entrada.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="rSalidasLibrosMenuItem" Click="rSalidasLibrosMenuItem_Click" Header="Registrar Salida de Libro">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Salida.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/EntradaYSalida.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem Header="Prestamo y Devolucion de Libros">
+                        <MenuItem x:Name="rPrestamosMenuItem" Click="rPrestamosMenuItem_Click" Header="Registrar Prestamo">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Lectura.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="rDevolucionesMenuItem" Click="rDevolucionesMenuItem_Click" Header="Registrar Devolucion">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Devolver.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/PrestamoYDevolucion.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <!--—————————————————————————————————————————[ Consultas ]—————————————————————————————————————————-->
                 <MenuItem Header="Consultas">
-                    <MenuItem x:Name="cUsuariosMenuItem" Click="cUsuariosMenuItem_Click" Header="Consultar Usuarios"/>
-                    <MenuItem x:Name="cEstudiantesMenuItem" Click="cEstudiantesMenuItem_Click" Header="Consultar Estudiantes"/>
-                    <MenuItem x:Name="cEditorialesMenuItem" Click="cEditorialesMenuItem_Click" Header="Consultar Editoriales"/>
-                    <MenuItem x:Name="cLibrosMenuItem" Click="cLibrosMenuItem_Click" Header="Consultar Libros"/>
-                    <MenuItem x:Name="cEntradasLibrosMenuItem" Click="cEntradasLibrosMenuItem_Click" Header="Consultar Entradas de Libros"/>
-                    <MenuItem x:Name="cSalidasLibrosMenuItem" Click="cSalidasLibrosMenuItem_Click" Header="Consultar Salidas de Libros"/>
-                    <MenuItem x:Name="cPrestamosMenuItem" Click="cPrestamosMenuItem_Click" Header="Consultar Prestamos"/>
-                    <MenuItem x:Name="cDevolucionesMenuItem" Click="cDevolucionesMenuItem_Click" Header="Consultar Devoluciones"/>
-                </MenuItem>
+                    <MenuItem x:Name="cUsuariosMenuItem" Click="cUsuariosMenuItem_Click" Header="Consultar Usuarios">
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Usuario.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
 
+                    <MenuItem x:Name="cEstudiantesMenuItem" Click="cEstudiantesMenuItem_Click" Header="Consultar Estudiantes">
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Identificacion.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem Header="Libro y Editorial">
+                        <MenuItem x:Name="cEditorialesMenuItem" Click="cEditorialesMenuItem_Click" Header="Consultar Editoriales">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Identificacion.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="cLibrosMenuItem" Click="cLibrosMenuItem_Click" Header="Consultar Libros">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Libros.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/Libros.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem Header="Entrada y Salida de Libros">
+                        <MenuItem x:Name="cEntradasLibrosMenuItem" Click="cEntradasLibrosMenuItem_Click" Header="Consultar Entradas de Libros">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Entrada.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="cSalidasLibrosMenuItem" Click="cSalidasLibrosMenuItem_Click" Header="Consultar Salidas de Libros">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Salida.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/EntradaYSalida.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem Header="Prestamo y Devolucion de Libros">
+                        <MenuItem x:Name="cPrestamosMenuItem" Click="cPrestamosMenuItem_Click" Header="Consultar Prestamos">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Lectura.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="cDevolucionesMenuItem" Click="cDevolucionesMenuItem_Click" Header="Consultar Devoluciones">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Devolver.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/PrestamoYDevolucion.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <!--—————————————————————————————————————————[ Informacion MenuItem ]—————————————————————————————————————————-->
                 <MenuItem x:Name="InformacionMenuItem" Click="InformacionMenuItem_Click" Header="Informacion"/>
             </Menu>
         </StackPanel>
@@ -47,7 +150,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <Label Content="Ultima modificacion:" FontWeight="Bold" FontSize="18" FontStyle="Italic"/>
-                <Label x:Name="ModificacionLabel" Content="27/07/2020" FontSize="18" />
+                <Label x:Name="ModificacionLabel" Content="30/07/2020" FontSize="18" />
             </StackPanel>
 
             <Label x:Name="PropietarioLabel" Content="©2020 JL-AR Solutions" FontWeight="Bold"  FontSize="16" FontStyle="Italic" HorizontalAlignment="Center" Margin="0,20,0,0"/>

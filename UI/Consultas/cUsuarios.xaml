@@ -47,8 +47,7 @@
                         <DataGridTextColumn Header="Nombres" Binding="{Binding Nombres}"/>
                         <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}"/>
                         <DataGridTextColumn Header="Fecha Creación" Binding="{Binding FechaCreacion, StringFormat='dd/MM/yyyy'}"/>
-                        <DataGridTextColumn Header="Usuario" Binding="{Binding NombreUsuario}"/>
-                        <DataGridTextColumn Header="Contraseña" Binding="{Binding Contrasena}"/>
+                        <DataGridTextColumn Header="Nombre Usuario" Binding="{Binding NombreUsuario}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

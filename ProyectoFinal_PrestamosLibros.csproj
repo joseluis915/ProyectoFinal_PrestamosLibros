@@ -6,6 +6,37 @@
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<UseWPF>true</UseWPF>
 	</PropertyGroup>
+	
+	<ItemGroup>
+	  <None Remove="Resources\Agendar.png" />
+	  <None Remove="Resources\Anonimo.png" />
+	  <None Remove="Resources\Buscar.png" />
+	  <None Remove="Resources\Cancelar.png" />
+	  <None Remove="Resources\Candado.png" />
+	  <None Remove="Resources\Carcular.png" />
+	  <None Remove="Resources\Crear.png" />
+	  <None Remove="Resources\Devolver.png" />
+	  <None Remove="Resources\Documento.png" />
+	  <None Remove="Resources\Eliminar.png" />
+	  <None Remove="Resources\Entrada.png" />
+	  <None Remove="Resources\EntradaYSalida.png" />
+	  <None Remove="Resources\Entrar.png" />
+	  <None Remove="Resources\Fecha.png" />
+	  <None Remove="Resources\Guardar.png" />
+	  <None Remove="Resources\Home.png" />
+	  <None Remove="Resources\Identificacion.png" />
+	  <None Remove="Resources\Key.png" />
+	  <None Remove="Resources\Lectura.png" />
+	  <None Remove="Resources\Libro.png" />
+	  <None Remove="Resources\Libros.png" />
+	  <None Remove="Resources\Limpiar.png" />
+	  <None Remove="Resources\Lista.png" />
+	  <None Remove="Resources\Mas.png" />
+	  <None Remove="Resources\PrestamoYDevolucion.png" />
+	  <None Remove="Resources\Salida.png" />
+	  <None Remove="Resources\Usuario.png" />
+	  <None Remove="Resources\Usuarios.png" />
+	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="DAL\" />
@@ -24,6 +55,9 @@
 	  <Resource Include="Resources\Agendar.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
+	  <Resource Include="Resources\Anonimo.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
 	  <Resource Include="Resources\Buscar.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
@@ -39,10 +73,19 @@
 	  <Resource Include="Resources\Crear.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
+	  <Resource Include="Resources\Devolver.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
 	  <Resource Include="Resources\Documento.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\Eliminar.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Entrada.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\EntradaYSalida.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\Entrar.png">
@@ -57,7 +100,19 @@
 	  <Resource Include="Resources\Home.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
+	  <Resource Include="Resources\Identificacion.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
 	  <Resource Include="Resources\Key.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Lectura.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Libro.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Libros.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\Limpiar.png">
@@ -67,6 +122,12 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\Mas.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\PrestamoYDevolucion.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Salida.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\Usuario.png">
@@ -90,12 +151,6 @@
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Update="Resources\Anonimo.png">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
 	</ItemGroup>
 
 </Project>

@@ -13,7 +13,7 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public int LibroId { get; set; }
         public int UsuarioId { get; set; }
         public String Titulo { get; set; }
-        public String ISBN { get; set; }
+        public long ISBN { get; set; }
         public double Existencia { get; set; }
         public DateTime Fecha { get; set; } = DateTime.Now;
 

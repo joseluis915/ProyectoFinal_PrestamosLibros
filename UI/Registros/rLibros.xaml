@@ -24,7 +24,7 @@
             <TextBox x:Name="TituloTextBox" Text="{Binding Titulo}" Height="30" VerticalContentAlignment="Center" />
             <!--——————————————————————————————————————————————[ ISBN ]——————————————————————————————————————————————-->
             <Label Content="ISBN" FontWeight="Bold" Margin="0,0,10,0"/>
-            <TextBox x:Name="ISBNTextBox" Text="{Binding ISBN}" Height="30" VerticalContentAlignment="Center" />
+            <TextBox x:Name="ISBNTextBox" Text="{Binding ISBN}" Height="30" VerticalContentAlignment="Center" MaxLength="13" TextChanged="ISBNTextBox_TextChanged"/>
             <!--——————————————————————————————————————————————[ Fecha ]——————————————————————————————————————————————-->
             <Label Content="Fecha" FontWeight="Bold"/>
             <DatePicker x:Name="FechaDatePicker" SelectedDate="{Binding Fecha}" Height="30" VerticalContentAlignment="Center"/>

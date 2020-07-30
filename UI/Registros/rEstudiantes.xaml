@@ -27,7 +27,7 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                 <!--——————————————————————————————————————————————[ Matricula ]——————————————————————————————————————————————-->
                 <Label Content="Matricula" FontWeight="Bold" />
-                <TextBox x:Name="MatriculaTextBox" Text="{Binding Matricula}" Height="30" Width="100" VerticalContentAlignment="Center" TextChanged="MatriculaTextBox_TextChanged"/>
+                <TextBox x:Name="MatriculaTextBox" Text="{Binding Matricula}" Height="30" Width="100" VerticalContentAlignment="Center" TextChanged="MatriculaTextBox_TextChanged" MaxLength="8"/>
             </StackPanel>
             <!--——————————————————————————————————————————————[ Nombres y Apellidos]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Margin="0,10,0,5">
@@ -42,7 +42,7 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
             <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
                 <!--—————————————————————————————[ Cedula ]—————————————————————————————-->
                 <Label Content="    Cedula" FontWeight="Bold"/>
-                <TextBox x:Name="CedulaTextBox" Text="{Binding Cedula}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,20,0" TextChanged="CedulaTextBox_TextChanged"/>
+                <TextBox x:Name="CedulaTextBox" Text="{Binding Cedula}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,20,0" TextChanged="CedulaTextBox_TextChanged" MaxLength="11"/>
                 <!--—————————————————————————————[ Generos ]—————————————————————————————-->
                 <Label Content="Genero: " FontWeight="Bold"/>
                 <RadioButton x:Name="FemeninoRadioButton" GroupName="Generos" Content="Femenino" 
@@ -56,7 +56,7 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
             <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
                 <!--—————————————————————————————[ Telefono ]—————————————————————————————-->
                 <Label Content=" Telefono" FontWeight="Bold"/>
-                <TextBox x:Name="TelefonoTextBox" Text="{Binding Telefono}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,10,0" TextChanged="TelefonoTextBox_TextChanged"/>
+                <TextBox x:Name="TelefonoTextBox" Text="{Binding Telefono}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,10,0" TextChanged="TelefonoTextBox_TextChanged" MaxLength="10"/>
                 <!--—————————————————————————————[ FechaNacimiento ]—————————————————————————————-->
                 <Label Content="Fecha Nacimiento" FontWeight="Bold"/>
                 <DatePicker x:Name="FechaNacimientoDatePicker" SelectedDate="{Binding FechaNacimiento}" Height="30" VerticalContentAlignment="Center" Width="150"/>

@@ -61,7 +61,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 this.libros = new Libros();
                 this.DataContext = this.libros;
-                MessageBox.Show($"Esta Entrada de libro no fue encontrada.\n\nAsegurese que existe o cree una nueva.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Esta Entrada de libro no fue encontrada.\n\nAsegurese que existe o cree una nueva.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 Limpiar();
                 LibroIdTextBox.Focus();
             }
@@ -82,7 +82,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Libro Id ]—————————————————————————————————
                 if (LibroIdTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Libro Id) esta vacio.\n\nAsigne un Id al Libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Libro Id) esta vacio.\n\nAsigne un Id al Libro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     LibroIdTextBox.Text = "0";
                     LibroIdTextBox.Focus();
                     LibroIdTextBox.SelectAll();
@@ -91,7 +91,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Titulo ]—————————————————————————————————
                 if (TituloTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Titulo) esta vacio.\n\nEscriba un de Titulo.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Titulo) esta vacio.\n\nEscriba un de Titulo.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     TituloTextBox.Clear();
                     TituloTextBox.Focus();
                     return;
@@ -99,22 +99,28 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ ISBN ]—————————————————————————————————
                 if (ISBNTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (ISBN) esta vacio.\n\nEscriba un de ISBN.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (ISBN) esta vacio.\n\nEscriba un de ISBN.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     ISBNTextBox.Clear();
+                    ISBNTextBox.Focus();
+                    return;
+                }
+                if (ISBNTextBox.Text.Length != 10 && ISBNTextBox.Text.Length != 13)
+                {
+                    MessageBox.Show($"El ISBN ({ISBNTextBox.Text}) no es valido.\n\nEl ISBN debe tener 10 o 13 digitos (0-9).", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     ISBNTextBox.Focus();
                     return;
                 }
                 //—————————————————————————————————[ Fecha ]—————————————————————————————————
                 if (FechaDatePicker.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show($"El Campo (Fecha) esta vacio.\n\nSeleccione una fecha.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"El Campo (Fecha) esta vacio.\n\nSeleccione una fecha.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     FechaDatePicker.Focus();
                     return;
                 }
                 //—————————————————————————————————[ Existencia ]—————————————————————————————————
                 if (ExistenciaTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Existencia) esta vacio.\n\nEscriba la existencia altual del Libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Existencia) esta vacio.\n\nEscriba la existencia altual del Libro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     ExistenciaTextBox.Text = "0";
                     ExistenciaTextBox.Focus();
                     ExistenciaTextBox.SelectAll();
@@ -158,23 +164,59 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             catch
             {
-                MessageBox.Show($"El valor digitado en el campo (Libro Id) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"El valor digitado en el campo (Libro Id) no es un numero.\n\nPorfavor, digite un numero.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 LibroIdTextBox.Text = "0";
                 LibroIdTextBox.Focus();
                 LibroIdTextBox.SelectAll();
             }
         }
+        //——————————————————————————————————————————[ ISBN ]——————————————————————————————————————————
+        private void ISBNTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (ISBNTextBox.Text.Trim() != string.Empty)
+                {
+                    long.Parse(ISBNTextBox.Text);
+                }
 
+                if (ISBNTextBox.Text.Length == 10 || ISBNTextBox.Text.Length == 13)
+                {
+                    ISBNTextBox.Foreground = Brushes.Black;
+                }
+                else
+                {
+                    ISBNTextBox.Foreground = Brushes.Red;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("El valor digitado en el campo (ISBN) no es un numero.\n\nPorfavor, digite un numero.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                ISBNTextBox.Text = "0";
+                ISBNTextBox.Focus();
+                ISBNTextBox.SelectAll();
+            }   
+        }
+        //——————————————————————————————————————————[ Existencia ]——————————————————————————————————————————
         private void ExistenciaTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (ExistenciaTextBox.Text != "0")
+            double Existencia;
+
+            if (double.TryParse(ExistenciaTextBox.Text, out Existencia))
             {
-                ExistenciaTextBox.Foreground = Brushes.Red;
-            }
-            else
-            {
-                ExistenciaTextBox.Foreground = Brushes.Green;
-            }
+                if (Existencia < 0)
+                {
+                    ExistenciaTextBox.Foreground = Brushes.Red;
+                }
+                if (Existencia == 0)
+                {
+                    ExistenciaTextBox.Foreground = Brushes.Black;
+                }
+                else
+                {
+                    ExistenciaTextBox.Foreground = Brushes.Green;
+                }
+            }  
         }
     }
 }

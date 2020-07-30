@@ -171,8 +171,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ISBN")
-                        .HasColumnType("TEXT");
+                    b.Property<long>("ISBN")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Titulo")
                         .HasColumnType("TEXT");

@@ -28,7 +28,7 @@
             <TextBox x:Name="ApellidosTextBox" Text="{Binding Apellidos}" Height="30" VerticalContentAlignment="Center" />
             <!--——————————————————————————————————————————————[ Fecha ]——————————————————————————————————————————————-->
             <Label Content="Fecha Creación" FontWeight="Bold"/>
-            <DatePicker x:Name="FechaCreacionDatePicker" SelectedDate="{Binding FechaCreacion}" Height="30" VerticalContentAlignment="Center"/>
+            <DatePicker x:Name="FechaCreacionDatePicker" SelectedDate="{Binding FechaCreacion}" Height="30" VerticalContentAlignment="Center" IsEnabled="False"/>
             <!--——————————————————————————————————————————————[ Nombre Usuario ]——————————————————————————————————————————————-->
             <Label Content="Nombre Usuario" FontWeight="Bold"/>
             <TextBox x:Name="NombreUsuarioTextBox" Text="{Binding NombreUsuario}" Height="30" VerticalContentAlignment="Center"/>

@@ -28,12 +28,16 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         {
             this.DataContext = null;
             this.DataContext = usuarios;
+            ContrasenaPasswordBox.Password = string.Empty;
+            ConfirmarContrasenaPasswordBox.Password = string.Empty;
         }
         //——————————————————————————————————————————————————————————————[ Limpiar ]——————————————————————————————————————————————————————————————
         private void Limpiar()
         {
             this.usuarios = new Usuarios();
             this.DataContext = usuarios;
+            ContrasenaPasswordBox.Password = string.Empty;
+            ConfirmarContrasenaPasswordBox.Password = string.Empty;
         }
         //——————————————————————————————————————————————————————————————[ Validar ]——————————————————————————————————————————————————————————————
         private bool Validar()
@@ -65,11 +69,20 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 Limpiar();
                 UsuarioIdTextBox.Focus();
             }
+            if (UsuarioIdTextBox.Text == "1")
+            {
+                EliminarButton.IsEnabled = false;
+            }
+            else
+            {
+                EliminarButton.IsEnabled = true;
+            }
         }
         //——————————————————————————————————————————————————————————————[ Nuevo ]———————————————————————————————————————————————————————————————
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
+            EliminarButton.IsEnabled = true;
         }
         //——————————————————————————————————————————————————————————————[ Guardar ]———————————————————————————————————————————————————————————————
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
@@ -78,7 +91,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 if (!Validar())
                     return;
 
-                //———————————————————————————————————————————————————————[ VALIDAR SI ESTA VACIO ]———————————————————————————————————————————————————————
+                //———————————————————————————————————————————————————————[ VALIDAR TEXTBOX ]———————————————————————————————————————————————————————
                 //—————————————————————————————————[ Usuario Id ]—————————————————————————————————
                 if (UsuarioIdTextBox.Text.Trim() == string.Empty)
                 {
@@ -143,7 +156,6 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     ConfirmarContrasenaPasswordBox.SelectAll();
                     return;
                 }
-                //———————————————————————————————————————————————————————[ VALIDAR SI ESTA VACIO - FIN ]———————————————————————————————————————————————————————
                 //—————————————————————————————————[ Validar Contraseñas ]—————————————————————————————————
                 if (ConfirmarContrasenaPasswordBox.Password != ContrasenaPasswordBox.Password)
                 {
@@ -170,8 +182,8 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             //—————————————————————————————————[ Evitar que se borre el Usuario Admin Id #1 ]—————————————————————————————————
             if (UsuarioIdTextBox.Text == "1")
             {
-                MessageBox.Show("No se pudo eliminar este Usuario\n\nNo puede eliminar el Usuario Prinicpal", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
-                UsuarioIdTextBox.Text = "0";
+                MessageBox.Show("No se pudo eliminar este Usuario.\n\nNo puede eliminar este Usuario.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                Limpiar();
                 UsuarioIdTextBox.Focus();
                 UsuarioIdTextBox.SelectAll();
                 return;
