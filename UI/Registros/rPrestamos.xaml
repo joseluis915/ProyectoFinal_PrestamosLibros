@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
         mc:Ignorable="d"
-        Title="REGISTRO DE PRESTAMOS" Height="540" Width="500" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png">
+        Title="Registro de préstamos" Height="540" Width="500" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Content="Prestamo Id" FontWeight="Bold" FontSize="16"/>
+            <Label Content="Préstamo Id" FontWeight="Bold" FontSize="16"/>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
                 <TextBox x:Name="PrestamoIdTextbox" Text="{Binding PrestamoId}" Width="240" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="PrestamoIdTextbox_TextChanged"/>
@@ -26,7 +26,7 @@
             <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                 <!--—————————————————————————————————————[ Fecha Prestamo ]—————————————————————————————————————-->
                 <StackPanel Orientation="Vertical">
-                    <Label Content="Fecha Prestamo" FontWeight="Bold" />
+                    <Label Content="Fecha Préstamo" FontWeight="Bold" />
                     <DatePicker x:Name="FechaTextBox" SelectedDate="{Binding Fecha}" Height="30" Width="205" VerticalContentAlignment="Center"/>
                 </StackPanel>
                 <!--—————————————————————————————————————[ Fecha Vencimiento ]—————————————————————————————————————-->
@@ -38,7 +38,7 @@
 
             <!--——————————————————————————————————————————————[ DETALLE ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Vertical">
-                <GroupBox Header="Detalle de Prestamos" Margin="0,10,0,0">
+                <GroupBox Header="Detalle de Préstamos" Margin="0,10,0,0">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                             <!--——————————————————————[ LibroId ]——————————————————————-->
@@ -109,7 +109,7 @@
                 </Button>
             </StackPanel>
             <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
-            <Label Content="Creacion: 24/07/2020                   ©2020 JL-AR Solutions                          Version: Beta 1.0" 
+            <Label Content="Creación: 24/07/2020                   ©2020 JL-AR Solutions                          Versión: Beta 1.0" 
                    FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,5,0,0" />
             <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
         </StackPanel>

@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
         mc:Ignorable="d"
-        Title="REGISTRO DE DEVOLUCIONES" Height="530" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png">
+        Title="Registro de devoluciones" Height="530" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Content="Devolucion Id" FontWeight="Bold" FontSize="16"/>
+            <Label Content="Devolución Id" FontWeight="Bold" FontSize="16"/>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
                 <TextBox x:Name="DevolucionIdTextbox" Text="{Binding DevolucionId}" Width="240" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
@@ -24,7 +24,7 @@
             <ComboBox x:Name="EstudianteIdComboBox" SelectedValue="{Binding EstudianteId}" Height="30" Width="100" VerticalContentAlignment="Center" HorizontalAlignment="Left" />
             <!--—————————————————————————————————————[ Fecha Devolucion ]—————————————————————————————————————-->
             <StackPanel Orientation="Vertical">
-                <Label x:Name="FechaLabel" Content="Fecha Devolucion" FontWeight="Bold" />
+                <Label x:Name="FechaLabel" Content="Fecha Devolución" FontWeight="Bold" />
                 <DatePicker x:Name="FechaTextBox" SelectedDate="{Binding Fecha}" Height="30" VerticalContentAlignment="Center"/>
             </StackPanel>
 
@@ -45,7 +45,7 @@
                             </StackPanel>
                             <!--——————————————————————[ Dias ]——————————————————————-->
                             <StackPanel Orientation="Vertical" Margin="0,0,20,0" >
-                                <Label Content="Dias Transcurridos" HorizontalAlignment="Center"/>
+                                <Label Content="Días Transcurridos" HorizontalAlignment="Center"/>
                                 <TextBox x:Name="DiasTextBox" Height="23" Width="100"/>
                             </StackPanel>
                             <!--——————————————————————[ AgregarFilaButton ]——————————————————————-->
@@ -60,9 +60,9 @@
                         <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding Detalle}" Height="80" AutoGenerateColumns="False" Margin="0,10,0,0">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Libro Id" Binding="{Binding LibroId}"/>
-                                <DataGridTextColumn Header="Titulo" Binding="{Binding libros.Titulo}"/>
+                                <DataGridTextColumn Header="Título" Binding="{Binding libros.Titulo}"/>
                                 <DataGridTextColumn Header="Libros Devueltos" Binding="{Binding LibrosDevueltos}"/>
-                                <DataGridTextColumn Header="Dias" Binding="{Binding Dias}"/>
+                                <DataGridTextColumn Header="Días" Binding="{Binding Dias}"/>
                             </DataGrid.Columns>
                         </DataGrid>
 
@@ -107,7 +107,7 @@
                 </Button>
             </StackPanel>
             <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
-            <Label Content="Creacion: 24/07/2020                   ©2020 JL-AR Solutions                          Version: Beta 1.0" 
+            <Label Content="Creación: 24/07/2020                   ©2020 JL-AR Solutions                          Versión: Beta 1.0" 
                    FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,5,0,0" />
             <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
         </StackPanel>

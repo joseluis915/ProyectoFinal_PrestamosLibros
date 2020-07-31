@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
         xmlns:convertidor="clr-namespace:ProyectoFinal_PrestamosLibros.Resources.Extra"
         mc:Ignorable="d"
-Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png">
+Title="Registrar estudiante" Height="500" Width="580" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png">
     <Window.Resources>
         <convertidor:GenderConverter x:Key="GenderConverter"/>
     </Window.Resources>
@@ -41,10 +41,10 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
             <!--——————————————————————————————————————————————[ Cedula y Genero ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
                 <!--—————————————————————————————[ Cedula ]—————————————————————————————-->
-                <Label Content="    Cedula" FontWeight="Bold"/>
+                <Label Content="    Cédula" FontWeight="Bold"/>
                 <TextBox x:Name="CedulaTextBox" Text="{Binding Cedula}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,20,0" TextChanged="CedulaTextBox_TextChanged" MaxLength="11"/>
                 <!--—————————————————————————————[ Generos ]—————————————————————————————-->
-                <Label Content="Genero: " FontWeight="Bold"/>
+                <Label Content="Género: " FontWeight="Bold"/>
                 <RadioButton x:Name="FemeninoRadioButton" GroupName="Generos" Content="Femenino" 
                              IsChecked="{Binding Genero, Converter={StaticResource ResourceKey=GenderConverter}, ConverterParameter=Femenino}" 
                              Margin="0,0,20,0" VerticalContentAlignment="Center"/>
@@ -55,17 +55,17 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
             <!--——————————————————————————————————————————————[ Telefono y FechaNacimiento ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
                 <!--—————————————————————————————[ Telefono ]—————————————————————————————-->
-                <Label Content=" Telefono" FontWeight="Bold"/>
+                <Label Content=" Teléfono" FontWeight="Bold"/>
                 <TextBox x:Name="TelefonoTextBox" Text="{Binding Telefono}" Height="30" VerticalContentAlignment="Center" Width="200" Margin="0,0,10,0" TextChanged="TelefonoTextBox_TextChanged" MaxLength="10"/>
                 <!--—————————————————————————————[ FechaNacimiento ]—————————————————————————————-->
                 <Label Content="Fecha Nacimiento" FontWeight="Bold"/>
                 <DatePicker x:Name="FechaNacimientoDatePicker" SelectedDate="{Binding FechaNacimiento}" Height="30" VerticalContentAlignment="Center" Width="150"/>
             </StackPanel>
             <!--——————————————————————————————————————————————[ Direccion ]——————————————————————————————————————————————-->
-            <Label Content="Direccion" FontWeight="Bold"/>
+            <Label Content="Dirección" FontWeight="Bold"/>
             <TextBox x:Name="DireccionTextBox" Text="{Binding Direccion}" Height="30" VerticalContentAlignment="Center"/>
             <!--——————————————————————————————————————————————[ Correo ]——————————————————————————————————————————————-->
-            <Label Content="Correo Electronico" FontWeight="Bold"/>
+            <Label Content="Correo Electrónico" FontWeight="Bold"/>
             <TextBox x:Name="CorreoTextBox" Text="{Binding Correo}" Height="30" VerticalContentAlignment="Center"/>
 
             <!--——————————————————————————————————————————————[ BOTON NUEVO ]——————————————————————————————————————————————-->
@@ -92,7 +92,7 @@ Title="REGISTRAR ESTUDIANTE" Height="500" Width="580" WindowStartupLocation="Cen
                 </Button>
             </StackPanel>
             <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
-            <Label Content="Creacion: 23/07/2020                   ©2020 JL-AR Solutions                          Version: Beta 1.0" 
+            <Label Content="Creación: 23/07/2020                   ©2020 JL-AR Solutions                          Versión: Beta 1.0" 
                    FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,5,0,0" />
             <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
         </StackPanel>
