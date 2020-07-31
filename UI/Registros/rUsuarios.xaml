@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
         xmlns:PasswordHelper="clr-namespace:ProyectoFinal_PrestamosLibros.Resources.PasswordHelper"
         mc:Ignorable="d"
-        Title="Registro de Usuario" Height="530" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" >
+        Title="Registro de Usuario" Height="530" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label Content="Usuario Id" FontWeight="Bold" FontSize="16"/>

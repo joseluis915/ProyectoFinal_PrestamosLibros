@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
         mc:Ignorable="d"
-        Title="Registrar editorial" Height="300" Width="520" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" >
+        Title="Registrar editorial" Height="300" Width="520" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label Content="Editorial Id" FontWeight="Bold" FontSize="16"/>

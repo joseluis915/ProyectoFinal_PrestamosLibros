@@ -17,10 +17,13 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public DateTime Fecha { get; set; } = DateTime.Now;
 
         //———————————————————————————[ ForeingKey ]———————————————————————————
+        [ForeignKey("SalidaLibroId")]
+        public virtual List<SalidasLibros> SL { get; set; } = new List<SalidasLibros>();
+
         [ForeignKey("UsuarioId")]
         public virtual Usuarios Usuario { get; set; } = new Usuarios();
 
         [ForeignKey("LibroId")]
-        public virtual Libros sLibro { get; set; }
+        public virtual Libros sLibro { get; set; } = new Libros();
     }
 }

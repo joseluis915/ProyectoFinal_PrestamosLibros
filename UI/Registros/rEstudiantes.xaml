@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
         xmlns:convertidor="clr-namespace:ProyectoFinal_PrestamosLibros.Resources.Extra"
         mc:Ignorable="d"
-Title="Registrar estudiante" Height="500" Width="580" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png">
+Title="Registrar estudiante" Height="500" Width="580" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" ResizeMode="CanMinimize">
     <Window.Resources>
         <convertidor:GenderConverter x:Key="GenderConverter"/>
     </Window.Resources>
@@ -28,6 +28,9 @@ Title="Registrar estudiante" Height="500" Width="580" WindowStartupLocation="Cen
                 <!--——————————————————————————————————————————————[ Matricula ]——————————————————————————————————————————————-->
                 <Label Content="Matricula" FontWeight="Bold" />
                 <TextBox x:Name="MatriculaTextBox" Text="{Binding Matricula}" Height="30" Width="100" VerticalContentAlignment="Center" TextChanged="MatriculaTextBox_TextChanged" MaxLength="8"/>
+                <!--—————————————————————————————[ Apellidos ]—————————————————————————————-->
+                <Label Content="Usuario Id" FontWeight="Bold"/>
+                <TextBox x:Name="UsuarioIdTextBox" Text="{Binding UsuarioId}" Height="30" VerticalContentAlignment="Center" Width="100"/>
             </StackPanel>
             <!--——————————————————————————————————————————————[ Nombres y Apellidos]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Margin="0,10,0,5">

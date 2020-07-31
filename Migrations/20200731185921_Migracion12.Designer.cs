@@ -9,8 +9,8 @@ using ProyectoFinal_PrestamosLibros.DAL;
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200730202103_Migracion_12")]
-    partial class Migracion_12
+    [Migration("20200731185921_Migracion12")]
+    partial class Migracion12
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -94,7 +94,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.EntradasLibros", b =>
                 {
                     b.Property<int>("EntradaLibroId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Cantidad")
@@ -252,7 +251,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.SalidasLibros", b =>
                 {
                     b.Property<int>("SalidaLibroId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Cantidad")
@@ -354,6 +352,12 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
 
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.EntradasLibros", b =>
                 {
+                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.EntradasLibros", null)
+                        .WithMany("EL")
+                        .HasForeignKey("EntradaLibroId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Libros", "eLibro")
                         .WithMany()
                         .HasForeignKey("LibroId")
@@ -369,7 +373,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
 
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.Estudiantes", b =>
                 {
-                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "Usuario")
+                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "eeUsuario")
                         .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -418,6 +422,12 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Libros", "sLibro")
                         .WithMany()
                         .HasForeignKey("LibroId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.SalidasLibros", null)
+                        .WithMany("SL")
+                        .HasForeignKey("SalidaLibroId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

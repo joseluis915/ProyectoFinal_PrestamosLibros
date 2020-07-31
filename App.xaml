@@ -4,8 +4,8 @@
              xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros"
              DispatcherUnhandledException="Application_DispatcherUnhandledException"
              StartupUri="MainWindow.xaml">
-             <!--StartupUri="Login.xaml">-->
+    <!--StartupUri="Login.xaml">-->
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>

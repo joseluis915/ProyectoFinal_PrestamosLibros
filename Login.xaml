@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Login"
         xmlns:PasswordHelper="clr-namespace:ProyectoFinal_PrestamosLibros.Resources.PasswordHelper"
         mc:Ignorable="d"
-        Title="LogIn" Height="360" Width="360" WindowStartupLocation="CenterScreen" Icon="/Resources/Entrar.png" >
+        Title="LogIn" Height="360" Width="360" WindowStartupLocation="CenterScreen" Icon="/Resources/Entrar.png" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Center">
             <!--—————————————————————————————————————————[ IMAGEN Y TITULO ]—————————————————————————————————————————-->
