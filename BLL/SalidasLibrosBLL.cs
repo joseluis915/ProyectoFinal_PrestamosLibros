@@ -12,6 +12,15 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 {
     public class SalidasLibrosBLL
     {
+        //public void Suma(int id, int suma)
+        //{
+        //    var items = LibrosBLL.Buscar(id);
+        //    var valor = EntradasLibrosBLL.Buscar(id);
+
+        //    if (items != null) // si encuentra
+        //        items.Existencia -= valor.Cantidad;
+        //    contexto.Entry(items.LibroId).State = EntityState.Modified;
+        //}
         //——————————————————————————————————————————————[ GUARDAR ]——————————————————————————————————————————————
         public static bool Guardar(SalidasLibros salidasLibros)
         {

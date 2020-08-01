@@ -67,10 +67,9 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             else
             {
-                MessageBox.Show($"Esta Devolución no fue encontrado.\n\nAsegúrese que existe o cree una nueva.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Esta Devolución no fue encontrado.\n\nAsegúrese que existe o cree una nueva.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 Limpiar();
-                //—————————————————————————————————————[ Limpiar y hacer focus en el Id]—————————————————————————————————————
-                DevolucionIdTextbox.Clear();
+                DevolucionIdTextbox.SelectAll();
                 DevolucionIdTextbox.Focus();
             }
         }
@@ -113,7 +112,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             catch
             {
-                MessageBox.Show("No has seleccionado ninguna Fila\n\nSeleccione la Fila a Remover.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No has seleccionado ninguna Fila\n\nSeleccione la Fila a Remover.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
         //——————————————————————————————————————————————————————————————[ Nuevo ]———————————————————————————————————————————————————————————————
@@ -132,7 +131,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Devolucion Id ]—————————————————————————————————
                 if (DevolucionIdTextbox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Devolución Id) está vacío.\n\nAsigne un Id al Préstamo.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Devolución Id) está vacío.\n\nAsigne un Id al Préstamo.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     DevolucionIdTextbox.Text = "0";
                     DevolucionIdTextbox.Focus();
                     DevolucionIdTextbox.SelectAll();
@@ -142,7 +141,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Estudiante Id ]—————————————————————————————————
                 if (EstudianteIdComboBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Estudiante Id) está vacío.\n\nSelecione una Id de Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Estudiante Id) está vacío.\n\nSelecione una Id de Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     EstudianteIdComboBox.Focus();
                     return;
                 }
@@ -183,7 +182,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             catch
             {
-                MessageBox.Show($"El valor digitado en el campo (Préstamo Id) no es un número.\n\nPor favor, digite un número.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"El valor digitado en el campo (Préstamo Id) no es un número.\n\nPor favor, digite un número.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 DevolucionIdTextbox.Text = "0";
                 DevolucionIdTextbox.Focus();
                 DevolucionIdTextbox.SelectAll();

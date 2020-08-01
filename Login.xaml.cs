@@ -44,7 +44,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Login
             //—————————————————————————————————[ NombreUsuario Vacio]—————————————————————————————————
             if (NombreUsuarioTextBox.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("El Campo (Nombre Usuario) está vacío.\n\nPor favor, escriba su nombre de usuario.", "Precaución", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("El Campo (Nombre Usuario) está vacío.\n\nPor favor, escriba su nombre de usuario.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 NombreUsuarioTextBox.Clear();
                 NombreUsuarioTextBox.Focus();
                 return;
@@ -58,7 +58,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Login
             }
             else
             {
-                MessageBox.Show("Nombre de Usuario o Contraseña incorrecta", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Nombre de Usuario o Contraseña incorrectos.", "Precaución", MessageBoxButton.OK, MessageBoxImage.Warning);
                 ContrasenaPasswordBox.Clear();
                 NombreUsuarioTextBox.Focus();
             }
@@ -85,7 +85,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Login
                 }
                 else
                 {
-                    MessageBox.Show("Nombre de Usuario o Contraseña incorrecta", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Nombre de Usuario o Contraseña incorrectos.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     ContrasenaPasswordBox.Clear();
                     NombreUsuarioTextBox.Focus();
                 }

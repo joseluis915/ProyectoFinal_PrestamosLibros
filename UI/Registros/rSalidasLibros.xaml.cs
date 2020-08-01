@@ -65,8 +65,9 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 this.salidasLibros = new SalidasLibros();
                 this.DataContext = this.salidasLibros;
-                MessageBox.Show($"Esta Entrada de libro no fue encontrada.\n\nAsegúrese que existe o cree una nueva.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Esta Salida de Libro no fue encontrada.\n\nAsegúrese que existe o cree una nueva.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 Limpiar();
+                SalidaLibroIdTextBox.SelectAll();
                 SalidaLibroIdTextBox.Focus();
             }
         }
@@ -86,7 +87,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ SalidaLibro Id ]—————————————————————————————————
                 if (SalidaLibroIdTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (SalidaLibro Id) está vacío.\n\nDebe asignar un Id a la Salida del Libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (SalidaLibro Id) está vacío.\n\nDebe asignar un Id a la Salida del Libro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     SalidaLibroIdTextBox.Text = "0";
                     SalidaLibroIdTextBox.Focus();
                     SalidaLibroIdTextBox.SelectAll();
@@ -95,21 +96,21 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Libro Id ]—————————————————————————————————
                 if (LibroIdComboBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Libro Id) está vacío.\n\nAsigne un Id al Libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Libro Id) está vacío.\n\nAsigne un Id al Libro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     LibroIdComboBox.Focus();
                     return;
                 }
                 //—————————————————————————————————[ Fecha ]—————————————————————————————————
                 if (FechaDatePicker.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show($"El Campo (Fecha) está vacío.\n\nSeleccione una fecha para la Entrada del Libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"El Campo (Fecha) está vacío.\n\nSeleccione una fecha para la Entrada del Libro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     FechaDatePicker.Focus();
                     return;
                 }
                 //—————————————————————————————————[ Cantidad ]—————————————————————————————————
                 if (CantidadTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Cantidad) está vacío.\n\nEscriba la cantidad de Libros.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Cantidad) está vacío.\n\nEscriba la cantidad de Libros.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     CantidadTextBox.Text = "0";
                     CantidadTextBox.Focus();
                     CantidadTextBox.SelectAll();
@@ -153,7 +154,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             catch
             {
-                MessageBox.Show($"El valor digitado en el campo (EntradaLibro Id) no es un número.\n\nPor favor, digite un número.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"El valor digitado en el campo (EntradaLibro Id) no es un número.\n\nPor favor, digite un número.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 SalidaLibroIdTextBox.Text = "0";
                 SalidaLibroIdTextBox.Focus();
                 SalidaLibroIdTextBox.SelectAll();
@@ -174,7 +175,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             catch
             {
-                MessageBox.Show($"El valor digitado en el campo (Cantidad) no es un número.\n\nPor favor, digite un número.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"El valor digitado en el campo (Cantidad) no es un número.\n\nPor favor, digite un número.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 CantidadTextBox.Text = "0";
                 CantidadTextBox.Focus();
                 CantidadTextBox.SelectAll();

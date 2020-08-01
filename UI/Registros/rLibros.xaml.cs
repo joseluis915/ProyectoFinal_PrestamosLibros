@@ -61,8 +61,9 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 this.libros = new Libros();
                 this.DataContext = this.libros;
-                MessageBox.Show($"Esta Entrada de libro no fue encontrada.\n\nAsegúrese que existe o cree una nueva.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show($"Este Libro no fue encontrado.\n\nAsegúrese que existe o cree una nuevo.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 Limpiar();
+                LibroIdTextBox.SelectAll();
                 LibroIdTextBox.Focus();
             }
         }
@@ -212,7 +213,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 {
                     ExistenciaTextBox.Foreground = Brushes.Black;
                 }
-                else
+                else if (Existencia > 0)
                 {
                     ExistenciaTextBox.Foreground = Brushes.Green;
                 }

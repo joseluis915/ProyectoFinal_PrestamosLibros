@@ -156,7 +156,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 name: "EntradasLibros",
                 columns: table => new
                 {
-                    EntradaLibroId = table.Column<int>(nullable: false),
+                    EntradaLibroId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     UsuarioId = table.Column<int>(nullable: false),
                     LibroId = table.Column<int>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false),
@@ -186,7 +187,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     SalidaLibroId = table.Column<int>(nullable: false),
                     UsuarioId = table.Column<int>(nullable: false),
                     LibroId = table.Column<int>(nullable: false),
-                    Cantidad = table.Column<int>(nullable: false),
+                    Cantidad = table.Column<double>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>

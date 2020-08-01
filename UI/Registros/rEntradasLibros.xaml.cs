@@ -65,8 +65,9 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 this.entradasLibros = new EntradasLibros();
                 this.DataContext = this.entradasLibros;
-                MessageBox.Show($"Esta Entrada de libro no fue encontrada.\n\nAsegúrese que existe o cree una nueva.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Esta Entrada de Libro no fue encontrada.\n\nAsegúrese que existe o cree una nueva.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Limpiar();
+                EntradaLibroIdTextBox.SelectAll();
                 EntradaLibroIdTextBox.Focus();
             }
         }

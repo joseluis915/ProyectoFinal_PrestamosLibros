@@ -92,6 +92,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.EntradasLibros", b =>
                 {
                     b.Property<int>("EntradaLibroId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Cantidad")
@@ -251,8 +252,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     b.Property<int>("SalidaLibroId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Cantidad")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Cantidad")
+                        .HasColumnType("REAL");
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
@@ -350,12 +351,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
 
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.EntradasLibros", b =>
                 {
-                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.EntradasLibros", null)
-                        .WithMany("EL")
-                        .HasForeignKey("EntradaLibroId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Libros", "eLibro")
                         .WithMany()
                         .HasForeignKey("LibroId")
@@ -371,7 +366,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
 
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.Estudiantes", b =>
                 {
-                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "eeUsuario")
+                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "Usuario")
                         .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)

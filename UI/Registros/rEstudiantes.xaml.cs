@@ -66,6 +66,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 this.DataContext = this.estudiantes;
                 MessageBox.Show($"Este Estudiante no fue encontrado.\n\nAsegúrese que existe o cree uno nuevo.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 Limpiar();
+                EstudianteIdTextBox.SelectAll();
                 EstudianteIdTextBox.Focus();
             }
         }
