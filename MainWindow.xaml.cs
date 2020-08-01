@@ -139,8 +139,8 @@ namespace ProyectoFinal_PrestamosLibros
         //——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————
         private void InformacionMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Creado por:\t\t{CreadoPorLabel.Content}\n\nVersion:\t\t\t{VersionLabel.Content}\n\nCreacion:\t\t{CreacionLabel.Content}\n\nUltima Modificacion:\t{ModificacionLabel.Content}\n\nPara mas informacion:\tejemplo@ucne.edu.do",
-                "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show($"Creado por:\t\t{CreadoPorLabel.Content}\n\nVersión:\t\t\t{VersionLabel.Content}\n\nCreación:\t\t{CreacionLabel.Content}\n\nUltima Modificación :\t{ModificacionLabel.Content}\n\nPara más información:\tejemplo@ucne.edu.do",
+                "Información", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

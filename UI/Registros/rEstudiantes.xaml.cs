@@ -45,7 +45,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             if (EstudianteIdTextBox.Text.Length == 0)
             {
                 Validado = false;
-                MessageBox.Show("Transaccion Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Transacción Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             return Validado;
@@ -64,7 +64,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 this.estudiantes = new Estudiantes();
                 this.DataContext = this.estudiantes;
-                MessageBox.Show($"Este Estudiante no fue encontrado.\n\nAsegurese que existe o cree uno nuevo.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show($"Este Estudiante no fue encontrado.\n\nAsegúrese que existe o cree uno nuevo.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 Limpiar();
                 EstudianteIdTextBox.Focus();
             }
@@ -86,7 +86,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //———————————————————————————————[ Estudiante Id ]———————————————————————————————
                 if (EstudianteIdTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Estudiante Id) esta vacio.\n\nAsigne un Id al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("El Campo (Estudiante Id) está vacío.\n\nAsigne un Id al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     EstudianteIdTextBox.Text = "0";
                     EstudianteIdTextBox.Focus();
                     EstudianteIdTextBox.SelectAll();
@@ -95,7 +95,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //———————————————————————————————[ Matricula ]———————————————————————————————
                 if (MatriculaTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Matricula) esta vacio.\n\nAsigne una Matricula al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("El Campo (Matricula) está vacío.\n\nAsigne una Matricula al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     MatriculaTextBox.Text = "0";
                     MatriculaTextBox.Focus();
                     MatriculaTextBox.SelectAll();
@@ -103,14 +103,14 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 }
                 if (MatriculaTextBox.Text.Length != 8)
                 {
-                    MessageBox.Show($"La Matricula ({MatriculaTextBox.Text}) no es valida.\n\nLa Matricula debe tener 8 digitos (0-9).", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show($"La Matrícula  ({MatriculaTextBox.Text}) no es válida.\n\nLa Matricula debe tener 8 dígitos (0-9).", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     MatriculaTextBox.Focus();
                     return;
                 }
                 //———————————————————————————————[ Nombres ]———————————————————————————————
                 if (NombresTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Nombres) esta vacio.\n\nAsigne un Nombre al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("El Campo (Nombres) está vacío.\n\nAsigne un Nombre al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     NombresTextBox.Clear();
                     NombresTextBox.Focus();
                     return;
@@ -118,7 +118,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //———————————————————————————————[ Apellidos ]———————————————————————————————
                 if (ApellidosTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Apellidos) esta vacio.\n\nAsigne un Apellido al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("El Campo (Apellidos) está vacío.\n\nAsigne un Apellido al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     ApellidosTextBox.Clear();
                     ApellidosTextBox.Focus();
                     return;
@@ -126,7 +126,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //———————————————————————————————[ Cedula ]———————————————————————————————
                 if (CedulaTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Cedula) esta vacio.\n\nAsigne una Cedula al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("El Campo (Cédula) está vacío.\n\nAsigne una Cedula al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     CedulaTextBox.Text = "0";
                     CedulaTextBox.Focus();
                     CedulaTextBox.SelectAll();
@@ -134,21 +134,21 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 }
                 if (CedulaTextBox.Text.Length != 11)
                 {
-                    MessageBox.Show($"La Cédula ({CedulaTextBox.Text}) no es valida.\n\nLa cedula debe tener 11 digitos (0-9).", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show($"La Cédula ({CedulaTextBox.Text}) no es válida.\n\nLa cedula debe tener 11 dígitos (0-9).", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     CedulaTextBox.Focus();
                     return;
                 }
                 //———————————————————————————————[ Genero ]———————————————————————————————
                 if (FemeninoRadioButton.IsChecked.Value == false && MasculinoRadioButton.IsChecked.Value == false)
                 {
-                    MessageBox.Show("El Campo (Genero) esta vacio.\n\nAsigne un Genero al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("El Campo (Género) está vacío.\n\nAsigne un Genero al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     FemeninoRadioButton.Focus();
                     return;
                 }
                 //———————————————————————————————[ Telefono ]———————————————————————————————
                 if (TelefonoTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Telefono) esta vacio.\n\nAsigne un Telefono al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("El Campo (Teléfono) está vacío.\n\nAsigne un Teléfono al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     TelefonoTextBox.Text = "0";
                     TelefonoTextBox.Focus();
                     TelefonoTextBox.SelectAll();
@@ -156,21 +156,21 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 }
                 if (TelefonoTextBox.Text.Length != 10)
                 {
-                    MessageBox.Show($"El Teféfono ({TelefonoTextBox.Text}) no es valido.\n\nEl Teféfono debe tener 10 digitos (0-9).", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show($"El Teféfono ({TelefonoTextBox.Text}) no es válido.\n\nEl Teléfono debe tener 10 dígitos (0-9).", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     TelefonoTextBox.Focus();
                     return;
                 }
                 //———————————————————————————————[ Fecha Nacimiento ]———————————————————————————————
                 if (FechaNacimientoDatePicker.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Fecha Nacimiento) esta vacio.\n\nAsigne una Fecha de Nacimiento al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("El Campo (Fecha Nacimiento) está vacío.\n\nAsigne una Fecha de Nacimiento al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     FechaNacimientoDatePicker.Focus();
                     return;
                 }
                 //———————————————————————————————[ Direccion ]———————————————————————————————
                 if (DireccionTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Direccion) esta vacio.\n\nAsigne una Direccion al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("El Campo (Dirección) está vacío.\n\nAsigne una Dirección al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     DireccionTextBox.Clear();
                     DireccionTextBox.Focus();
                     return;
@@ -178,7 +178,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //———————————————————————————————[ Correo ]———————————————————————————————
                 if (CorreoTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Correo) esta vacio.\n\nAsigne una Correo al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("El Campo (Correo) está vacío.\n\nAsigne una Correo al Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                     CorreoTextBox.Clear();
                     CorreoTextBox.Focus();
                     return;
@@ -188,10 +188,10 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 if (paso)
                 {
                     Limpiar();
-                    MessageBox.Show("Transaccion Exitosa", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Transacción Exitosa", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
-                    MessageBox.Show("Transaccion Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Transacción Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         //——————————————————————————————————————————————————————————————[ Eliminar ]———————————————————————————————————————————————————————————————
@@ -201,7 +201,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 if (EstudiantesBLL.Eliminar(Utilidades.ToInt(EstudianteIdTextBox.Text)))
                 {
                     Limpiar();
-                    MessageBox.Show("Registro Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Registro Eliminado", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                     MessageBox.Show("No se pudo eliminar el registro", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -221,7 +221,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             catch
             {
-                MessageBox.Show($"El valor digitado en el campo (Estudiante Id) no es un numero.\n\nPorfavor, digite un numero.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show($"El valor digitado en el campo (Estudiante Id) no es un número.\n\nPor favor, digite un número.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 EstudianteIdTextBox.Text = "0";
                 EstudianteIdTextBox.Focus();
                 EstudianteIdTextBox.SelectAll();
@@ -248,7 +248,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             catch
             {
-                MessageBox.Show("El valor digitado en el campo (Matricula) no es un numero.\n\nPorfavor, digite un numero.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("El valor digitado en el campo (Matricula) no es un número.\n\nPor favor, digite un número.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 MatriculaTextBox.Text = "0";
                 MatriculaTextBox.Focus();
                 MatriculaTextBox.SelectAll();
@@ -275,7 +275,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             catch
             {
-                MessageBox.Show("El valor digitado en el campo (Cedula) no es un numero.\n\nPorfavor, digite numeros (0-9).", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("El valor digitado en el campo (Cedula) no es un número.\n\nPor favor, digite números (0-9).", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 CedulaTextBox.Text = "0";
                 CedulaTextBox.Focus();
                 CedulaTextBox.SelectAll();
@@ -302,7 +302,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             catch
             {
-                MessageBox.Show("El valor digitado en el campo (Telefono) no es un numero.\n\nPorfavor, digite un numero.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("El valor digitado en el campo (Teléfono) no es un número.\n\nPor favor, digite un número.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 TelefonoTextBox.Text = "0";
                 TelefonoTextBox.Focus();
                 TelefonoTextBox.SelectAll();

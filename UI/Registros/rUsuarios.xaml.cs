@@ -46,7 +46,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             if (UsuarioIdTextBox.Text.Length == 0)
             {
                 Validado = false;
-                MessageBox.Show("Transaccion Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Transacción Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             return Validado;
@@ -65,7 +65,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 this.usuarios = new Usuarios();
                 this.DataContext = this.usuarios;
-                MessageBox.Show($"Este Usuario no fue encontrado.\n\nAsegurese que existe o cree uno nuevo.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Este Usuario no fue encontrado.\n\nAsegúrese que existe o cree uno nuevo.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 Limpiar();
                 UsuarioIdTextBox.Focus();
             }
@@ -95,7 +95,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Usuario Id ]—————————————————————————————————
                 if (UsuarioIdTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Usuario Id) esta vacio.\n\nAsigne un Id al Usuario.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Usuario Id) está vacío.\n\nAsigne un Id al Usuario.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     UsuarioIdTextBox.Text = "0";
                     UsuarioIdTextBox.Focus();
                     UsuarioIdTextBox.SelectAll();
@@ -104,7 +104,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Nombres ]—————————————————————————————————
                 if (NombresTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Nombres) esta vacio.\n\nEscriba sus Nombres.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Nombres) está vacío.\n\nEscriba sus Nombres.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     NombresTextBox.Clear();
                     NombresTextBox.Focus();
                     return;
@@ -112,7 +112,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Apellidos ]—————————————————————————————————
                 if (ApellidosTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Apellidos) esta vacio.\n\nEscriba sus Apellidos.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Apellidos) está vacío.\n\nEscriba sus Apellidos.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     ApellidosTextBox.Clear();
                     ApellidosTextBox.Focus();
                     return;
@@ -120,14 +120,14 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Fecha Creación ]—————————————————————————————————
                 if (FechaCreacionDatePicker.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show($"El Campo (Fecha Creación) esta vacio.\n\nSeleccione una fecha.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"El Campo (Fecha Creación) está vacío.\n\nSeleccione una fecha.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     FechaCreacionDatePicker.Focus();
                     return;
                 }
                 //—————————————————————————————————[ Nombre Usuario ]—————————————————————————————————
                 if (NombreUsuarioTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Nombre Usuario) esta vacio.\n\nAsigne un Nombre al Usuario.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Nombre Usuario) está vacío.\n\nAsigne un Nombre al Usuario.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     NombreUsuarioTextBox.Focus();
                     NombreUsuarioTextBox.SelectAll();
                     return;
@@ -135,7 +135,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Nombre Usuario ]—————————————————————————————————
                 if (NombreUsuarioTextBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Nombre Usuario) esta vacio.\n\nAsigne un Nombre al Usuario.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Nombre Usuario) está vacío.\n\nAsigne un Nombre al Usuario.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     NombreUsuarioTextBox.Focus();
                     NombreUsuarioTextBox.SelectAll();
                     return;
@@ -143,7 +143,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Contraseña ]—————————————————————————————————
                 if (ContrasenaPasswordBox.Password == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Contraseña) esta vacio.\n\nAsigne una Contraseña al Usuario.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Contraseña) está vacío.\n\nAsigne una Contraseña al Usuario.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     ContrasenaPasswordBox.Focus();
                     ContrasenaPasswordBox.SelectAll();
                     return;
@@ -151,7 +151,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Confirmar Contraseña ]—————————————————————————————————
                 if (ConfirmarContrasenaPasswordBox.Password == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Confirmar Contraseña) esta vacio.\n\nConfirme la Contraseña del Usuario.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Confirmar Contraseña) está vacío.\n\nConfirme la Contraseña del Usuario.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     ConfirmarContrasenaPasswordBox.Focus();
                     ConfirmarContrasenaPasswordBox.SelectAll();
                     return;
@@ -170,10 +170,10 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 if (paso)
                 {
                     Limpiar();
-                    MessageBox.Show("Transaccion Exitosa", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Transacción Exitosa", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
-                    MessageBox.Show("Transaccion Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Transacción Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         //——————————————————————————————————————————————————————————————[ Eliminar ]———————————————————————————————————————————————————————————————
@@ -192,7 +192,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             if (UsuariosBLL.Eliminar(Utilidades.ToInt(UsuarioIdTextBox.Text)))
             {
                 Limpiar();
-                MessageBox.Show("Registro Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Registro Eliminado", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
                 MessageBox.Show("No se pudo eliminar el registro", "Error", MessageBoxButton.OK, MessageBoxImage.Error);

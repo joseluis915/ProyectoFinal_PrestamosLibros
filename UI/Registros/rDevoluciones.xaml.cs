@@ -50,7 +50,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             if (DevolucionIdTextbox.Text.Length == 0)
             {
                 Validado = false;
-                MessageBox.Show("Transaccion Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Transacción Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             return Validado;
@@ -67,7 +67,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             else
             {
-                MessageBox.Show($"Esta Devolucion no fue encontrado.\n\nAsegurese que existe o cree una nueva.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Esta Devolución no fue encontrado.\n\nAsegúrese que existe o cree una nueva.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 Limpiar();
                 //—————————————————————————————————————[ Limpiar y hacer focus en el Id]—————————————————————————————————————
                 DevolucionIdTextbox.Clear();
@@ -132,7 +132,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Devolucion Id ]—————————————————————————————————
                 if (DevolucionIdTextbox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Devolucion Id) esta vacio.\n\nAsigne un Id al Prestamo.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Devolución Id) está vacío.\n\nAsigne un Id al Préstamo.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     DevolucionIdTextbox.Text = "0";
                     DevolucionIdTextbox.Focus();
                     DevolucionIdTextbox.SelectAll();
@@ -142,7 +142,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————[ Estudiante Id ]—————————————————————————————————
                 if (EstudianteIdComboBox.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("El Campo (Estudiante Id) esta vacio.\n\nSelecione una Id de Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El Campo (Estudiante Id) está vacío.\n\nSelecione una Id de Estudiante.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     EstudianteIdComboBox.Focus();
                     return;
                 }
@@ -151,10 +151,10 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 if (paso)
                 {
                     Limpiar();
-                    MessageBox.Show("Transaccion Exitosa", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Transacción Exitosa", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
-                    MessageBox.Show("Transaccion Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Transacción Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         //——————————————————————————————————————————————————————————————[ Eliminar ]———————————————————————————————————————————————————————————————
@@ -164,7 +164,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 if (DevolucionesBLL.Eliminar(Utilidades.ToInt(DevolucionIdTextbox.Text)))
                 {
                     Limpiar();
-                    MessageBox.Show("Registro Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Registro Eliminado", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                     MessageBox.Show("No se pudo eliminar el registro", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -183,7 +183,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             catch
             {
-                MessageBox.Show($"El valor digitado en el campo (Prestamo Id) no es un numero.\n\nPorfavor, digite un numero.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"El valor digitado en el campo (Préstamo Id) no es un número.\n\nPor favor, digite un número.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 DevolucionIdTextbox.Text = "0";
                 DevolucionIdTextbox.Focus();
                 DevolucionIdTextbox.SelectAll();
