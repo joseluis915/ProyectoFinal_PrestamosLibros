@@ -8,6 +8,17 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
+	  <Compile Remove="ProyectoFinal_PrestamosLibrosTests\**" />
+	  <Compile Remove="ProyectoFinal_PrestamosLibrosTest\**" />
+	  <EmbeddedResource Remove="ProyectoFinal_PrestamosLibrosTests\**" />
+	  <EmbeddedResource Remove="ProyectoFinal_PrestamosLibrosTest\**" />
+	  <None Remove="ProyectoFinal_PrestamosLibrosTests\**" />
+	  <None Remove="ProyectoFinal_PrestamosLibrosTest\**" />
+	  <Page Remove="ProyectoFinal_PrestamosLibrosTests\**" />
+	  <Page Remove="ProyectoFinal_PrestamosLibrosTest\**" />
+	</ItemGroup>
+	
+	<ItemGroup>
 	  <None Remove="Resources\Agendar.png" />
 	  <None Remove="Resources\Anonimo.png" />
 	  <None Remove="Resources\Buscar.png" />
