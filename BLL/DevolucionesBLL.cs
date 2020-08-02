@@ -60,7 +60,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 
             try
             {
-                contexto.Database.ExecuteSqlRaw($"Delete From DevolucionesDetalle Where DevolucionId={devoluciones.DevolucionId}");
+                contexto.Database.ExecuteSqlRaw($"DELETE FROM DevolucionesDetalle WHERE DevolucionId={devoluciones.DevolucionId}");
 
                 foreach (var item in devoluciones.Detalle)
                 {
@@ -88,10 +88,10 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             Contexto contexto = new Contexto();
             try
             {
-                var devol = DevolucionesBLL.Buscar(id);
-                if (devol != null)
-                {
-                    contexto.Devoluciones.Remove(devol);
+                var devolucion = DevolucionesBLL.Buscar(id);
+                if (devolucion != null)
+                {   
+                    contexto.Devoluciones.Remove(devolucion);
                     paso = contexto.SaveChanges() > 0;
                 }
             }
@@ -157,8 +157,8 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             try
             {
                 devoluciones = contexto.Devoluciones
-                    .Where(p => p.DevolucionId == id)
-                    .Include(p => p.Detalle).ThenInclude(l => l.libros)
+                    .Where(d => d.DevolucionId == id)
+                    .Include(d => d.Detalle).ThenInclude(dl => dl.libros)
                     .SingleOrDefault();
             }
             catch (Exception)

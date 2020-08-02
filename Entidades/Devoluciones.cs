@@ -21,9 +21,9 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public virtual List<DevolucionesDetalle> Detalle { get; set; } = new List<DevolucionesDetalle>();
 
         [ForeignKey("UsuarioId")]
-        public virtual Usuarios Usuario { get; set; } = new Usuarios();
+        public virtual Usuarios usuarios { get; set; } = new Usuarios();
 
         [ForeignKey("EstudianteId")]
-        public Estudiantes estudiantes { get; set; } = new Estudiantes();
+        public Estudiantes estudiantes { get; set; }
     }
 }

@@ -76,6 +76,13 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         //——————————————————————————————————————————————————————————————[ Agregar Fila ]———————————————————————————————————————————————————————————————
         private void AgregarFilaButton_Click(object sender, RoutedEventArgs e)
         {
+            if (DiasTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("El Campo (Dias Transcurridos) está vacio.\n\nEscriba cuando dias transcurrieron.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                DiasTextBox.Focus();
+                return;
+            }
+
             var filaDetalle = new DevolucionesDetalle
             {
                 DevolucionId = this.devoluciones.DevolucionId,
@@ -84,9 +91,8 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 libros = (Libros)LibroIdComboBox.SelectedItem,
                 //—————————————————————————————————————————————————————————————————————————————————————
                 LibrosDevueltos = Convert.ToSingle(LibrosDevueltosTextBox.Text),
-                Dias = double.Parse(LibrosDevueltosTextBox.Text)
+                Dias = Convert.ToInt32(DiasTextBox.Text.ToString())
             };
-            //filaDetalle.libros = (Libros)LibroIdComboBox.SelectedItem;
             //——————————————————————————————[Tiempo Total]——————————————————————————————
             devoluciones.Total += Convert.ToDouble(LibrosDevueltosTextBox.Text.ToString());
             //——————————————————————————————————————————————————————————————————————————

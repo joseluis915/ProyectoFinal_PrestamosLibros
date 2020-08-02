@@ -16,6 +16,6 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
 
         //———————————————————————————[ ForeingKey ]———————————————————————————
         [ForeignKey("UsuarioId")]
-        public virtual Usuarios Usuario { get; set; } = new Usuarios();
+        public virtual Usuarios usuarios { get; set; } = new Usuarios();
     }
 }

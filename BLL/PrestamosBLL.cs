@@ -60,7 +60,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 
             try
             {
-                contexto.Database.ExecuteSqlRaw($"Delete From PrestamosDetalle Where PrestamoId={prestamos.PrestamoId}");
+                contexto.Database.ExecuteSqlRaw($"DELETE FROM PrestamosDetalle WHERE PrestamoId={prestamos.PrestamoId}");
 
                 foreach (var item in prestamos.Detalle)
                 {
@@ -158,7 +158,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             {
                 prestamos = contexto.Prestamos
                     .Where(p => p.PrestamoId == id)
-                    .Include(p => p.Detalle).ThenInclude(t => t.libros)
+                    .Include(p => p.Detalle).ThenInclude(pl => pl.libros)
                     .SingleOrDefault();
             }
             catch (Exception)

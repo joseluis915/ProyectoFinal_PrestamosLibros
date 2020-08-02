@@ -76,7 +76,7 @@
                             </Button>
                             <!--——————————————————————[ TiempoTotal ]——————————————————————-->
                             <Label Content="Devueltos Total" Margin="60,0,0,0" FontWeight="Bold" />
-                            <TextBox x:Name="LibrosDevueltosTotalTextBox" Text="{Binding LibrosDevueltosTotal}" Width="130" IsReadOnly="True" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="LibrosDevueltosTotalTextBox" Text="{Binding Total}" Width="130" IsReadOnly="True" VerticalContentAlignment="Center"/>
                         </StackPanel>
                     </StackPanel>
                 </GroupBox>

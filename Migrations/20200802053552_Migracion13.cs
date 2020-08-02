@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
-    public partial class Migracion12 : Migration
+    public partial class Migracion13 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -160,8 +160,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     UsuarioId = table.Column<int>(nullable: false),
                     LibroId = table.Column<int>(nullable: false),
-                    Fecha = table.Column<DateTime>(nullable: false),
-                    Cantidad = table.Column<int>(nullable: false)
+                    Cantidad = table.Column<double>(nullable: false),
+                    Fecha = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -184,7 +184,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 name: "SalidasLibros",
                 columns: table => new
                 {
-                    SalidaLibroId = table.Column<int>(nullable: false),
+                    SalidaLibroId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     UsuarioId = table.Column<int>(nullable: false),
                     LibroId = table.Column<int>(nullable: false),
                     Cantidad = table.Column<double>(nullable: false),
@@ -216,7 +217,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                     DevolucionId = table.Column<int>(nullable: false),
                     LibroId = table.Column<int>(nullable: false),
                     LibrosDevueltos = table.Column<double>(nullable: false),
-                    Dias = table.Column<double>(nullable: false)
+                    Dias = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

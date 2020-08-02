@@ -15,7 +15,7 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public int DevolucionId { get; set; }
         public int LibroId { get; set; }
         public double LibrosDevueltos { get; set; }
-        public double Dias { get; set; }
+        public int Dias { get; set; }
 
         //———————————————————————————[ ForeingKey ]———————————————————————————
         [ForeignKey("LibroId")]

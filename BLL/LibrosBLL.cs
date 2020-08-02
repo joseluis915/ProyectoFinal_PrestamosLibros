@@ -7,6 +7,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using ProyectoFinal_PrestamosLibros.DAL;
 using ProyectoFinal_PrestamosLibros.Entidades;
+using System.Windows;
+using System.Windows.Documents;
 
 namespace ProyectoFinal_PrestamosLibros.BLL
 {
@@ -194,6 +196,33 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             }
 
             return libros;
+        }
+        //——————————————————————————————————————————————[ Sumar - SalidaLibros ]——————————————————————————————————————————————
+        public static void SumarSalidaLibros(int id, double cantidad)
+        {
+            Libros libros = Buscar(id);
+
+            libros.Existencia += cantidad;
+
+            Modificar(libros);
+        }
+        //——————————————————————————————————————————————[ Restar - SalidaLibros ]——————————————————————————————————————————————
+        public static void RestarSalidaLibros(int id, double cantidad)
+        {
+            Libros libros = Buscar(id);
+
+            libros.Existencia -= cantidad;
+
+            if (libros.Existencia >= 0)
+            {
+                Modificar(libros);
+            }
+            else
+            {
+                // TODO: No dejar que guarde al mostrar este mensaje. 
+                MessageBox.Show("No puedes dar salida a esta catidad de libros, porque es menor que 0.\n\nVerifique la existencia actual del libro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
         }
     }
 }

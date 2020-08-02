@@ -85,7 +85,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 //—————————————————————————————————————————————————————————————————————————————————————
                 CantidadLibro = Convert.ToSingle(CantidadLibroTextBox.Text)
             };
-            //——————————————————————————————[Tiempo Total]——————————————————————————————
+            //——————————————————————————————[Prestamos Total]——————————————————————————————
             prestamos.LibrosTotal += Convert.ToDouble(CantidadLibroTextBox.Text.ToString());
             //——————————————————————————————————————————————————————————————————————————
             this.prestamos.Detalle.Add(filaDetalle);

@@ -117,6 +117,9 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     return;
                 }
                 //———————————————————————————————————————————————————————[ VALIDAR SI ESTA VACIO - FIN ]———————————————————————————————————————————————————————
+                
+                LibrosBLL.RestarSalidaLibros(Convert.ToInt32(LibroIdComboBox.SelectedValue), Convert.ToDouble(CantidadTextBox.Text)); //-----------------
+
                 var paso = SalidasLibrosBLL.Guardar(salidasLibros);
                 if (paso)
                 {
@@ -133,6 +136,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             {
                 if (SalidasLibrosBLL.Eliminar(Utilidades.ToInt(SalidaLibroIdTextBox.Text)))
                 {
+                    LibrosBLL.SumarSalidaLibros(Convert.ToInt32(LibroIdComboBox.SelectedValue), Convert.ToDouble(CantidadTextBox.Text)); //-----------------
                     Limpiar();
                     MessageBox.Show("Registro Eliminado", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
                 }

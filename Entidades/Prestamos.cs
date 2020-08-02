@@ -22,7 +22,7 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public virtual List<PrestamosDetalle> Detalle { get; set; } = new List<PrestamosDetalle>();
 
         [ForeignKey("UsuarioId")]
-        public virtual Usuarios Usuario { get; set; } = new Usuarios();
+        public virtual Usuarios usuarios { get; set; } = new Usuarios();
 
         [ForeignKey("EstudianteId")]
         public virtual Estudiantes estudiantes { get; set; }

@@ -23,6 +23,8 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         {
             InitializeComponent();
             this.DataContext = estudiantes;
+
+            // TODO: UsuariosBLL.ObtenerIdUsuario(Convert.ToInt32(UsuarioIdTextBox.Text)); //-----------------
         }
         //——————————————————————————————————————————————————————————————[ Cargar ]———————————————————————————————————————————————————————————————
         private void Cargar()

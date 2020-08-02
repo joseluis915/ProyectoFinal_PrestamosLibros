@@ -199,5 +199,11 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 
             return sb.ToString();
         }
+        // TODO: ——————————————————————————————————————————————[ ObtenerIdUsuario ]——————————————————————————————————————————————
+        public static void ObtenerIdUsuario(int id, string usuarioId)
+        {
+            Usuarios usuarios = Buscar(id);
+            usuarios.NombreUsuario = usuarioId;
+        }
     }
 }
