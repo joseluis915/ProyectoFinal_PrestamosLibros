@@ -30,7 +30,34 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
                 switch (FiltroComboBox.SelectedIndex)
                 {
                     case 0:
-                        listado = DevolucionesBLL.GetList(d => d.DevolucionId == Utilidades.ToInt(CriterioTextBox.Text));
+                        try
+                        {
+                            listado = DevolucionesBLL.GetList(d => d.DevolucionId == Utilidades.ToInt(CriterioTextBox.Text));
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Debes ingresar un Critero valido para aplicar este filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
+                        break;
+                    case 1:
+                        try
+                        {
+                            listado = DevolucionesBLL.GetList(d => d.UsuarioId == Utilidades.ToInt(CriterioTextBox.Text));
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Debes ingresar un Critero valido para aplicar este filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
+                        break;
+                    case 2:
+                        try
+                        {
+                            listado = DevolucionesBLL.GetList(d => d.EstudianteId == Utilidades.ToInt(CriterioTextBox.Text));
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Debes ingresar un Critero valido para aplicar este filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
                         break;
                 }
             }
