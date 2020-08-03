@@ -144,7 +144,7 @@
             <Label Content="Menú Principal" FontWeight="Bold" Height="50" FontSize="36" HorizontalAlignment="Center" />
             <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                <Label Content="Creación:" FontWeight="Bold" FontSize="18" FontStyle="Italic"/>
+                <Label Content="Programa creado:" FontWeight="Bold" FontSize="18" FontStyle="Italic"/>
                 <Label x:Name="CreacionLabel" Content="16/07/2020" FontSize="18" />
             </StackPanel>
 
