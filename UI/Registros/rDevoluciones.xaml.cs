@@ -80,6 +80,13 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         //——————————————————————————————————————————————————————————————[ Agregar Fila ]———————————————————————————————————————————————————————————————
         private void AgregarFilaButton_Click(object sender, RoutedEventArgs e)
         {
+            //—————————————————————————————————[ Libro Id ]—————————————————————————————————
+            if (LibroIdComboBox.Text == string.Empty)
+            {
+                MessageBox.Show("El Campo (Libro Id) está vacío.\n\nPorfavor, Seleccione el Libro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                LibroIdComboBox.IsDropDownOpen = true;
+                return;
+            }
             if (DiasTextBox.Text == string.Empty)
             {
                 MessageBox.Show("El Campo (Dias Transcurridos) está vacio.\n\nEscriba cuando dias transcurrieron.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -155,10 +162,10 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     return;
                 }
                 //—————————————————————————————————[ Estudiante Id ]—————————————————————————————————
-                if (EstudianteIdComboBox.Text.Trim() == string.Empty)
+                if (EstudianteIdComboBox.Text == string.Empty)
                 {
                     MessageBox.Show("El Campo (Estudiante Id) está vacío.\n\nSelecione una Id de Estudiante.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    EstudianteIdComboBox.Focus();
+                    EstudianteIdComboBox.IsDropDownOpen = true;
                     return;
                 }
 

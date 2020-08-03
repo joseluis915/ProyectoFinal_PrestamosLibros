@@ -105,10 +105,10 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     return;
                 }
                 //—————————————————————————————————[ Libro Id ]—————————————————————————————————
-                if (LibroIdComboBox.Text.Trim() == string.Empty)
+                if (LibroIdComboBox.Text == string.Empty)
                 {
                     MessageBox.Show("El Campo (Libro Id) está vacío.\n\nAsigne un Id al Libro.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
-                    LibroIdComboBox.Focus();
+                    LibroIdComboBox.IsDropDownOpen = true;
                     return;
                 }
                 //—————————————————————————————————[ Fecha ]—————————————————————————————————
