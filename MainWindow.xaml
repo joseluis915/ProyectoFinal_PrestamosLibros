@@ -150,7 +150,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <Label Content="Ultima modificación:" FontWeight="Bold" FontSize="18" FontStyle="Italic"/>
-                <Label x:Name="ModificacionLabel" Content="02/08/2020" FontSize="18" />
+                <Label x:Name="ModificacionLabel" Content="03/08/2020" FontSize="18" />
             </StackPanel>
 
             <Label x:Name="CreadoPorLabel" Content="©2020 JL-AR Solutions" FontWeight="Bold"  FontSize="16" FontStyle="Italic" HorizontalAlignment="Center" Margin="0,20,0,0"/>

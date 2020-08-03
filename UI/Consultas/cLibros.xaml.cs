@@ -32,6 +32,51 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
                     case 0:
                         listado = LibrosBLL.GetList(l => l.LibroId == Utilidades.ToInt(CriterioTextBox.Text));
                         break;
+
+                    case 1:
+                        try
+                        {
+                            listado = LibrosBLL.GetList(l => l.UsuarioId == Utilidades.ToInt(CriterioTextBox.Text));
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Debe ingresar un Critero valido para el filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
+                        break;
+
+                    case 2:
+                        try
+                        {
+                            listado = LibrosBLL.GetList(l => l.Titulo.Contains(CriterioTextBox.Text));
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Debe ingresar un Critero valido para el filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
+                        break;
+
+                    case 3:
+                        try
+                        {
+                            listado = LibrosBLL.GetList(l => l.EditorialId == Utilidades.ToInt(CriterioTextBox.Text));
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Debe ingresar un Critero valido para el filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
+                        break;
+
+                    case 5:
+                        try
+                        {
+                            long id = long.Parse(CriterioTextBox.Text);
+                            listado = LibrosBLL.GetList(l => l.ISBN == id);
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Debe ingresar un Critero valido para el filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
+                        break;
                 }
             }
             else
