@@ -112,6 +112,13 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     TituloTextBox.Focus();
                     return;
                 }
+                //—————————————————————————————————[ Editorial Id ]—————————————————————————————————
+                if (EditorialIdComboBox.Text == string.Empty)
+                {
+                    MessageBox.Show("El Campo (Editorial Id) está vacío.\n\nPorfavor, Seleccione la Editorial del libro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    EditorialIdComboBox.IsDropDownOpen = true;
+                    return;
+                }
                 //—————————————————————————————————[ ISBN ]—————————————————————————————————
                 if (ISBNTextBox.Text.Trim() == string.Empty)
                 {

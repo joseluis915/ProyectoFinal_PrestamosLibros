@@ -23,7 +23,10 @@
                 <StackPanel  Margin="0,0,10,0" >
                     <Label Content="Filtro:" />
                     <ComboBox x:Name="FiltroComboBox" Width="95" Height="24" >
-                        <ComboBoxItem Content="Id"/>
+                        <ComboBoxItem Content="Estudiante Id"/>
+                        <ComboBoxItem Content="Usuario Id"/>
+                        <ComboBoxItem Content="Nombres"/>
+                        <ComboBoxItem Content="Apellidos"/>
                     </ComboBox>
                 </StackPanel>
                 <!--——————————————————————————————————————————————[ CRITERIO ]——————————————————————————————————————————————-->

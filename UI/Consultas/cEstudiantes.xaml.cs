@@ -32,11 +32,37 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
                     case 0: 
                         listado = EstudiantesBLL.GetList(e => e.EstudianteId == Utilidades.ToInt(CriterioTextBox.Text));
                         break;
-                    case 1:                       
-                        listado = EstudiantesBLL.GetList(e => e.Nombres.Contains(CriterioTextBox.Text, StringComparison.OrdinalIgnoreCase));
+                    case 1:
+                        try
+                        {
+                            listado = EstudiantesBLL.GetList(e => e.UsuarioId == Utilidades.ToInt(CriterioTextBox.Text));
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Por favor, ingrese un Critero valido");
+                        }
+
                         break;
-                    case 2:                     
-                        listado = EstudiantesBLL.GetList(e => e.Apellidos.Contains(CriterioTextBox.Text, StringComparison.OrdinalIgnoreCase));
+                    case 2:
+                        try
+                        {
+                        listado = EstudiantesBLL.GetList(e => e.Nombres.Contains(CriterioTextBox.Text));
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Por favor, ingrese un Critero valido");
+                        }
+                        
+                        break;
+                    case 3:
+                        try
+                        {
+                            listado = EstudiantesBLL.GetList(e => e.Apellidos.Contains(CriterioTextBox.Text));
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Por favor, ingrese un Critero valido");
+                        }
                         break;
                 }
             }
