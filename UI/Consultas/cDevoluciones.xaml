@@ -45,9 +45,9 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Devolución Id" Binding="{Binding DevolucionId}"/>
                         <DataGridTextColumn Header="Usuario Id" Binding="{Binding UsuarioId}"/>
-                        <DataGridTextColumn Header="Etudiante Id" Binding="{Binding EtudianteId}"/>
+                        <DataGridTextColumn Header="Estudiante Id" Binding="{Binding EstudianteId}"/>
                         <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha, StringFormat='dd/MM/yyyy'}"/>
-                        <DataGridTextColumn Header="Devolución Total" Binding="{Binding Total}"/>
+                        <DataGridTextColumn Header="Devueltos Total" Binding="{Binding Total}"/>
                         <DataGridTextColumn Header="Detalle" Binding="{Binding Detalle}"/>
                     </DataGrid.Columns>
                 </DataGrid>

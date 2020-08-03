@@ -169,12 +169,6 @@ namespace ProyectoFinal_PrestamosLibros.BLL
             try
             {
                 paso = contexto.Usuarios.Any(u => u.NombreUsuario.Equals(nombreusuario) && u.Contrasena.Equals(GetSHA256(contrasena)));
-                
-                //var autenticar = from usuario in contexto.Usuarios where usuario.NombreUsuario == nombreusuario && usuario.Contrasena == GetSHA256(contrasena) select usuario;
-                //if (autenticar.Count() > 0)
-                //    paso = true;
-                //else
-                //    paso = false;
             }
             catch (Exception)
             {
@@ -199,11 +193,26 @@ namespace ProyectoFinal_PrestamosLibros.BLL
 
             return sb.ToString();
         }
-        // TODO: ——————————————————————————————————————————————[ ObtenerIdUsuario ]——————————————————————————————————————————————
-        public static void ObtenerIdUsuario(int id, string usuarioId)
+        //——————————————————————————————————————————————[ GET ]——————————————————————————————————————————————
+        public static List<Usuarios> GetUsuarios()
         {
-            Usuarios usuarios = Buscar(id);
-            usuarios.NombreUsuario = usuarioId;
+            List<Usuarios> lista = new List<Usuarios>();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                lista = contexto.Usuarios.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return lista;
         }
     }
 }

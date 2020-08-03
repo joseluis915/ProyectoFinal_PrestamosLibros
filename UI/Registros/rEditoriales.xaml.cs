@@ -22,6 +22,10 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         {
             InitializeComponent();
             this.DataContext = editoriales;
+            //—————————————————————————————————————[ ComboBox UsuarioId ]—————————————————————————————————————
+            UsuarioIdComboBox.ItemsSource = UsuariosBLL.GetUsuarios();
+            UsuarioIdComboBox.SelectedValuePath = "UsuarioId";
+            UsuarioIdComboBox.DisplayMemberPath = "NombreUsuario";
         }
         //——————————————————————————————————————————————————————————————[ Cargar ]———————————————————————————————————————————————————————————————
         private void Cargar()
@@ -88,6 +92,13 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     EditorialIdTextBox.Text = "0";
                     EditorialIdTextBox.Focus();
                     EditorialIdTextBox.SelectAll();
+                    return;
+                }
+                //—————————————————————————————————[ Usuario Id ]—————————————————————————————————
+                if (UsuarioIdComboBox.Text == string.Empty)
+                {
+                    MessageBox.Show("El Campo (Usuario Id) está vacío.\n\nPorfavor, Seleccione su Nombre de Usuario.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    UsuarioIdComboBox.IsDropDownOpen = true;
                     return;
                 }
                 //—————————————————————————————————[ Descripcion ]—————————————————————————————————

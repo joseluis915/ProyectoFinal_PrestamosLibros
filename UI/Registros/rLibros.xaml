@@ -5,14 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro de libro" Height="420" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" ResizeMode="CanMinimize">
+        Title="Registro de libro" Height="430" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Content="Libro Id" FontWeight="Bold" FontSize="16"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Libro Id" FontWeight="Bold" FontSize="16"/>
+                <Label Content="Usuario Id" FontWeight="Bold" FontSize="16" Margin="88,0,0,0"/>
+            </StackPanel>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="LibroIdTextBox" Text="{Binding LibroId}" Width="200" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="LibroIdTextbox_TextChanged"/>
-                <Button x:Name="BuscarButton" Margin="80,0,0,0" Width="120" Click="BuscarButton_Click">
+                <TextBox x:Name="LibroIdTextBox" Text="{Binding LibroId}" Width="100" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="LibroIdTextbox_TextChanged"/>
+                <!--—————————————————————————————[ Usuario Id ]—————————————————————————————-->
+                <ComboBox x:Name="UsuarioIdComboBox" SelectedValue="{Binding UsuarioId}" VerticalContentAlignment="Center" Width="100" Margin="50,0,0,0" />
+                <!--—————————————————————————————[ Boton Buscar ]—————————————————————————————-->
+                <Button x:Name="BuscarButton" Margin="50,0,0,0" Width="120" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Buscar.png" />
                         <Label Content="Buscar" FontSize="17" FontWeight="Bold"/>
@@ -20,8 +26,14 @@
                 </Button>
             </StackPanel>
             <!--——————————————————————————————————————————————[ Titulo ]——————————————————————————————————————————————-->
-            <Label Content="Título" FontWeight="Bold" Margin="0,0,10,0"/>
-            <TextBox x:Name="TituloTextBox" Text="{Binding Titulo}" Height="30" VerticalContentAlignment="Center" />
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                <Label Content="Título" FontWeight="Bold"/>
+                <Label Content="Editorial Id" FontWeight="Bold" Margin="322,0,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="30" >
+                <TextBox x:Name="TituloTextBox" Text="{Binding Titulo}" Width="300" VerticalContentAlignment="Center" />
+                <ComboBox x:Name="EditorialIdComboBox" SelectedValue="{Binding EditorialId}" Width="100" Margin="50,0,0,0" VerticalContentAlignment="Center"/>
+            </StackPanel>
             <!--——————————————————————————————————————————————[ ISBN ]——————————————————————————————————————————————-->
             <Label Content="ISBN" FontWeight="Bold" Margin="0,0,10,0"/>
             <TextBox x:Name="ISBNTextBox" Text="{Binding ISBN}" Height="30" VerticalContentAlignment="Center" MaxLength="13" TextChanged="ISBNTextBox_TextChanged"/>

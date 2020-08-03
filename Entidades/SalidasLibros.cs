@@ -16,7 +16,7 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public double Cantidad { get; set; }
         public DateTime Fecha { get; set; } = DateTime.Now;
 
-        //———————————————————————————[ ForeingKey ]———————————————————————————
+        //———————————————————————————[ ForeingKeys ]———————————————————————————
         [ForeignKey("UsuarioId")]
         public Usuarios usuarios { get; set; }
 

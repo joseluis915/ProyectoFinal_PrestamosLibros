@@ -8,11 +8,17 @@
         Title="Registrar salida de libro" Height="370" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Content="SalidaLibro Id" FontWeight="Bold" FontSize="16"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="SalidaLibro Id" FontWeight="Bold" FontSize="16"/>
+                <Label Content="Usuario Id" FontWeight="Bold" FontSize="16" Margin="93,0,0,0"/>
+            </StackPanel>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="SalidaLibroIdTextBox" Text="{Binding SalidaLibroId}" Width="200" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
-                <Button x:Name="BuscarButton" Margin="80,0,0,0" Width="120" Click="BuscarButton_Click">
+                <TextBox x:Name="SalidaLibroIdTextBox" Text="{Binding SalidaLibroId}" Width="150" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="SalidaLibroIdTextbox_TextChanged"/>
+                <!--—————————————————————————————[ Usuario Id ]—————————————————————————————-->
+                <ComboBox x:Name="UsuarioIdComboBox" SelectedValue="{Binding UsuarioId}" VerticalContentAlignment="Center" Width="100" Margin="50,0,0,0" />
+                <!--—————————————————————————————[ Boton Buscar ]—————————————————————————————-->
+                <Button x:Name="BuscarButton" Margin="50,0,0,0" Width="120" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Buscar.png" />
                         <Label Content="Buscar" FontSize="17" FontWeight="Bold"/>

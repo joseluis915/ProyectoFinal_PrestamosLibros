@@ -13,12 +13,16 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public int LibroId { get; set; }
         public int UsuarioId { get; set; }
         public String Titulo { get; set; }
+        public int EditorialId { get; set; }
         public long ISBN { get; set; }
         public double Existencia { get; set; }
         public DateTime Fecha { get; set; } = DateTime.Now;
 
-        //———————————————————————————[ForeingKey UsuarioId]———————————————————————————
+        //———————————————————————————[ ForeingKeys ]———————————————————————————
         [ForeignKey("UsuarioId")]
-        public virtual Usuarios usuarios { get; set; } = new Usuarios();
+        public Usuarios usuarios { get; set; }
+
+        [ForeignKey("EditorialId")]
+        public Editoriales editoriales { get; set; }
     }
 }

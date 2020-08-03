@@ -24,15 +24,15 @@
                         </MenuItem.Icon>
                     </MenuItem>
 
-                    <MenuItem Header="Libro y Editorial">
-                        <MenuItem x:Name="rLibrosMenuItem" Click="rLibrosMenuItem_Click" Header="Registrar Libro">
-                            <MenuItem.Icon>
-                                <Image Source="/Resources/Libro.png" />
-                            </MenuItem.Icon>
-                        </MenuItem>
+                    <MenuItem Header="Editorial y Libro">
                         <MenuItem x:Name="rEditorialesMenuItem" Click="rEditorialesMenuItem_Click" Header="Registrar Editorial">
                             <MenuItem.Icon>
                                 <Image Source="/Resources/Identificacion.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="rLibrosMenuItem" Click="rLibrosMenuItem_Click" Header="Registrar Libro">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Libro.png" />
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem.Icon>
@@ -86,15 +86,15 @@
                         </MenuItem.Icon>
                     </MenuItem>
 
-                    <MenuItem Header="Libro y Editorial">
-                        <MenuItem x:Name="cLibrosMenuItem" Click="cLibrosMenuItem_Click" Header="Consultar Libros">
-                            <MenuItem.Icon>
-                                <Image Source="/Resources/Libros.png" />
-                            </MenuItem.Icon>
-                        </MenuItem>
+                    <MenuItem Header="Editorial y Libro">
                         <MenuItem x:Name="cEditorialesMenuItem" Click="cEditorialesMenuItem_Click" Header="Consultar Editoriales">
                             <MenuItem.Icon>
                                 <Image Source="/Resources/Identificacion.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="cLibrosMenuItem" Click="cLibrosMenuItem_Click" Header="Consultar Libros">
+                            <MenuItem.Icon>
+                                <Image Source="/Resources/Libros.png" />
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem.Icon>
@@ -150,13 +150,13 @@
 
             <StackPanel Orientation="Horizontal">
                 <Label Content="Ultima modificación:" FontWeight="Bold" FontSize="18" FontStyle="Italic"/>
-                <Label x:Name="ModificacionLabel" Content="31/07/2020" FontSize="18" />
+                <Label x:Name="ModificacionLabel" Content="02/08/2020" FontSize="18" />
             </StackPanel>
 
             <Label x:Name="CreadoPorLabel" Content="©2020 JL-AR Solutions" FontWeight="Bold"  FontSize="16" FontStyle="Italic" HorizontalAlignment="Center" Margin="0,20,0,0"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Label Content="Versión:" FontWeight="Bold" FontSize="16" FontStyle="Italic"/>
-                <Label x:Name="VersionLabel" Content="Beta 1.0" FontSize="16" FontStyle="Italic"/>
+                <Label x:Name="VersionLabel" Content="Beta 2.0" FontSize="16" FontStyle="Italic"/>
             </StackPanel>
             <!--———————————————————————————————————————————————————————————————————————————————————————————————-->
         </StackPanel>

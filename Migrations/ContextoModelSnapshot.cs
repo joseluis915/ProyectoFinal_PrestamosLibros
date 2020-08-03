@@ -165,6 +165,9 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("EditorialId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<double>("Existencia")
                         .HasColumnType("REAL");
 
@@ -181,6 +184,8 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("LibroId");
+
+                    b.HasIndex("EditorialId");
 
                     b.HasIndex("UsuarioId");
 
@@ -376,6 +381,12 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
 
             modelBuilder.Entity("ProyectoFinal_PrestamosLibros.Entidades.Libros", b =>
                 {
+                    b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Editoriales", "editoriales")
+                        .WithMany()
+                        .HasForeignKey("EditorialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ProyectoFinal_PrestamosLibros.Entidades.Usuarios", "usuarios")
                         .WithMany()
                         .HasForeignKey("UsuarioId")

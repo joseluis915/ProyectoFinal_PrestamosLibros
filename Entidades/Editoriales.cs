@@ -14,8 +14,8 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public int UsuarioId { get; set; }
         public String Descripcion { get; set; }
 
-        //———————————————————————————[ ForeingKey ]———————————————————————————
+        //———————————————————————————[ ForeingKeys ]———————————————————————————
         [ForeignKey("UsuarioId")]
-        public virtual Usuarios usuarios { get; set; } = new Usuarios();
+        public Usuarios usuarios { get; set; }
     }
 }

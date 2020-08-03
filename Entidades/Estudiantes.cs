@@ -22,7 +22,7 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public String Direccion { get; set; }
         public String Correo { get; set; }
 
-        //———————————————————————————[ ForeingKey ]———————————————————————————
+        //———————————————————————————[ ForeingKeys ]———————————————————————————
         [ForeignKey("UsuarioId")]
         public Usuarios usuarios { get; set; }
     }

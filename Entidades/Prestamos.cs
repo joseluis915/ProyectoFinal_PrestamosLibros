@@ -17,12 +17,12 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public DateTime FechaVencimiento { get; set; } = DateTime.Now;
         public double LibrosTotal { get; set; }
         
-        //———————————————————————————[ ForeingKey ]———————————————————————————
+        //———————————————————————————[ ForeingKeys ]———————————————————————————
         [ForeignKey("PrestamoId")]
         public virtual List<PrestamosDetalle> Detalle { get; set; } = new List<PrestamosDetalle>();
 
         [ForeignKey("UsuarioId")]
-        public virtual Usuarios usuarios { get; set; } = new Usuarios();
+        public Usuarios usuarios { get; set; }
 
         [ForeignKey("EstudianteId")]
         public virtual Estudiantes estudiantes { get; set; }

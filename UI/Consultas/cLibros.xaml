@@ -45,7 +45,8 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Libro Id" Binding="{Binding LibroId}"/>
                         <DataGridTextColumn Header="Usuario Id" Binding="{Binding UsuarioId}"/>
-                        <DataGridTextColumn Header="Titulo" Binding="{Binding Titulo}"/>
+                        <DataGridTextColumn Header="Título" Binding="{Binding Titulo}"/>
+                        <DataGridTextColumn Header="Editorial Id" Binding="{Binding EditorialId}"/>
                         <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}"/>
                         <DataGridTextColumn Header="Existencia" Binding="{Binding Existencia}"/>
                         <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha, StringFormat='dd/MM/yyyy'}"/>

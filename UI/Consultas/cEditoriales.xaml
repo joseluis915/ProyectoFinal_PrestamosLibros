@@ -44,7 +44,7 @@
                 <DataGrid x:Name="DatosDataGrid" Height="330" IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="Gainsboro" TextBlock.TextAlignment="Center">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Editorial Id" Binding="{Binding EditorialId}"/>
-                        <DataGridTextColumn Header="Usuario Id" Binding="{Binding Usuario.UsuarioId}"/>
+                        <DataGridTextColumn Header="Usuario Id" Binding="{Binding UsuarioId}"/>
                         <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}"/>
                     </DataGrid.Columns>
                 </DataGrid>

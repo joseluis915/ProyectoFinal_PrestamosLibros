@@ -17,7 +17,7 @@ namespace ProyectoFinal_PrestamosLibros.Entidades
         public double LibrosDevueltos { get; set; }
         public int Dias { get; set; }
 
-        //———————————————————————————[ ForeingKey ]———————————————————————————
+        //———————————————————————————[ ForeingKeys ]———————————————————————————
         [ForeignKey("LibroId")]
         public Libros libros { get; set; } = new Libros();
     }

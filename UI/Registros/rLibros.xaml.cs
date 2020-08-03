@@ -22,6 +22,14 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
         {
             InitializeComponent();
             this.DataContext = libros;
+            //—————————————————————————————————————[ ComboBox UsuarioId ]—————————————————————————————————————
+            UsuarioIdComboBox.ItemsSource = UsuariosBLL.GetUsuarios();
+            UsuarioIdComboBox.SelectedValuePath = "UsuarioId";
+            UsuarioIdComboBox.DisplayMemberPath = "NombreUsuario";
+            //—————————————————————————————————————[ ComboBox EditorialId ]—————————————————————————————————————
+            EditorialIdComboBox.ItemsSource = EditorialesBLL.GetEditoriales();
+            EditorialIdComboBox.SelectedValuePath = "EditorialId";
+            EditorialIdComboBox.DisplayMemberPath = "Descripcion";
         }
         //——————————————————————————————————————————————————————————————[ Cargar ]———————————————————————————————————————————————————————————————
         private void Cargar()

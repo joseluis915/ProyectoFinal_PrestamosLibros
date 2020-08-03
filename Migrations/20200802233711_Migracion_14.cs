@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProyectoFinal_PrestamosLibros.Migrations
 {
-    public partial class Migracion13 : Migration
+    public partial class Migracion_14 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -80,6 +80,7 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     UsuarioId = table.Column<int>(nullable: false),
                     Titulo = table.Column<string>(nullable: true),
+                    EditorialId = table.Column<int>(nullable: false),
                     ISBN = table.Column<long>(nullable: false),
                     Existencia = table.Column<double>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false)
@@ -87,6 +88,12 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Libros", x => x.LibroId);
+                    table.ForeignKey(
+                        name: "FK_Libros_Editoriales_EditorialId",
+                        column: x => x.EditorialId,
+                        principalTable: "Editoriales",
+                        principalColumn: "EditorialId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Libros_Usuarios_UsuarioId",
                         column: x => x.UsuarioId,
@@ -311,6 +318,11 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Libros_EditorialId",
+                table: "Libros",
+                column: "EditorialId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Libros_UsuarioId",
                 table: "Libros",
                 column: "UsuarioId");
@@ -352,9 +364,6 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
                 name: "DevolucionesDetalle");
 
             migrationBuilder.DropTable(
-                name: "Editoriales");
-
-            migrationBuilder.DropTable(
                 name: "EntradasLibros");
 
             migrationBuilder.DropTable(
@@ -374,6 +383,9 @@ namespace ProyectoFinal_PrestamosLibros.Migrations
 
             migrationBuilder.DropTable(
                 name: "Estudiantes");
+
+            migrationBuilder.DropTable(
+                name: "Editoriales");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");

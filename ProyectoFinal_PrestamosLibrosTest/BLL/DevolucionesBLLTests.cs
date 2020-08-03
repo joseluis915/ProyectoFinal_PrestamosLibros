@@ -16,6 +16,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL.Tests
             Devoluciones devoluciones = new Devoluciones();
 
             devoluciones.DevolucionId = 1;
+            devoluciones.UsuarioId = 1;
             devoluciones.EstudianteId = 1;
             devoluciones.Fecha = DateTime.Now;
             devoluciones.Detalle.Add(new DevolucionesDetalle
@@ -24,6 +25,7 @@ namespace ProyectoFinal_PrestamosLibros.BLL.Tests
                 LibrosDevueltos = 1,
                 Dias = 20,
             });
+            devoluciones.Total = 1;
         }
 
         [TestMethod()]
@@ -48,6 +50,12 @@ namespace ProyectoFinal_PrestamosLibros.BLL.Tests
         public void BuscarTest()
         {
             Assert.IsTrue(DevolucionesBLL.Buscar(1) != null);
+        }
+
+        [TestMethod()]
+        public void ModificarTest()
+        {
+            Assert.Fail();
         }
     }
 }

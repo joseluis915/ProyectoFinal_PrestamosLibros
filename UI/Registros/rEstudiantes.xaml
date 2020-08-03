@@ -6,18 +6,24 @@
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
         xmlns:convertidor="clr-namespace:ProyectoFinal_PrestamosLibros.Resources.Extra"
         mc:Ignorable="d"
-Title="Registrar estudiante" Height="500" Width="580" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" ResizeMode="CanMinimize">
+Title="Registrar estudiante" Height="480" Width="580" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" ResizeMode="CanMinimize">
     <Window.Resources>
         <convertidor:GenderConverter x:Key="GenderConverter"/>
     </Window.Resources>
     <Grid>
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Content="Estudiante Id" FontWeight="Bold" FontSize="16"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Estudiante Id" FontWeight="Bold" FontSize="16"/>
+                <Label Content="Usuario Id" FontWeight="Bold" FontSize="16" Margin="98,0,0,0"/>
+            </StackPanel>
             <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="EstudianteIdTextBox" Text="{Binding EstudianteId}" Width="265" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="EstudianteIdTextbox_TextChanged"/>
-                <Button x:Name="BuscarButton" Margin="109,0,0,0" Width="120" Click="BuscarButton_Click">
+                <TextBox x:Name="EstudianteIdTextBox" Text="{Binding EstudianteId}" Width="150" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" TextChanged="EstudianteIdTextbox_TextChanged"/>
+                <!--—————————————————————————————[ Usuario Id ]—————————————————————————————-->
+                <ComboBox x:Name="UsuarioIdComboBox" SelectedValue="{Binding UsuarioId}" VerticalContentAlignment="Center" Width="100" Margin="50,0,0,0" />
+                <!--—————————————————————————————[ Boton Buscar ]—————————————————————————————-->
+                <Button x:Name="BuscarButton" Margin="50,0,0,0" Width="120" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Buscar.png" />
                         <Label Content="Buscar" FontSize="17" FontWeight="Bold"/>
@@ -28,9 +34,6 @@ Title="Registrar estudiante" Height="500" Width="580" WindowStartupLocation="Cen
                 <!--——————————————————————————————————————————————[ Matricula ]——————————————————————————————————————————————-->
                 <Label Content="Matricula" FontWeight="Bold" />
                 <TextBox x:Name="MatriculaTextBox" Text="{Binding Matricula}" Height="30" Width="100" VerticalContentAlignment="Center" TextChanged="MatriculaTextBox_TextChanged" MaxLength="8"/>
-                <!--—————————————————————————————[ Apellidos ]—————————————————————————————-->
-                <Label Content="Usuario Id" FontWeight="Bold"/>
-                <TextBox x:Name="UsuarioIdTextBox" Text="{Binding UsuarioId}" Height="30" VerticalContentAlignment="Center" Width="100"/>
             </StackPanel>
             <!--——————————————————————————————————————————————[ Nombres y Apellidos]——————————————————————————————————————————————-->
             <StackPanel Orientation="Horizontal" Margin="0,10,0,5">
