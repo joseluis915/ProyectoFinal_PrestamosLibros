@@ -89,7 +89,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
             }
             if (DiasTextBox.Text == string.Empty)
             {
-                MessageBox.Show("El Campo (Dias Transcurridos) está vacio.\n\nEscriba cuando dias transcurrieron.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("El Campo (Dias Transcurridos) está vacio.\n\nEscriba cuantos dias transcurrieron.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 DiasTextBox.Focus();
                 return;
             }
@@ -209,6 +209,24 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                 DevolucionIdTextbox.Text = "0";
                 DevolucionIdTextbox.Focus();
                 DevolucionIdTextbox.SelectAll();
+            }
+        }
+
+        private void DiasTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (DiasTextBox.Text.Trim() != string.Empty)
+                {
+                    int.Parse(DiasTextBox.Text);
+                }
+            }
+            catch
+            {
+                MessageBox.Show($"El valor digitado en el campo (Dias Transcurridos) no es un número.\n\nPor favor, digite un número de dias valido.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                DiasTextBox.Text = "0";
+                DiasTextBox.Focus();
+                DiasTextBox.SelectAll();
             }
         }
     } 

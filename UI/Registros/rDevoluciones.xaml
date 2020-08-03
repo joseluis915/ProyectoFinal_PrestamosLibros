@@ -52,7 +52,7 @@
                             <!--——————————————————————[ Dias ]——————————————————————-->
                             <StackPanel Orientation="Vertical" Margin="0,0,20,0" >
                                 <Label Content="Días Transcurridos" HorizontalAlignment="Center"/>
-                                <TextBox x:Name="DiasTextBox" Height="23" Width="100"/>
+                                <TextBox x:Name="DiasTextBox" Height="23" Width="100" TextChanged="DiasTextBox_TextChanged"/>
                             </StackPanel>
                             <!--——————————————————————[ AgregarFilaButton ]——————————————————————-->
                             <Button x:Name="AgregarFilaButton" Click="AgregarFilaButton_Click" Height="30" >
