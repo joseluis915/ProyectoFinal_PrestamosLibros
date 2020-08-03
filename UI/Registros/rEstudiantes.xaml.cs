@@ -97,6 +97,13 @@ namespace ProyectoFinal_PrestamosLibros.UI.Registros
                     EstudianteIdTextBox.SelectAll();
                     return;
                 }
+                //—————————————————————————————————[ Usuario Id ]—————————————————————————————————
+                if (UsuarioIdComboBox.Text == string.Empty)
+                {
+                    MessageBox.Show("El Campo (Usuario Id) está vacío.\n\nPorfavor, Seleccione su Nombre de Usuario.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    UsuarioIdComboBox.IsDropDownOpen = true;
+                    return;
+                }
                 //———————————————————————————————[ Matricula ]———————————————————————————————
                 if (MatriculaTextBox.Text.Trim() == string.Empty)
                 {
