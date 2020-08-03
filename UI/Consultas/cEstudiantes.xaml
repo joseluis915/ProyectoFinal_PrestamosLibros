@@ -25,8 +25,12 @@
                     <ComboBox x:Name="FiltroComboBox" Width="95" Height="24" >
                         <ComboBoxItem Content="Estudiante Id"/>
                         <ComboBoxItem Content="Usuario Id"/>
+                        <ComboBoxItem Content="Matricula"/>
                         <ComboBoxItem Content="Nombres"/>
                         <ComboBoxItem Content="Apellidos"/>
+                        <ComboBoxItem Content="Cédula"/>
+                        <ComboBoxItem Content="Género"/>
+                        <ComboBoxItem Content="Teléfono"/>
                     </ComboBox>
                 </StackPanel>
                 <!--——————————————————————————————————————————————[ CRITERIO ]——————————————————————————————————————————————-->
