@@ -30,7 +30,14 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
                 switch (FiltroComboBox.SelectedIndex)
                 {
                     case 0:
-                        listado = LibrosBLL.GetList(l => l.LibroId == Utilidades.ToInt(CriterioTextBox.Text));
+                        try
+                        {
+                            listado = LibrosBLL.GetList(l => l.LibroId == Utilidades.ToInt(CriterioTextBox.Text));
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Debes ingresar un Critero valido para aplicar este filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
                         break;
 
                     case 1:
@@ -40,7 +47,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
                         }
                         catch (FormatException)
                         {
-                            MessageBox.Show("Debe ingresar un Critero valido para el filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("Debes ingresar un Critero valido para aplicar este filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                         break;
 
@@ -51,7 +58,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
                         }
                         catch (FormatException)
                         {
-                            MessageBox.Show("Debe ingresar un Critero valido para el filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("Debes ingresar un Critero valido para aplicar este filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                         break;
 
@@ -62,7 +69,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
                         }
                         catch (FormatException)
                         {
-                            MessageBox.Show("Debe ingresar un Critero valido para el filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("Debes ingresar un Critero valido para aplicar este filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                         break;
 
@@ -74,7 +81,7 @@ namespace ProyectoFinal_PrestamosLibros.UI.Consultas
                         }
                         catch (FormatException)
                         {
-                            MessageBox.Show("Debe ingresar un Critero valido para el filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("Debes ingresar un Critero valido para aplicar este filtro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                         break;
                 }
