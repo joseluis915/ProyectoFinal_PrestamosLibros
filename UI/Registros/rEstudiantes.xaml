@@ -12,7 +12,7 @@ Title="Registrar estudiante" Height="480" Width="580" WindowStartupLocation="Cen
     </Window.Resources>
     <Grid>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
                 <Label Content="Estudiante Id" FontWeight="Bold" FontSize="16"/>
                 <Label Content="Usuario Id" FontWeight="Bold" FontSize="16" Margin="98,0,0,0"/>
@@ -99,7 +99,7 @@ Title="Registrar estudiante" Height="480" Width="580" WindowStartupLocation="Cen
             </StackPanel>
             <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
             <Label Content="Creado: 24/07/2020           —           ©2020 JL-AR Solutions          —          Modificado: 03/08/2020" 
-                   FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,5,0,0" />
+                   FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Bottom"  />
             <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
         </StackPanel>
     </Grid>

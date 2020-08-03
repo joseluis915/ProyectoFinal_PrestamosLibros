@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Consultas"
         mc:Ignorable="d"
-        Title="Consultar estudiantes" Height="450" Width="680" WindowStartupLocation="CenterScreen" Icon="/Resources/Lista.png" ResizeMode="CanMinimize">
+        Title="Consultar estudiantes" Height="480" Width="680" WindowStartupLocation="CenterScreen" Icon="/Resources/Lista.png" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="0,5,0,0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Height="60">
@@ -66,7 +66,7 @@
             </StackPanel>
             <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
             <Label Content="Creado: 25/07/2020              —              ©2020 JL-AR Solutions             —             Modificado: 03/08/2020" 
-                   FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,5,0,0" />
+                   FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Bottom" />
             <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
         </StackPanel>
     </Grid>

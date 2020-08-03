@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Registrar salida de libro" Height="370" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" ResizeMode="CanMinimize">
     <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
             <StackPanel Orientation="Horizontal">
                 <Label Content="SalidaLibro Id" FontWeight="Bold" FontSize="16"/>
                 <Label Content="Usuario Id" FontWeight="Bold" FontSize="16" Margin="93,0,0,0"/>
@@ -59,7 +59,7 @@
             </StackPanel>
             <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
             <Label Content="Creado: 23/07/2020        —        ©2020 JL-AR Solutions       —       Modificado: 03/08/2020" 
-                   FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,5,0,0" />
+                   FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Bottom" />
             <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
         </StackPanel>
     </Grid>

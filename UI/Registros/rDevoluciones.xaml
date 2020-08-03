@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_PrestamosLibros.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro de devoluciones" Height="540" Width="510" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" ResizeMode="CanMinimize">
+        Title="Registro de devoluciones" Height="535" Width="520" WindowStartupLocation="CenterScreen" Icon="/Resources/Agendar.png" ResizeMode="CanMinimize">
     <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
             <StackPanel Orientation="Horizontal">
                 <Label Content="Devolución Id" FontWeight="Bold" FontSize="16"/>
                 <Label Content="Usuario Id" FontWeight="Bold" FontSize="16" Margin="93,0,0,0"/>
@@ -112,10 +112,10 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
-            <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
-            <Label Content="Creado: 24/07/2020        —        ©2020 JL-AR Solutions       —       Modificado: 03/08/2020" 
-                   FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,5,0,0" />
-            <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
+        <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
+        <Label Content="Creado: 24/07/2020        —        ©2020 JL-AR Solutions       —       Modificado: 03/08/2020" 
+                   FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Bottom" />
+        <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
         </StackPanel>
     </Grid>
 </Window>

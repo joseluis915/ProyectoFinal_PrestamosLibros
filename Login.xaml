@@ -40,9 +40,9 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
-            <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
-            <Label Content="©2020 JL-AR Solutions" FontWeight="Bold" FontSize="10" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,15,0,0" />
-            <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
         </StackPanel>
+        <!--——————————————————————————————————————————————[ INFORMACION ]——————————————————————————————————————————————-->
+        <Label Content="©2020 JL-AR Solutions" FontWeight="Bold" FontSize="10" FontStyle="Italic" Foreground="#99000000" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Bottom" />
+        <!--————————————————————————————————————————————————————————————————————————————————————————————————————————————-->
     </Grid>
 </Window>
