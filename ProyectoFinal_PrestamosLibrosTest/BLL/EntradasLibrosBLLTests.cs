@@ -8,16 +8,18 @@ using System.Text;
 namespace ProyectoFinal_PrestamosLibros.BLL.Tests
 {
     [TestClass()]
-    public class EditorialesBLLTests
+    public class EntradasLibrosBLLTests
     {
         [TestMethod()]
         public void GuardarTest()
         {
-            Editoriales editoriales = new Editoriales();
+            EntradasLibros entradasLibros = new EntradasLibros();
 
-            editoriales.EditorialId = 1;
-            editoriales.UsuarioId = 1;
-            editoriales.Descripcion = "Editorial Test";
+            entradasLibros.EntradaLibroId = 1;
+            entradasLibros.UsuarioId = 1;
+            entradasLibros.LibroId = 1;
+            entradasLibros.Cantidad = 20;
+            entradasLibros.Fecha = DateTime.Now;
         }
 
         [TestMethod()]
@@ -29,29 +31,29 @@ namespace ProyectoFinal_PrestamosLibros.BLL.Tests
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.IsTrue(EditorialesBLL.Eliminar(1));
+            Assert.IsTrue(EntradasLibrosBLL.Eliminar(1));
         }
 
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.IsTrue(EditorialesBLL.Buscar(1) != null);
+            Assert.IsTrue(EntradasLibrosBLL.Buscar(1) != null);
         }
 
         [TestMethod()]
         public void GetListTest()
         {
-            Assert.IsTrue(EditorialesBLL.GetList(e => e.EditorialId == 1) != null);
+            Assert.IsTrue(EntradasLibrosBLL.GetList(el => el.EntradaLibroId == 1) != null);
         }
 
         [TestMethod()]
         public void ExisteTest()
         {
-            Assert.IsTrue(EditorialesBLL.Existe(1));
+            Assert.IsTrue(EntradasLibrosBLL.Existe(1));
         }
 
         [TestMethod()]
-        public void GetEditorialesTest()
+        public void GetEntradasLibrosTest()
         {
             Assert.Fail();
         }

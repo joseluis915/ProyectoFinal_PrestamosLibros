@@ -8,16 +8,20 @@ using System.Text;
 namespace ProyectoFinal_PrestamosLibros.BLL.Tests
 {
     [TestClass()]
-    public class EditorialesBLLTests
+    public class LibrosBLLTests
     {
         [TestMethod()]
         public void GuardarTest()
         {
-            Editoriales editoriales = new Editoriales();
+            Libros libros = new Libros();
 
-            editoriales.EditorialId = 1;
-            editoriales.UsuarioId = 1;
-            editoriales.Descripcion = "Editorial Test";
+            libros.LibroId = 1;
+            libros.UsuarioId = 1;
+            libros.Titulo = "Titulo libro";
+            libros.EditorialId = 2;
+            libros.ISBN = 1234567890123;
+            libros.Existencia = 50;
+            libros.Fecha = DateTime.Now;
         }
 
         [TestMethod()]
@@ -29,29 +33,41 @@ namespace ProyectoFinal_PrestamosLibros.BLL.Tests
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.IsTrue(EditorialesBLL.Eliminar(1));
+            Assert.IsTrue(LibrosBLL.Eliminar(1));
         }
 
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.IsTrue(EditorialesBLL.Buscar(1) != null);
+            Assert.IsTrue(LibrosBLL.Buscar(1) != null);
         }
 
         [TestMethod()]
         public void GetListTest()
         {
-            Assert.IsTrue(EditorialesBLL.GetList(e => e.EditorialId == 1) != null);
+            Assert.IsTrue(LibrosBLL.GetList(l => l.LibroId == 1) != null);
         }
 
         [TestMethod()]
         public void ExisteTest()
         {
-            Assert.IsTrue(EditorialesBLL.Existe(1));
+            Assert.IsTrue(LibrosBLL.Existe(1));
         }
 
         [TestMethod()]
-        public void GetEditorialesTest()
+        public void GetLibrosTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void SumarSalidaLibrosTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void RestarSalidaLibrosTest()
         {
             Assert.Fail();
         }
