@@ -1,11 +1,11 @@
-# **📚 Prestamos de Libros de una Biblioteca Universitaria 📚**<br/><br/>
+# **📚 Prestamos de Libros — Biblioteca Universitaria 📚**<br/><br/>
 
 # 📈 **Diagrama de Base de Datos** 📊<br/>
 ![DiagramaBD_ProyectoFinal](https://user-images.githubusercontent.com/64672921/89222032-507cdd00-d5a2-11ea-9bba-e4c4f5922cd0.png)
 
 # 👨🏻‍💻 **Participantes** 👨🏻‍💻<br/>
-**1)** José Luis Burgos Hernández<br/>
-**2)** Anderson Rodríguez Molina
+### 1) José Luis Burgos Hernández<br/>
+### 2) Anderson Rodríguez Molina
 
 # ℹ **Presentación** ℹ<br/>
 Este es un minitutorial, para saber cómo interactuar con el programa diseñado, para así tener una mejor experiencia de usuario al utilizar este programa.
